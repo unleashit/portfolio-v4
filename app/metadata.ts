@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 const globalMeta: Metadata = {
-  robots: "noindex,follow",
+  robots: "noindex, nofollow",
   title: {
     default:
       "Front End / Full Stack Engineer in Portland, OR specializing in React, Typescript, Javascript, Node.Js and more",
