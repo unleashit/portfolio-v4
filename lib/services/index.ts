@@ -9,10 +9,9 @@ const clientInstance =
   new promiseCache({
     baseurl: directusEndpoint,
     defaultCacheTime: 60 * 5,
-    debug: true,
   });
 
 export const directus =
   typeof window === "undefined"
-    ? cache(() => new promiseCache({ baseurl: directusEndpoint, debug: true }))
+    ? cache(() => new promiseCache({ baseurl: directusEndpoint }))
     : () => clientInstance as promiseCache;
