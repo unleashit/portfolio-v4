@@ -3,7 +3,6 @@ import { getHomeBlocks } from "../../app/data";
 import { findKeyWithValue } from "@/lib/utils.new";
 import { CMS } from "@/components/common/cms";
 import { assetsURL } from "@/lib/constants";
-import type { Blocks } from "../../directus";
 
 export default async function WhoWhatWhere() {
   const blocks = await getHomeBlocks();

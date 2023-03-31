@@ -38,6 +38,7 @@ export function StickyHeader({
         dispatch({ type: SET_HEADER, payload: false });
       }
     };
+    // eslint-disable-next-line
   }, []);
 
   const toggleHamburger = () => {

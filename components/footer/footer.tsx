@@ -1,7 +1,6 @@
 import ContactForm from "@/components/contactForm/contactForm";
 import { getHomeBlocks } from "../../app/data";
 import { findKeyWithValue } from "@/lib/utils.new";
-import { Blocks } from "../../directus";
 import { CMS } from "@/components/common/cms";
 import React from "react";
 // import OpenChat from '../ReactHelpDesk/client/openChat';

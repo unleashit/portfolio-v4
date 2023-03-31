@@ -13,9 +13,9 @@ const sluggify = (toSlug: string) =>
 
 export default function PortfolioItem({
   item,
-  index,
-  color,
-}: {
+}: // index,
+// color,
+{
   item: Project;
   index: any;
   color: string;

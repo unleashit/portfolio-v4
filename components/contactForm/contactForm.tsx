@@ -1,10 +1,10 @@
 "use client";
 
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Input, Textarea } from "@/components/common/formParts";
 import { sendContact } from "./data";
 import Loader from "@/components/common/loader";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export interface ContactFormValues {
   name: string;
@@ -13,24 +13,17 @@ export interface ContactFormValues {
   message: string;
 }
 
-function resetContactFormAfterDelay(reset: any) {
-  setTimeout(() => {
-    reset();
-  }, 5000);
-}
-
 function ContactForm() {
   const {
     register,
     handleSubmit,
     reset,
-    watch,
-    formState: { isValidating, errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<ContactFormValues>({ mode: "onBlur" });
   const [error, setError] = useState<null | Error>(null);
 
   if (isSubmitSuccessful && !error) {
-    const formResetTimer = setTimeout(() => {
+    setTimeout(() => {
       reset();
     }, 5000);
 

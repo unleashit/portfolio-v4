@@ -1,6 +1,3 @@
-// import Head from "next/head";
-// import { getProject } from "../services/queries";
-
 // export default async function Home() {
 //
 //   const project = await getProject("b141dd40-77ae-4b86-8284-58f95d26ae80");
@@ -23,12 +20,8 @@
 import Header from "@/components/home/Header";
 import WhoWhatWhere from "@/components/home/WhoWhatWhere";
 import About from "@/components/home/About";
-// import getHomeData, { getSkills } from "./data";
-import Client from "./Client";
+// import Client from "./Client";
 import logger from "@/lib/logger";
-import getHomeData from "./data";
-import { useContext } from "react";
-import { GlobalContext } from "@/components/providers";
 import Portfolio from "@/components/portfolio/Portfolio";
 import { StickyHeader } from "@/components/stickyHeader/stickyHeader";
 import Navigation from "@/components/navigation/navigation";
