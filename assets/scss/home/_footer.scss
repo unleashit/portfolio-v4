@@ -1,0 +1,83 @@
+.footer-wrap {
+  background-color: #3e6f22;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+.footer-border {
+  background: url('https://content.jasongallagher.org/assets/ca68252a-2078-41ad-8801-0cef47444183.png/footer-tile.webp?format=webp') #000 top left repeat-x;
+  height: 232px;
+}
+
+.contact {
+  margin-top: $section-padding;
+  color: #292929;
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: $footer-links;
+    text-decoration: none;
+    transition: color 300ms;
+  }
+  a:hover {
+    color: darken($footer-links, 15%);
+  }
+}
+
+.contact-method {
+  margin-bottom: 3px;
+}
+
+.about-this-site {
+  margin-top: 30px;
+}
+.about-this-site-text {
+  span {
+    color: $footer-links;
+    white-space: nowrap;
+  }
+}
+.contact-form {
+  .message {
+    height: 160px;
+  }
+  .error {
+    color: $footer-links;
+    padding-left: 13px;
+  }
+  .send-message {
+    margin-bottom: 15px;
+  }
+  button {
+    width: 140px;
+  }
+  .form-control:focus {
+    color: #999;
+    background-color: #444;
+    outline: none;
+  }
+}
+
+.thanks {
+  text-align: center;
+  font-family: "Sanchez", serif;
+  font-size: 2em;
+  color: $footer-links;
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, lg)) {
+  .contact-me,
+  .about-this-site,
+  .contact-form {
+    margin-top: 45px;
+  }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, md)) {
+  .contact-form {
+    button {
+      width: 100%;
+    }
+  }
+}
