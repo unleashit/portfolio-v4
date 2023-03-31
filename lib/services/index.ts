@@ -1,4 +1,4 @@
-import fetchCache from "@unleashit/fetch-cache";
+import promiseCache from "next-promise-cache";
 import { cache } from "react";
 
 const directusEndpoint =
@@ -6,7 +6,7 @@ const directusEndpoint =
 
 const clientInstance =
   typeof window !== "undefined" &&
-  new fetchCache({
+  new promiseCache({
     baseurl: directusEndpoint,
     defaultCacheTime: 60 * 5,
     debug: true,
@@ -14,5 +14,5 @@ const clientInstance =
 
 export const directus =
   typeof window === "undefined"
-    ? cache(() => new fetchCache({ baseurl: directusEndpoint, debug: true }))
-    : () => clientInstance as fetchCache;
+    ? cache(() => new promiseCache({ baseurl: directusEndpoint, debug: true }))
+    : () => clientInstance as promiseCache;

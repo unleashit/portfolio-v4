@@ -13,7 +13,7 @@
     "create-snapshot": "docker exec directus npx directus schema snapshot ./database/snapshots/\"$(date \"+%F\")\"-snapshot-\"$(date \"+%s\")\".yaml"
   },
   "dependencies": {
-    "@unleashit/fetch-cache": "file:../../next-promise-cache",
+    "next-promise-cache": "^0.5.3",
     "bootstrap": "^5.2.3",
     "lodash": "^4.17.21",
     "next": "^13.2.5-canary.21",
