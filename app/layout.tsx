@@ -1,6 +1,7 @@
 import logger from "@/lib/logger";
 import GlobalState from "@/components/providers";
 import globalMeta from "./metadata";
+import { Footer } from "@/components/footer/footer";
 import { Oswald, Sanchez } from "next/font/google";
 const oswald = Oswald({
   weight: "400",
@@ -25,6 +26,8 @@ export default async function RootLayout({
     <html lang="en" className={`${oswald.variable} ${sanchez.variable}`}>
       <body>
         <GlobalState>{children}</GlobalState>
+        {/* @ts-expect-error Server Component */}
+        <Footer />
       </body>
     </html>
   );

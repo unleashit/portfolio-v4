@@ -25,7 +25,6 @@ import logger from "@/lib/logger";
 import Portfolio from "@/components/portfolio/Portfolio";
 import { StickyHeader } from "@/components/stickyHeader/stickyHeader";
 import Navigation from "@/components/navigation/navigation";
-import { Footer } from "@/components/footer/footer";
 
 // import { animation, getEnvironment } from "@/lib/utils";
 
@@ -153,8 +152,6 @@ export default async function Home() {
       //   animateOff
       // )}
       />
-      {/* @ts-expect-error Server Component */}
-      <Footer />
     </div>
   );
 }
