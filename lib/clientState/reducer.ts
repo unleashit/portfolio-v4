@@ -14,15 +14,15 @@ export interface GlobalState {
   animateOff: boolean;
 }
 
-export const TOGGLE_HAMBURGER = "TOGGLE_HAMBURGER";
+export const TOGGLE_HAMBURGER = 'TOGGLE_HAMBURGER';
 // export const OPEN_HAMBURGER = "OPEN_HAMBURGER";
 // export const CLOSE_HAMBURGER = "CLOSE_HAMBURGER";
-export const SET_HEADER = "SET_HEADER";
-export const ANIMATE_ABOUT = "ANIMATE_ABOUT";
-export const ANIMATE_PORTFOLIO = "ANIMATE_PORTFOLIO";
-export const ANIMATE_CONTACT = "ANIMATE_CONTACT";
-export const ANIMATE_OFF = "ANIMATE_OFF";
-export const REHYDRATE = "REHYDRATE";
+export const SET_HEADER = 'SET_HEADER';
+export const ANIMATE_ABOUT = 'ANIMATE_ABOUT';
+export const ANIMATE_PORTFOLIO = 'ANIMATE_PORTFOLIO';
+export const ANIMATE_CONTACT = 'ANIMATE_CONTACT';
+export const ANIMATE_OFF = 'ANIMATE_OFF';
+export const REHYDRATE = 'REHYDRATE';
 
 export const initialState: GlobalState = {
   headerState: false,

@@ -17,21 +17,22 @@
 
 // import StickyHeader from '@/components/stickyHeader/stickyHeader';
 // import ResponsiveMenu from '@/components/navigation/responsiveMenu';
-import Header from "@/components/home/Header";
-import WhoWhatWhere from "@/components/home/WhoWhatWhere";
-import About from "@/components/home/About";
+import Header from '@/components/home/Header';
+import WhoWhatWhere from '@/components/home/WhoWhatWhere';
+import About from '@/components/home/About';
 // import Client from "./Client";
-import logger from "@/lib/logger";
-import Portfolio from "@/components/portfolio/Portfolio";
-import { StickyHeader } from "@/components/stickyHeader/stickyHeader";
-import Navigation from "@/components/navigation/navigation";
+import logger from '@/lib/logger';
+import Portfolio from '@/components/portfolio/Portfolio';
+import { StickyHeader } from '@/components/stickyHeader/stickyHeader';
+import Navigation from '@/components/navigation/navigation';
+import getHomeData from './data';
 
 // import { animation, getEnvironment } from "@/lib/utils";
 
 // import throttle from 'lodash/throttle';
 export default async function Home() {
-  logger.info("HOME called");
-  // await getHomeData();
+  logger.info('HOME called');
+  await getHomeData();
 
   // static readyOnActions(dispatch) {
   //   return Promise.all([
@@ -116,7 +117,6 @@ export default async function Home() {
   //   animatePortfolio,
   // } = this.props.global;
   //
-  // const htmlClassCheck = htmlClass ? { class: htmlClass } : {};
 
   return (
     <div id="home">

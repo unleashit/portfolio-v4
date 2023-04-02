@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { initialState, reducer } from "@/lib/clientState/reducer";
-import type { Action, GlobalState } from "@/lib/clientState/reducer";
-import { GlobalContext } from "@/lib/clientState/context";
-import { arrayEquals } from "@/lib/utils.new";
+import * as React from 'react';
+import { initialState, reducer } from '@/lib/clientState/reducer';
+import type { Action, GlobalState } from '@/lib/clientState/reducer';
+import { GlobalContext } from '@/lib/clientState/context';
+import { arrayEquals } from '@/lib/utils.new';
 
 const handleLocalStorage = (
   state: GlobalState,
@@ -13,7 +13,7 @@ const handleLocalStorage = (
   let appState: GlobalState | undefined;
 
   try {
-    const rawState = localStorage.getItem("appState");
+    const rawState = localStorage.getItem('appState');
     appState = rawState && JSON.parse(rawState);
 
     // disallow user from altering state keys?
@@ -21,7 +21,7 @@ const handleLocalStorage = (
       appState &&
       !arrayEquals(Object.keys(appState), Object.keys(initialState))
     ) {
-      throw new Error("Unexpected state detected. Resetting to initial state");
+      throw new Error('Unexpected state detected. Resetting to initial state');
     }
   } catch (err) {
     console.error(err);
@@ -31,10 +31,10 @@ const handleLocalStorage = (
   if (appState && Object.is(state, initialState) && state !== appState) {
     // state is initial state but localstorage has a not null value
     // user lost session so rehydrate context from localstorage
-    dispatch({ type: "rehydrate", payload: appState });
+    dispatch({ type: 'rehydrate', payload: appState });
   } else {
     // update localstorage on every update for now...
-    localStorage.setItem("appState", JSON.stringify(state));
+    localStorage.setItem('appState', JSON.stringify(state));
   }
 };
 

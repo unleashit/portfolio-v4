@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useContext, useEffect } from "react";
-import { GlobalContext } from "@/lib/clientState/context";
-import { SET_HEADER, TOGGLE_HAMBURGER } from "@/lib/clientState/reducer";
+import { useContext, useEffect } from 'react';
+import { GlobalContext } from '@/lib/clientState/context';
+import { SET_HEADER, TOGGLE_HAMBURGER } from '@/lib/clientState/reducer';
 // import OpenChat from "../ReactHelpDesk/client/openChat";
 // import LiveChatStatus from "../ReactHelpDesk/client/liveChatStatus";
-import throttle from "lodash/throttle";
+import throttle from 'lodash/throttle';
 
 export function StickyHeader({
   visible = false,
@@ -21,19 +21,19 @@ export function StickyHeader({
 
       // handle sticky header
       if (top >= 250) {
-        document.documentElement.classList.add("sticky-menu-open");
+        document.documentElement.classList.add('sticky-menu-open');
         dispatch({ type: SET_HEADER, payload: true });
       } else if (top < 250) {
-        document.documentElement.classList.remove("sticky-menu-open");
+        document.documentElement.classList.remove('sticky-menu-open');
         dispatch({ type: SET_HEADER, payload: false });
       }
     }, 150);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      console.log("UMOUNTING");
-      document.documentElement.classList.remove("sticky-menu-open");
+      window.removeEventListener('scroll', handleScroll);
+      console.log('UMOUNTING');
+      document.documentElement.classList.remove('sticky-menu-open');
       if (state.headerState) {
         dispatch({ type: SET_HEADER, payload: false });
       }
@@ -46,7 +46,7 @@ export function StickyHeader({
   };
 
   const classes = `sticky-header hidden-xs-down${
-    visible || state.headerState ? " on" : " off"
+    visible || state.headerState ? ' on' : ' off'
   }`;
 
   return (

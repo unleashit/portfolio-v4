@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export default function Error({
   error,
@@ -9,10 +9,10 @@ export default function Error({
   error: Error;
   reset: () => void;
 }) {
-  console.log("ERROR BOUNDARY CALLED");
+  console.log('ERROR BOUNDARY CALLED');
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error("error from Error Boundary Component", error);
+    console.error('error from Error Boundary Component', error);
   }, [error]);
 
   return (

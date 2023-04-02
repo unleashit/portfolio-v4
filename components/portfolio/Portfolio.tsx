@@ -1,5 +1,5 @@
-import PortfolioItem from "./PortfolioItem";
-import { getProjects } from "../../app/data";
+import PortfolioItem from './PortfolioItem';
+import { getProjects } from '../../app/data';
 
 export default async function Portfolio() {
   const projects = await getProjects();
@@ -43,14 +43,14 @@ export default async function Portfolio() {
   return (
     <section
       // className={this.props.animation() + "portfolio clearfix"}
-      className={"portfolio clearfix"}
+      className={'portfolio clearfix'}
       id="work"
     >
       <div>
         {projects
           .sort((a, b) => +a.sort - +b.sort)
           .map((item, index) => {
-            const color = index % 2 ? "#000" : "#353535";
+            const color = index % 2 ? '#000' : '#353535';
             return (
               <PortfolioItem
                 key={index}

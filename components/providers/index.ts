@@ -1,5 +1,5 @@
-import Providers from "./providers";
+import Providers from './providers';
 
-export * from "@/lib/clientState/context";
+export * from '@/lib/clientState/context';
 
 export default Providers;

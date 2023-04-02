@@ -1,16 +1,16 @@
-import * as React from "react";
-import { getSkills } from "../../app/data";
+import * as React from 'react';
+import { getSkills } from '../../app/data';
 
 type SkillProps = {
   title?: string;
-  size: "full" | "half";
+  size: 'full' | 'half';
   color: string;
 };
 
 type MappedSkills = [
-  SkillProps["title"],
-  SkillProps["size"],
-  SkillProps["color"]
+  SkillProps['title'],
+  SkillProps['size'],
+  SkillProps['color']
 ][];
 
 function Skill({ title, size, color }: SkillProps) {
@@ -25,7 +25,7 @@ function Skill({ title, size, color }: SkillProps) {
 }
 
 async function Skills() {
-  console.log("Skills called");
+  console.log('Skills called');
 
   const skills = await getSkills();
 
@@ -40,16 +40,16 @@ async function Skills() {
 
   const mappedSkills: MappedSkills = skills.map(({ title }, i) => {
     const colors = [
-      "#8781bd",
-      "#bd8181",
-      "#84bd81",
-      "#81afbd",
-      "#bd9981",
-      "#bdba81",
+      '#8781bd',
+      '#bd8181',
+      '#84bd81',
+      '#81afbd',
+      '#bd9981',
+      '#bdba81',
     ];
 
     // the first and last skills are full width
-    const size = i === 0 || i === skills.length - 1 ? "full" : "half";
+    const size = i === 0 || i === skills.length - 1 ? 'full' : 'half';
     // cycle through colors
     const color = colors[i % colors.length];
     return [title, size, color];

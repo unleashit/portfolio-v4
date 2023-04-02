@@ -1,10 +1,10 @@
-import { directus } from "@/lib/services";
+import { directus } from '@/lib/services';
 
 export async function sendContact(data: any) {
-  return await directus().post<any>("/items/contacts", {
+  return await directus().post<any>('/items/contacts', {
     body: JSON.stringify(data),
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   });
 }

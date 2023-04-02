@@ -4,435 +4,435 @@
  */
 
 export interface paths {
-  "/assets/{id}": {
+  '/assets/{id}': {
     /** Image typed files can be dynamically resized and transformed to fit any need. */
-    get: operations["getAsset"];
+    get: operations['getAsset'];
   };
-  "/auth/login": {
+  '/auth/login': {
     /** Retrieve a Temporary Access Token */
-    post: operations["login"];
+    post: operations['login'];
   };
-  "/auth/refresh": {
+  '/auth/refresh': {
     /** Refresh a Temporary Access Token. */
-    post: operations["refresh"];
+    post: operations['refresh'];
   };
-  "/auth/logout": {
+  '/auth/logout': {
     /** Log Out */
-    post: operations["logout"];
+    post: operations['logout'];
   };
-  "/auth/password/request": {
+  '/auth/password/request': {
     /** Request a reset password email to be send. */
-    post: operations["passwordRequest"];
+    post: operations['passwordRequest'];
   };
-  "/auth/password/reset": {
+  '/auth/password/reset': {
     /** The request a password reset endpoint sends an email with a link to the admin app which in turn uses this endpoint to allow the user to reset their password. */
-    post: operations["passwordReset"];
+    post: operations['passwordReset'];
   };
-  "/auth/oauth": {
+  '/auth/oauth': {
     /** List configured OAuth providers. */
-    get: operations["oauth"];
+    get: operations['oauth'];
   };
-  "/auth/oauth/{provider}": {
+  '/auth/oauth/{provider}': {
     /** Start OAuth flow using the specified provider */
-    get: operations["oauthProvider"];
+    get: operations['oauthProvider'];
   };
-  "/extensions/interfaces": {
+  '/extensions/interfaces': {
     /** List all installed custom interfaces. */
-    get: operations["getInterfaces"];
+    get: operations['getInterfaces'];
   };
-  "/extensions/layouts": {
+  '/extensions/layouts': {
     /** List all installed custom layouts. */
-    get: operations["getLayouts"];
+    get: operations['getLayouts'];
   };
-  "/extensions/displays": {
+  '/extensions/displays': {
     /** List all installed custom displays. */
-    get: operations["getDisplays"];
+    get: operations['getDisplays'];
   };
-  "/extensions/modules": {
+  '/extensions/modules': {
     /** List all installed custom modules. */
-    get: operations["getModules"];
+    get: operations['getModules'];
   };
-  "/server/info": {
+  '/server/info': {
     /** Perform a system status check and return the options. */
-    get: operations["serverInfo"];
+    get: operations['serverInfo'];
   };
-  "/server/ping": {
+  '/server/ping': {
     /** Ping, pong. Ping.. pong. */
-    get: operations["ping"];
+    get: operations['ping'];
   };
-  "/utils/hash/generate": {
+  '/utils/hash/generate': {
     /** Generate a hash for a given string. */
-    post: operations["hash-generate"];
+    post: operations['hash-generate'];
   };
-  "/utils/hash/verify": {
+  '/utils/hash/verify': {
     /** Generate a hash for a given string. */
-    post: operations["hash-verify"];
+    post: operations['hash-verify'];
   };
-  "/utils/sort/{collection}": {
+  '/utils/sort/{collection}': {
     /** Re-sort items in collection based on start and to value of item */
-    post: operations["sort"];
+    post: operations['sort'];
   };
-  "/utils/import/{collection}": {
+  '/utils/import/{collection}': {
     /** Import multiple records from a JSON or CSV file into a collection. */
-    post: operations["import"];
+    post: operations['import'];
   };
-  "/utils/export/{collection}": {
+  '/utils/export/{collection}': {
     /** Export a larger data set to a file in the File Library */
-    post: operations["export"];
+    post: operations['export'];
   };
-  "/utils/cache/clear": {
+  '/utils/cache/clear': {
     /** Resets both the data and schema cache of Directus. */
-    post: operations["clear-cache"];
+    post: operations['clear-cache'];
   };
-  "/utils/random/string": {
+  '/utils/random/string': {
     /** Returns a random string of given length. */
-    get: operations["random"];
+    get: operations['random'];
   };
-  "/items/blocks": {
+  '/items/blocks': {
     /** List the blocks items. */
-    get: operations["readItemsBlocks"];
+    get: operations['readItemsBlocks'];
     /** Create a new blocks item. */
-    post: operations["createItemsBlocks"];
+    post: operations['createItemsBlocks'];
   };
-  "/items/blocks/{id}": {
+  '/items/blocks/{id}': {
     /** Retrieve a single blocks item by unique identifier. */
-    get: operations["readSingleItemsBlocks"];
+    get: operations['readSingleItemsBlocks'];
     /** Delete an existing blocks item. */
-    delete: operations["deleteSingleItemsBlocks"];
+    delete: operations['deleteSingleItemsBlocks'];
     /** Update an existing blocks item. */
-    patch: operations["updateSingleItemsBlocks"];
+    patch: operations['updateSingleItemsBlocks'];
   };
-  "/items/contacts": {
+  '/items/contacts': {
     /** List the contacts items. */
-    get: operations["readItemsContacts"];
+    get: operations['readItemsContacts'];
     /** Create a new contacts item. */
-    post: operations["createItemsContacts"];
+    post: operations['createItemsContacts'];
   };
-  "/items/contacts/{id}": {
+  '/items/contacts/{id}': {
     /** Retrieve a single contacts item by unique identifier. */
-    get: operations["readSingleItemsContacts"];
+    get: operations['readSingleItemsContacts'];
     /** Delete an existing contacts item. */
-    delete: operations["deleteSingleItemsContacts"];
+    delete: operations['deleteSingleItemsContacts'];
     /** Update an existing contacts item. */
-    patch: operations["updateSingleItemsContacts"];
+    patch: operations['updateSingleItemsContacts'];
   };
-  "/items/homepage": {
+  '/items/homepage': {
     /** List the homepage items. */
-    get: operations["readItemsHomepage"];
+    get: operations['readItemsHomepage'];
     /** Create a new homepage item. */
-    post: operations["createItemsHomepage"];
+    post: operations['createItemsHomepage'];
   };
-  "/items/homepage/{id}": {
+  '/items/homepage/{id}': {
     /** Retrieve a single homepage item by unique identifier. */
-    get: operations["readSingleItemsHomepage"];
+    get: operations['readSingleItemsHomepage'];
     /** Delete an existing homepage item. */
-    delete: operations["deleteSingleItemsHomepage"];
+    delete: operations['deleteSingleItemsHomepage'];
     /** Update an existing homepage item. */
-    patch: operations["updateSingleItemsHomepage"];
+    patch: operations['updateSingleItemsHomepage'];
   };
-  "/items/navigation": {
+  '/items/navigation': {
     /** List the navigation items. */
-    get: operations["readItemsNavigation"];
+    get: operations['readItemsNavigation'];
     /** Create a new navigation item. */
-    post: operations["createItemsNavigation"];
+    post: operations['createItemsNavigation'];
   };
-  "/items/navigation/{id}": {
+  '/items/navigation/{id}': {
     /** Retrieve a single navigation item by unique identifier. */
-    get: operations["readSingleItemsNavigation"];
+    get: operations['readSingleItemsNavigation'];
     /** Delete an existing navigation item. */
-    delete: operations["deleteSingleItemsNavigation"];
+    delete: operations['deleteSingleItemsNavigation'];
     /** Update an existing navigation item. */
-    patch: operations["updateSingleItemsNavigation"];
+    patch: operations['updateSingleItemsNavigation'];
   };
-  "/items/project": {
+  '/items/project': {
     /** List the project items. */
-    get: operations["readItemsProject"];
+    get: operations['readItemsProject'];
     /** Create a new project item. */
-    post: operations["createItemsProject"];
+    post: operations['createItemsProject'];
   };
-  "/items/project/{id}": {
+  '/items/project/{id}': {
     /** Retrieve a single project item by unique identifier. */
-    get: operations["readSingleItemsProject"];
+    get: operations['readSingleItemsProject'];
     /** Delete an existing project item. */
-    delete: operations["deleteSingleItemsProject"];
+    delete: operations['deleteSingleItemsProject'];
     /** Update an existing project item. */
-    patch: operations["updateSingleItemsProject"];
+    patch: operations['updateSingleItemsProject'];
   };
-  "/items/project_project_tags": {
+  '/items/project_project_tags': {
     /** List the project_project_tags items. */
-    get: operations["readItemsProjectProjectTags"];
+    get: operations['readItemsProjectProjectTags'];
     /** Create a new project_project_tags item. */
-    post: operations["createItemsProjectProjectTags"];
+    post: operations['createItemsProjectProjectTags'];
   };
-  "/items/project_project_tags/{id}": {
+  '/items/project_project_tags/{id}': {
     /** Retrieve a single project_project_tags item by unique identifier. */
-    get: operations["readSingleItemsProjectProjectTags"];
+    get: operations['readSingleItemsProjectProjectTags'];
     /** Delete an existing project_project_tags item. */
-    delete: operations["deleteSingleItemsProjectProjectTags"];
+    delete: operations['deleteSingleItemsProjectProjectTags'];
     /** Update an existing project_project_tags item. */
-    patch: operations["updateSingleItemsProjectProjectTags"];
+    patch: operations['updateSingleItemsProjectProjectTags'];
   };
-  "/items/project_tags": {
+  '/items/project_tags': {
     /** List the project_tags items. */
-    get: operations["readItemsProjectTags"];
+    get: operations['readItemsProjectTags'];
     /** Create a new project_tags item. */
-    post: operations["createItemsProjectTags"];
+    post: operations['createItemsProjectTags'];
   };
-  "/items/project_tags/{id}": {
+  '/items/project_tags/{id}': {
     /** Retrieve a single project_tags item by unique identifier. */
-    get: operations["readSingleItemsProjectTags"];
+    get: operations['readSingleItemsProjectTags'];
     /** Delete an existing project_tags item. */
-    delete: operations["deleteSingleItemsProjectTags"];
+    delete: operations['deleteSingleItemsProjectTags'];
     /** Update an existing project_tags item. */
-    patch: operations["updateSingleItemsProjectTags"];
+    patch: operations['updateSingleItemsProjectTags'];
   };
-  "/items/skills": {
+  '/items/skills': {
     /** List the skills items. */
-    get: operations["readItemsSkills"];
+    get: operations['readItemsSkills'];
     /** Create a new skills item. */
-    post: operations["createItemsSkills"];
+    post: operations['createItemsSkills'];
   };
-  "/items/skills/{id}": {
+  '/items/skills/{id}': {
     /** Retrieve a single skills item by unique identifier. */
-    get: operations["readSingleItemsSkills"];
+    get: operations['readSingleItemsSkills'];
     /** Delete an existing skills item. */
-    delete: operations["deleteSingleItemsSkills"];
+    delete: operations['deleteSingleItemsSkills'];
     /** Update an existing skills item. */
-    patch: operations["updateSingleItemsSkills"];
+    patch: operations['updateSingleItemsSkills'];
   };
-  "/activity": {
+  '/activity': {
     /** Returns a list of activity actions. */
-    get: operations["getActivities"];
+    get: operations['getActivities'];
   };
-  "/activity/comment": {
+  '/activity/comment': {
     /** Creates a new comment. */
-    post: operations["createComment"];
+    post: operations['createComment'];
   };
-  "/activity/{id}": {
+  '/activity/{id}': {
     /** Retrieves the details of an existing activity action. Provide the primary key of the activity action and Directus will return the corresponding information. */
-    get: operations["getActivity"];
+    get: operations['getActivity'];
   };
-  "/activity/comment/{id}": {
+  '/activity/comment/{id}': {
     /** Delete an existing comment. Deleted comments can not be retrieved. */
-    delete: operations["deleteComment"];
+    delete: operations['deleteComment'];
     /** Update the content of an existing comment. */
-    patch: operations["updateComment"];
+    patch: operations['updateComment'];
   };
-  "/collections": {
+  '/collections': {
     /** Returns a list of the collections available in the project. */
-    get: operations["getCollections"];
+    get: operations['getCollections'];
     /** Create a new collection in Directus. */
-    post: operations["createCollection"];
+    post: operations['createCollection'];
   };
-  "/collections/{id}": {
+  '/collections/{id}': {
     /** Retrieves the details of a single collection. */
-    get: operations["getCollection"];
+    get: operations['getCollection'];
     /** Delete an existing collection. Warning: This will delete the whole collection, including the items within. Proceed with caution. */
-    delete: operations["deleteCollection"];
+    delete: operations['deleteCollection'];
     /** Update an existing collection. */
-    patch: operations["updateCollection"];
+    patch: operations['updateCollection'];
   };
-  "/fields": {
+  '/fields': {
     /** Returns a list of the fields available in the project. */
-    get: operations["getFields"];
+    get: operations['getFields'];
   };
-  "/fields/{collection}": {
+  '/fields/{collection}': {
     /** Returns a list of the fields available in the given collection. */
-    get: operations["getCollectionFields"];
+    get: operations['getCollectionFields'];
     /** Create a new field in a given collection. */
-    post: operations["createField"];
+    post: operations['createField'];
   };
-  "/fields/{collection}/{id}": {
+  '/fields/{collection}/{id}': {
     /** Retrieves the details of a single field in a given collection. */
-    get: operations["getCollectionField"];
+    get: operations['getCollectionField'];
     /** Delete an existing field. */
-    delete: operations["deleteField"];
+    delete: operations['deleteField'];
     /** Update an existing field. */
-    patch: operations["updateField"];
+    patch: operations['updateField'];
   };
-  "/files": {
+  '/files': {
     /** List the files. */
-    get: operations["getFiles"];
+    get: operations['getFiles'];
     /** Create a new file */
-    post: operations["createFile"];
+    post: operations['createFile'];
   };
-  "/files/{id}": {
+  '/files/{id}': {
     /** Retrieve a single file by unique identifier. */
-    get: operations["getFile"];
+    get: operations['getFile'];
     /** Delete an existing file. */
-    delete: operations["deleteFile"];
+    delete: operations['deleteFile'];
     /** Update an existing file, and/or replace it's file contents. */
-    patch: operations["updateFile"];
+    patch: operations['updateFile'];
   };
-  "/folders": {
+  '/folders': {
     /** List the folders. */
-    get: operations["getFolders"];
+    get: operations['getFolders'];
     /** Create a new folder. */
-    post: operations["createFolder"];
+    post: operations['createFolder'];
   };
-  "/folders/{id}": {
+  '/folders/{id}': {
     /** Retrieve a single folder by unique identifier. */
-    get: operations["getFolder"];
+    get: operations['getFolder'];
     /** Delete an existing folder */
-    delete: operations["deleteFolder"];
+    delete: operations['deleteFolder'];
     /** Update an existing folder */
-    patch: operations["updateFolder"];
+    patch: operations['updateFolder'];
   };
-  "/permissions": {
+  '/permissions': {
     /** List all permissions. */
-    get: operations["getPermissions"];
+    get: operations['getPermissions'];
     /** Create a new permission. */
-    post: operations["createPermission"];
+    post: operations['createPermission'];
   };
-  "/permissions/me": {
+  '/permissions/me': {
     /** List the permissions that apply to the current user. */
-    get: operations["getMyPermissions"];
+    get: operations['getMyPermissions'];
   };
-  "/permissions/{id}": {
+  '/permissions/{id}': {
     /** Retrieve a single permissions object by unique identifier. */
-    get: operations["getPermission"];
+    get: operations['getPermission'];
     /** Delete an existing permission */
-    delete: operations["deletePermission"];
+    delete: operations['deletePermission'];
     /** Update an existing permission */
-    patch: operations["updatePermission"];
+    patch: operations['updatePermission'];
   };
-  "/presets": {
+  '/presets': {
     /** List the presets. */
-    get: operations["getPresets"];
+    get: operations['getPresets'];
     /** Create a new preset. */
-    post: operations["createPreset"];
+    post: operations['createPreset'];
   };
-  "/presets/{id}": {
+  '/presets/{id}': {
     /** Retrieve a single preset by unique identifier. */
-    get: operations["getPreset"];
+    get: operations['getPreset'];
     /** Delete an existing preset. */
-    delete: operations["deletePreset"];
+    delete: operations['deletePreset'];
     /** Update an existing preset. */
-    patch: operations["updatePreset"];
+    patch: operations['updatePreset'];
   };
-  "/relations": {
+  '/relations': {
     /** List the relations. */
-    get: operations["getRelations"];
+    get: operations['getRelations'];
     /** Create a new relation. */
-    post: operations["createRelation"];
+    post: operations['createRelation'];
   };
-  "/relations/{id}": {
+  '/relations/{id}': {
     /** Retrieve a single relation by unique identifier. */
-    get: operations["getRelation"];
+    get: operations['getRelation'];
     /** Delete an existing relation. */
-    delete: operations["deleteRelation"];
+    delete: operations['deleteRelation'];
     /** Update an existing relation */
-    patch: operations["updateRelation"];
+    patch: operations['updateRelation'];
   };
-  "/revisions": {
+  '/revisions': {
     /** List the revisions. */
-    get: operations["getRevisions"];
+    get: operations['getRevisions'];
   };
-  "/revisions/{id}": {
+  '/revisions/{id}': {
     /** Retrieve a single revision by unique identifier. */
-    get: operations["getRevision"];
+    get: operations['getRevision'];
   };
-  "/roles": {
+  '/roles': {
     /** List the roles. */
-    get: operations["getRoles"];
+    get: operations['getRoles'];
     /** Create a new role. */
-    post: operations["createRole"];
+    post: operations['createRole'];
   };
-  "/roles/{id}": {
+  '/roles/{id}': {
     /** Retrieve a single role by unique identifier. */
-    get: operations["getRole"];
+    get: operations['getRole'];
     /** Delete an existing role */
-    delete: operations["deleteRole"];
+    delete: operations['deleteRole'];
     /** Update an existing role */
-    patch: operations["updateRole"];
+    patch: operations['updateRole'];
   };
-  "/settings": {
+  '/settings': {
     /** List the settings. */
-    get: operations["getSettings"];
+    get: operations['getSettings'];
     /** Update the settings */
-    patch: operations["updateSetting"];
+    patch: operations['updateSetting'];
   };
-  "/users": {
+  '/users': {
     /** List the users. */
-    get: operations["getUsers"];
+    get: operations['getUsers'];
     /** Create a new user. */
-    post: operations["createUser"];
+    post: operations['createUser'];
   };
-  "/users/{id}": {
+  '/users/{id}': {
     /** Retrieve a single user by unique identifier. */
-    get: operations["getUser"];
+    get: operations['getUser'];
     /** Delete an existing user */
-    delete: operations["deleteUser"];
+    delete: operations['deleteUser'];
     /** Update an existing user */
-    patch: operations["updateUser"];
+    patch: operations['updateUser'];
   };
-  "/users/invite": {
+  '/users/invite': {
     /** Invites one or more users to this project. It creates a user with an invited status, and then sends an email to the user with instructions on how to activate their account. */
-    post: operations["invite"];
+    post: operations['invite'];
   };
-  "/users/invite/accept": {
+  '/users/invite/accept': {
     /** Accepts and enables an invited user using a JWT invitation token. */
-    post: operations["acceptInvite"];
+    post: operations['acceptInvite'];
   };
-  "/users/me": {
+  '/users/me': {
     /** Retrieve the currently authenticated user. */
-    get: operations["getMe"];
+    get: operations['getMe'];
     /** Update the currently authenticated user. */
-    patch: operations["updateMe"];
+    patch: operations['updateMe'];
   };
-  "/users/me/track/page": {
+  '/users/me/track/page': {
     /** Updates the last used page field of the currently authenticated user. This is used internally to be able to open the Directus admin app from the last page you used. */
-    patch: operations["updateLastUsedPageMe"];
+    patch: operations['updateLastUsedPageMe'];
   };
-  "/users/me/tfa/enable": {
+  '/users/me/tfa/enable': {
     /** Enables two-factor authentication for the currently authenticated user. */
-    post: operations["meTfaEnable"];
+    post: operations['meTfaEnable'];
   };
-  "/users/me/tfa/disable": {
+  '/users/me/tfa/disable': {
     /** Disables two-factor authentication for the currently authenticated user. */
-    post: operations["meTfaDisable"];
+    post: operations['meTfaDisable'];
   };
-  "/webhooks": {
+  '/webhooks': {
     /** Get all webhooks. */
-    get: operations["getWebhooks"];
+    get: operations['getWebhooks'];
     /** Create a new webhook. */
-    post: operations["createWebhook"];
+    post: operations['createWebhook'];
   };
-  "/webhooks/{id}": {
+  '/webhooks/{id}': {
     /** Retrieve a single webhook by unique identifier. */
-    get: operations["getWebhook"];
+    get: operations['getWebhook'];
     /** Delete an existing webhook */
-    delete: operations["deleteWebhook"];
+    delete: operations['deleteWebhook'];
     /** Update an existing webhook */
-    patch: operations["updateWebhook"];
+    patch: operations['updateWebhook'];
   };
-  "/flows": {
+  '/flows': {
     /** Get all flows. */
-    get: operations["getFlows"];
+    get: operations['getFlows'];
     /** Create a new flow. */
-    post: operations["createFlow"];
+    post: operations['createFlow'];
   };
-  "/flows/{id}": {
+  '/flows/{id}': {
     /** Retrieve a single flow by unique identifier. */
-    get: operations["getFlow"];
+    get: operations['getFlow'];
     /** Delete an existing flow */
-    delete: operations["deleteFlow"];
+    delete: operations['deleteFlow'];
     /** Update an existing flow */
-    patch: operations["updateFlow"];
+    patch: operations['updateFlow'];
   };
-  "/operations": {
+  '/operations': {
     /** Get all operations. */
-    get: operations["getOperations"];
+    get: operations['getOperations'];
     /** Create a new operation. */
-    post: operations["createOperation"];
+    post: operations['createOperation'];
   };
-  "/operations/{id}": {
+  '/operations/{id}': {
     /** Retrieve a single operation by unique identifier. */
-    get: operations["getOperation"];
+    get: operations['getOperation'];
     /** Delete an existing operation */
-    delete: operations["deleteOperation"];
+    delete: operations['deleteOperation'];
     /** Update an existing operation */
-    patch: operations["updateOperation"];
+    patch: operations['updateOperation'];
   };
 }
 
@@ -445,7 +445,7 @@ export interface components {
       date_updated?: string | null;
       title?: string;
       content?: string | null;
-      image?: (string | components["schemas"]["Files"]) | null;
+      image?: (string | components['schemas']['Files']) | null;
       sort?: number | null;
     };
     ItemsContacts: {
@@ -469,9 +469,9 @@ export interface components {
       date_updated?: string | null;
       decription_short?: string | null;
       description?: string | null;
-      image_logo?: (string | components["schemas"]["Files"]) | null;
-      image_main?: (string | components["schemas"]["Files"]) | null;
-      image_mobile?: (string | components["schemas"]["Files"]) | null;
+      image_logo?: (string | components['schemas']['Files']) | null;
+      image_main?: (string | components['schemas']['Files']) | null;
+      image_mobile?: (string | components['schemas']['Files']) | null;
       link?: string | null;
       project_id?: string;
       /** url slug */
@@ -479,15 +479,15 @@ export interface components {
       sort?: number | null;
       status?: string;
       title?: string | null;
-      tag?: (number | components["schemas"]["ItemsProjectProjectTags"])[];
+      tag?: (number | components['schemas']['ItemsProjectProjectTags'])[];
     };
     ItemsProjectProjectTags: {
       id?: number;
       project_project_id?:
-        | (string | components["schemas"]["ItemsProject"])
+        | (string | components['schemas']['ItemsProject'])
         | null;
       project_tags_tag_id?:
-        | (string | components["schemas"]["ItemsProjectTags"])
+        | (string | components['schemas']['ItemsProjectTags'])
         | null;
     };
     ItemsProjectTags: {
@@ -503,9 +503,9 @@ export interface components {
       /** Unique identifier for the object. */
       id?: number;
       /** Action that was performed. */
-      action?: "create" | "update" | "delete" | "login";
+      action?: 'create' | 'update' | 'delete' | 'login';
       /** The user who performed this action. */
-      user?: (string | components["schemas"]["Users"]) | null;
+      user?: (string | components['schemas']['Users']) | null;
       /** When the action happened. */
       timestamp?: string;
       /** The IP address of the user at the time the action took place. */
@@ -513,14 +513,14 @@ export interface components {
       /** User agent string of the browser the user used when the action took place. */
       user_agent?: string;
       /** Collection identifier in which the item resides. */
-      collection?: string | components["schemas"]["Collections"];
+      collection?: string | components['schemas']['Collections'];
       /** Unique identifier for the item the action applied to. This is always a string, even for integer primary keys. */
       item?: string;
       /** User comment. This will store the comments that show up in the right sidebar of the item edit page in the admin app. */
       comment?: string | null;
       /** Origin of the request when the action took place. */
       origin?: string;
-      revisions?: (number | components["schemas"]["Revisions"])[];
+      revisions?: (number | components['schemas']['Revisions'])[];
     };
     Collections: {
       /** The collection key. */
@@ -540,7 +540,7 @@ export interface components {
       color?: string | null;
       item_duplication_fields?: { [key: string]: any } | null;
       sort?: number | null;
-      group?: (string | components["schemas"]["Collections"]) | null;
+      group?: (string | components['schemas']['Collections']) | null;
       collapse?: string;
       collection_divider?: string;
       archive_divider?: string;
@@ -567,7 +567,7 @@ export interface components {
       note?: string | null;
       conditions?: { [key: string]: any } | null;
       required?: boolean | null;
-      group?: (number | components["schemas"]["Fields"]) | null;
+      group?: (number | components['schemas']['Fields']) | null;
       validation?: { [key: string]: any } | null;
       validation_message?: string | null;
     };
@@ -585,12 +585,12 @@ export interface components {
       /** MIME type of the file. */
       type?: string;
       /** Virtual folder where this file resides in. */
-      folder?: (string | components["schemas"]["Folders"]) | null;
+      folder?: (string | components['schemas']['Folders']) | null;
       /** Who uploaded the file. */
-      uploaded_by?: string | components["schemas"]["Users"];
+      uploaded_by?: string | components['schemas']['Users'];
       /** When the file was uploaded. */
       uploaded_on?: string;
-      modified_by?: (string | components["schemas"]["Users"]) | null;
+      modified_by?: (string | components['schemas']['Users']) | null;
       modified_on?: string;
       /** Character set of the file. */
       charset?: string | null;
@@ -620,7 +620,7 @@ export interface components {
       /** Name of the folder. */
       name?: string;
       /** Unique identifier of the parent folder. This allows for nested folders. */
-      parent?: (string | components["schemas"]["Folders"]) | null;
+      parent?: (string | components['schemas']['Folders']) | null;
     };
     Permissions: {
       /** Unique identifier for the permission. */
@@ -630,7 +630,7 @@ export interface components {
       /** What collection this permission applies to. */
       collection?: string;
       /** What action this permission applies to. */
-      action?: "create" | "read" | "update" | "delete";
+      action?: 'create' | 'read' | 'update' | 'delete';
       /** JSON structure containing the permissions checks for this permission. */
       permissions?: { [key: string]: any } | null;
       /** JSON structure containing the validation checks for this permission. */
@@ -646,11 +646,11 @@ export interface components {
       /** Name for the bookmark. If this is set, the preset will be considered a bookmark. */
       bookmark?: string | null;
       /** The unique identifier of the user to whom this collection preset applies. */
-      user?: (string | components["schemas"]["Users"]) | null;
+      user?: (string | components['schemas']['Users']) | null;
       /** The unique identifier of a role in the platform. If `user` is null, this will be used to apply the collection preset or bookmark for all users in the role. */
-      role?: (string | components["schemas"]["Roles"]) | null;
+      role?: (string | components['schemas']['Roles']) | null;
       /** What collection this collection preset is used for. */
-      collection?: string | components["schemas"]["Collections"];
+      collection?: string | components['schemas']['Collections'];
       /** Search query. */
       search?: string | null;
       /** Key of the layout that is used. */
@@ -686,9 +686,9 @@ export interface components {
       /** Unique identifier for the revision. */
       id?: number;
       /** Unique identifier for the activity record. */
-      activity?: number | components["schemas"]["Activity"];
+      activity?: number | components['schemas']['Activity'];
       /** Collection of the updated item. */
-      collection?: string | components["schemas"]["Collections"];
+      collection?: string | components['schemas']['Collections'];
       /** Primary key of updated item. */
       item?: string;
       /** Copy of item state at time of update. */
@@ -715,7 +715,7 @@ export interface components {
       admin_access?: boolean;
       /** The users in the role are allowed to use the app. */
       app_access?: boolean;
-      users?: (string | components["schemas"]["Users"])[];
+      users?: (string | components['schemas']['Users'])[];
     };
     Settings: {
       /** Unique identifier for the setting. */
@@ -739,14 +739,14 @@ export interface components {
       /** Authentication password policy. */
       auth_password_policy?: string | null;
       /** What transformations are allowed in the assets endpoint. */
-      storage_asset_transform?: ("all" | "none" | "presets") | null;
+      storage_asset_transform?: ('all' | 'none' | 'presets') | null;
       /** Array of allowed */
       storage_asset_presets?:
         | {
             /** Key for the asset. Used in the assets endpoint. */
             key?: string;
             /** Whether to crop the thumbnail to match the size, or maintain the aspect ratio. */
-            fit?: "cover" | "contain" | "inside" | "outside";
+            fit?: 'cover' | 'contain' | 'inside' | 'outside';
             /** Width of the thumbnail. */
             width?: number;
             /** Height of the thumbnail. */
@@ -756,7 +756,7 @@ export interface components {
             /** Quality of the compression used. */
             quality?: number;
             /** Reformat output image */
-            format?: "" | "jpeg" | "png" | "webp" | "tiff";
+            format?: '' | 'jpeg' | 'png' | 'webp' | 'tiff';
             /** Additional transformations to apply */
             transforms?:
               | {
@@ -810,17 +810,17 @@ export interface components {
       /** The user's tags. */
       tags?: string[] | null;
       /** The user's avatar. */
-      avatar?: (string | components["schemas"]["Files"]) | null;
+      avatar?: (string | components['schemas']['Files']) | null;
       /** The user's language used in Directus. */
       language?: string;
       /** What theme the user is using. */
-      theme?: "light" | "dark" | "auto";
+      theme?: 'light' | 'dark' | 'auto';
       /** The 2FA secret string that's used to generate one time passwords. */
       tfa_secret?: string | null;
       /** Status of the user. */
-      status?: "active" | "invited" | "draft" | "suspended" | "deleted";
+      status?: 'active' | 'invited' | 'draft' | 'suspended' | 'deleted';
       /** Unique identifier of the role of this user. */
-      role?: string | components["schemas"]["Roles"];
+      role?: string | components['schemas']['Roles'];
       /** Static token for the user. */
       token?: string | null;
       last_access?: string | null;
@@ -863,7 +863,7 @@ export interface components {
       color?: string | null;
       description?: string | null;
       /** Current status of the flow. */
-      status?: "active" | "inactive";
+      status?: 'active' | 'inactive';
       /** Type of trigger for the flow. One of `hook`, `webhook`, `operation`, `schedule`, `manual`. */
       trigger?: string;
       /** The permission used during the flow. One of `$public`, `$trigger`, `$full`, or UUID of a role. */
@@ -871,12 +871,12 @@ export interface components {
       /** Options of the selected trigger for the flow. */
       options?: { [key: string]: any } | null;
       /** UUID of the operation connected to the trigger in the flow. */
-      operation?: string | components["schemas"]["Operations"];
+      operation?: string | components['schemas']['Operations'];
       /** Timestamp in ISO8601 when the flow was created. */
       date_created?: string | null;
       /** The user who created the flow. */
-      user_created?: string | components["schemas"]["Users"];
-      operations?: (string | components["schemas"]["Operations"])[];
+      user_created?: string | components['schemas']['Users'];
+      operations?: (string | components['schemas']['Operations'])[];
     };
     Operations: {
       /** Unique identifier for the operation. */
@@ -894,21 +894,21 @@ export interface components {
       /** Options depending on the type of the operation. */
       options?: { [key: string]: any } | null;
       /** The operation triggered when the current operation succeeds (or `then` logic of a condition operation). */
-      resolve?: string | components["schemas"]["Operations"];
+      resolve?: string | components['schemas']['Operations'];
       /** The operation triggered when the current operation fails (or `otherwise` logic of a condition operation). */
-      reject?: string | components["schemas"]["Operations"];
-      flow?: string | components["schemas"]["Flows"];
+      reject?: string | components['schemas']['Operations'];
+      flow?: string | components['schemas']['Flows'];
       /** Timestamp in ISO8601 when the operation was created. */
       date_created?: string | null;
       /** The user who created the operation. */
-      user_created?: string | components["schemas"]["Users"];
+      user_created?: string | components['schemas']['Users'];
     };
   };
   responses: {
     /** Error: Not found. */
     NotFoundError: {
       content: {
-        "application/json": {
+        'application/json': {
           error?: {
             code?: number;
             message?: string;
@@ -919,7 +919,7 @@ export interface components {
     /** Error: Unauthorized request */
     UnauthorizedError: {
       content: {
-        "application/json": {
+        'application/json': {
           error?: {
             code?: number;
             message?: string;
@@ -952,7 +952,7 @@ export interface components {
     /** Control what fields are being returned in the object. */
     Fields: string[];
     /** Controls if the API sets a cookie or returns a JWT on successful login. */
-    Mode: "jwt" | "cookie";
+    Mode: 'jwt' | 'cookie';
   };
 }
 
@@ -977,10 +977,10 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "text/plain": string;
+          'text/plain': string;
         };
       };
-      404: components["responses"]["NotFoundError"];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Retrieve a Temporary Access Token */
@@ -989,7 +989,7 @@ export interface operations {
       /** Successful authentification */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: {
               access_token?: string;
               expires?: number;
@@ -1001,13 +1001,13 @@ export interface operations {
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Email address of the user you're retrieving the access token for. */
           email: string;
           /** Password of the user. */
           password: string;
           /** Choose between retrieving the token as a string, or setting it as a cookie. */
-          mode?: "json" | "cookie";
+          mode?: 'json' | 'cookie';
           /** If 2FA is enabled, you need to pass the one time password. */
           otp?: string;
         };
@@ -1020,7 +1020,7 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: {
               access_token?: string;
               expires?: number;
@@ -1029,11 +1029,11 @@ export interface operations {
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** JWT access token you want to refresh. This token can't be expired. */
           refresh_token?: string;
         };
@@ -1048,7 +1048,7 @@ export interface operations {
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** JWT access token you want to logout. */
           refresh_token?: string;
         };
@@ -1058,11 +1058,11 @@ export interface operations {
   /** Request a reset password email to be send. */
   passwordRequest: {
     responses: {
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Email address of the user you're requesting a reset for. */
           email: string;
         };
@@ -1072,11 +1072,11 @@ export interface operations {
   /** The request a password reset endpoint sends an email with a link to the admin app which in turn uses this endpoint to allow the user to reset their password. */
   passwordReset: {
     responses: {
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** One-time use JWT token that is used to verify the user. */
           token: string;
           /** New password for the user. */
@@ -1091,13 +1091,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             public?: boolean;
             data?: string[];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Start OAuth flow using the specified provider */
@@ -1116,7 +1116,7 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             public?: boolean;
             data?: {
               token?: string;
@@ -1124,7 +1124,7 @@ export interface operations {
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** List all installed custom interfaces. */
@@ -1133,13 +1133,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: { [key: string]: any }[];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** List all installed custom layouts. */
@@ -1148,13 +1148,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: { [key: string]: any }[];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** List all installed custom displays. */
@@ -1163,13 +1163,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: { [key: string]: any }[];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** List all installed custom modules. */
@@ -1178,13 +1178,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: { [key: string]: any }[];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Perform a system status check and return the options. */
@@ -1199,13 +1199,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: { [key: string]: any };
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Ping, pong. Ping.. pong. */
@@ -1214,18 +1214,18 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/text": string;
+          'application/text': string;
         };
       };
     };
   };
   /** Generate a hash for a given string. */
-  "hash-generate": {
+  'hash-generate': {
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: string;
           };
         };
@@ -1233,7 +1233,7 @@ export interface operations {
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** String to hash. */
           string: string;
         };
@@ -1241,12 +1241,12 @@ export interface operations {
     };
   };
   /** Generate a hash for a given string. */
-  "hash-verify": {
+  'hash-verify': {
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: boolean;
           };
         };
@@ -1254,7 +1254,7 @@ export interface operations {
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** String to hash. */
           string: string;
           /** Hash you want to verify against. */
@@ -1277,7 +1277,7 @@ export interface operations {
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Primary key of item to move */
           item?: number;
           /** Primary key of item where to move the current item to */
@@ -1300,7 +1300,7 @@ export interface operations {
     };
     requestBody: {
       content: {
-        "multipart/form-data": {
+        'multipart/form-data': {
           file?: string;
         };
       };
@@ -1320,17 +1320,17 @@ export interface operations {
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** What file format to save the export to. One of csv, xml, json */
-          format: "csv" | "xml" | "json";
-          query: components["schemas"]["Query"];
-          file: components["schemas"]["Files"];
+          format: 'csv' | 'xml' | 'json';
+          query: components['schemas']['Query'];
+          file: components['schemas']['Files'];
         };
       };
     };
   };
   /** Resets both the data and schema cache of Directus. */
-  "clear-cache": {
+  'clear-cache': {
     responses: {
       /** Successful request */
       200: unknown;
@@ -1348,7 +1348,7 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: string;
           };
         };
@@ -1360,32 +1360,32 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsBlocks"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['ItemsBlocks'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Create a new blocks item. */
@@ -1393,25 +1393,25 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsBlocks"][];
+          'application/json': {
+            data?: components['schemas']['ItemsBlocks'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json":
-          | components["schemas"]["ItemsBlocks"][]
-          | components["schemas"]["ItemsBlocks"];
+        'application/json':
+          | components['schemas']['ItemsBlocks'][]
+          | components['schemas']['ItemsBlocks'];
       };
     };
   };
@@ -1420,9 +1420,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -1433,13 +1433,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsBlocks"];
+          'application/json': {
+            data?: components['schemas']['ItemsBlocks'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing blocks item. */
@@ -1453,8 +1453,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing blocks item. */
@@ -1462,9 +1462,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -1475,17 +1475,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsBlocks"];
+          'application/json': {
+            data?: components['schemas']['ItemsBlocks'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["ItemsBlocks"];
+        'application/json': components['schemas']['ItemsBlocks'];
       };
     };
   };
@@ -1494,32 +1494,32 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsContacts"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['ItemsContacts'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Create a new contacts item. */
@@ -1527,25 +1527,25 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsContacts"][];
+          'application/json': {
+            data?: components['schemas']['ItemsContacts'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json":
-          | components["schemas"]["ItemsContacts"][]
-          | components["schemas"]["ItemsContacts"];
+        'application/json':
+          | components['schemas']['ItemsContacts'][]
+          | components['schemas']['ItemsContacts'];
       };
     };
   };
@@ -1554,9 +1554,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -1567,13 +1567,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsContacts"];
+          'application/json': {
+            data?: components['schemas']['ItemsContacts'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing contacts item. */
@@ -1587,8 +1587,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing contacts item. */
@@ -1596,9 +1596,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -1609,17 +1609,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsContacts"];
+          'application/json': {
+            data?: components['schemas']['ItemsContacts'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["ItemsContacts"];
+        'application/json': components['schemas']['ItemsContacts'];
       };
     };
   };
@@ -1628,32 +1628,32 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsHomepage"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['ItemsHomepage'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Create a new homepage item. */
@@ -1661,25 +1661,25 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsHomepage"][];
+          'application/json': {
+            data?: components['schemas']['ItemsHomepage'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json":
-          | components["schemas"]["ItemsHomepage"][]
-          | components["schemas"]["ItemsHomepage"];
+        'application/json':
+          | components['schemas']['ItemsHomepage'][]
+          | components['schemas']['ItemsHomepage'];
       };
     };
   };
@@ -1688,9 +1688,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -1701,13 +1701,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsHomepage"];
+          'application/json': {
+            data?: components['schemas']['ItemsHomepage'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing homepage item. */
@@ -1721,8 +1721,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing homepage item. */
@@ -1730,9 +1730,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -1743,17 +1743,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsHomepage"];
+          'application/json': {
+            data?: components['schemas']['ItemsHomepage'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["ItemsHomepage"];
+        'application/json': components['schemas']['ItemsHomepage'];
       };
     };
   };
@@ -1762,32 +1762,32 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsNavigation"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['ItemsNavigation'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Create a new navigation item. */
@@ -1795,25 +1795,25 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsNavigation"][];
+          'application/json': {
+            data?: components['schemas']['ItemsNavigation'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json":
-          | components["schemas"]["ItemsNavigation"][]
-          | components["schemas"]["ItemsNavigation"];
+        'application/json':
+          | components['schemas']['ItemsNavigation'][]
+          | components['schemas']['ItemsNavigation'];
       };
     };
   };
@@ -1822,9 +1822,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -1835,13 +1835,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsNavigation"];
+          'application/json': {
+            data?: components['schemas']['ItemsNavigation'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing navigation item. */
@@ -1855,8 +1855,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing navigation item. */
@@ -1864,9 +1864,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -1877,17 +1877,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsNavigation"];
+          'application/json': {
+            data?: components['schemas']['ItemsNavigation'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["ItemsNavigation"];
+        'application/json': components['schemas']['ItemsNavigation'];
       };
     };
   };
@@ -1896,32 +1896,32 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProject"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['ItemsProject'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Create a new project item. */
@@ -1929,25 +1929,25 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProject"][];
+          'application/json': {
+            data?: components['schemas']['ItemsProject'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json":
-          | components["schemas"]["ItemsProject"][]
-          | components["schemas"]["ItemsProject"];
+        'application/json':
+          | components['schemas']['ItemsProject'][]
+          | components['schemas']['ItemsProject'];
       };
     };
   };
@@ -1956,9 +1956,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -1969,13 +1969,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProject"];
+          'application/json': {
+            data?: components['schemas']['ItemsProject'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing project item. */
@@ -1989,8 +1989,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing project item. */
@@ -1998,9 +1998,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -2011,17 +2011,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProject"];
+          'application/json': {
+            data?: components['schemas']['ItemsProject'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["ItemsProject"];
+        'application/json': components['schemas']['ItemsProject'];
       };
     };
   };
@@ -2030,32 +2030,32 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProjectProjectTags"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['ItemsProjectProjectTags'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Create a new project_project_tags item. */
@@ -2063,25 +2063,25 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProjectProjectTags"][];
+          'application/json': {
+            data?: components['schemas']['ItemsProjectProjectTags'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json":
-          | components["schemas"]["ItemsProjectProjectTags"][]
-          | components["schemas"]["ItemsProjectProjectTags"];
+        'application/json':
+          | components['schemas']['ItemsProjectProjectTags'][]
+          | components['schemas']['ItemsProjectProjectTags'];
       };
     };
   };
@@ -2090,9 +2090,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -2103,13 +2103,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProjectProjectTags"];
+          'application/json': {
+            data?: components['schemas']['ItemsProjectProjectTags'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing project_project_tags item. */
@@ -2123,8 +2123,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing project_project_tags item. */
@@ -2132,9 +2132,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -2145,17 +2145,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProjectProjectTags"];
+          'application/json': {
+            data?: components['schemas']['ItemsProjectProjectTags'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["ItemsProjectProjectTags"];
+        'application/json': components['schemas']['ItemsProjectProjectTags'];
       };
     };
   };
@@ -2164,32 +2164,32 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProjectTags"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['ItemsProjectTags'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Create a new project_tags item. */
@@ -2197,25 +2197,25 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProjectTags"][];
+          'application/json': {
+            data?: components['schemas']['ItemsProjectTags'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json":
-          | components["schemas"]["ItemsProjectTags"][]
-          | components["schemas"]["ItemsProjectTags"];
+        'application/json':
+          | components['schemas']['ItemsProjectTags'][]
+          | components['schemas']['ItemsProjectTags'];
       };
     };
   };
@@ -2224,9 +2224,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -2237,13 +2237,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProjectTags"];
+          'application/json': {
+            data?: components['schemas']['ItemsProjectTags'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing project_tags item. */
@@ -2257,8 +2257,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing project_tags item. */
@@ -2266,9 +2266,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -2279,17 +2279,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsProjectTags"];
+          'application/json': {
+            data?: components['schemas']['ItemsProjectTags'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["ItemsProjectTags"];
+        'application/json': components['schemas']['ItemsProjectTags'];
       };
     };
   };
@@ -2298,32 +2298,32 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsSkills"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['ItemsSkills'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Create a new skills item. */
@@ -2331,25 +2331,25 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsSkills"][];
+          'application/json': {
+            data?: components['schemas']['ItemsSkills'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json":
-          | components["schemas"]["ItemsSkills"][]
-          | components["schemas"]["ItemsSkills"];
+        'application/json':
+          | components['schemas']['ItemsSkills'][]
+          | components['schemas']['ItemsSkills'];
       };
     };
   };
@@ -2358,9 +2358,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -2371,13 +2371,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsSkills"];
+          'application/json': {
+            data?: components['schemas']['ItemsSkills'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing skills item. */
@@ -2391,8 +2391,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing skills item. */
@@ -2400,9 +2400,9 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
       path: {
         /** Index of the item. */
@@ -2413,17 +2413,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["ItemsSkills"];
+          'application/json': {
+            data?: components['schemas']['ItemsSkills'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["ItemsSkills"];
+        'application/json': components['schemas']['ItemsSkills'];
       };
     };
   };
@@ -2432,33 +2432,33 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Activity"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['Activity'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Creates a new comment. */
@@ -2466,24 +2466,24 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Activity"];
+          'application/json': {
+            data?: components['schemas']['Activity'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           collection: string;
           item: number;
           comment: string;
@@ -2496,26 +2496,26 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Activity"];
+          'application/json': {
+            data?: components['schemas']['Activity'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing comment. Deleted comments can not be retrieved. */
@@ -2523,14 +2523,14 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
     };
     responses: {
       /** Deleted successfully */
       203: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update the content of an existing comment. */
@@ -2538,28 +2538,28 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Activity"];
+          'application/json': {
+            data?: components['schemas']['Activity'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           comment?: string;
         };
       };
@@ -2570,22 +2570,22 @@ export interface operations {
     parameters: {
       query: {
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Collections"][];
+          'application/json': {
+            data?: components['schemas']['Collections'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Create a new collection in Directus. */
@@ -2593,24 +2593,24 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Collections"];
+          'application/json': {
+            data?: components['schemas']['Collections'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Unique name of the collection. */
           collection: string;
           /** The fields contained in this collection. See the fields reference for more information. Each individual field requires field, type, and interface to be provided. */
@@ -2650,20 +2650,20 @@ export interface operations {
       };
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Collections"];
+          'application/json': {
+            data?: components['schemas']['Collections'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing collection. Warning: This will delete the whole collection, including the items within. Proceed with caution. */
@@ -2677,8 +2677,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing collection. */
@@ -2690,24 +2690,24 @@ export interface operations {
       };
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Collections"];
+          'application/json': {
+            data?: components['schemas']['Collections'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Metadata of the collection. */
           meta?: {
             /** Name of a Google Material Design Icon that's assigned to this collection. */
@@ -2744,22 +2744,22 @@ export interface operations {
     parameters: {
       query: {
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Fields"][];
+          'application/json': {
+            data?: components['schemas']['Fields'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Returns a list of the fields available in the given collection. */
@@ -2771,20 +2771,20 @@ export interface operations {
       };
       query: {
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Fields"][];
+          'application/json': {
+            data?: components['schemas']['Fields'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Create a new field in a given collection. */
@@ -2799,17 +2799,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Fields"];
+          'application/json': {
+            data?: components['schemas']['Fields'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Unique name of the field. Field name is unique within the collection. */
           field: string;
           /** Directus specific data type. Used to cast values in the API. */
@@ -2854,7 +2854,7 @@ export interface operations {
             /** Transformation flag for field */
             special?: string[] | null;
             /** What interface is used in the admin app to edit the value for this field. */
-            "system-interface"?: string | null;
+            'system-interface'?: string | null;
             /** Options for the interface that's used. This format is based on the individual interface. */
             options?: { [key: string]: any } | null;
             /** What display is used in the admin app to display the value for this field. */
@@ -2871,7 +2871,7 @@ export interface operations {
             sort?: number | null;
             /** Width of the field on the edit form. */
             width?:
-              | ("half" | "half-left" | "half-right" | "full" | "fill")
+              | ('half' | 'half-left' | 'half-right' | 'full' | 'fill')
               | null;
             /** What field group this field is part of. */
             group?: number | null;
@@ -2898,13 +2898,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Fields"];
+          'application/json': {
+            data?: components['schemas']['Fields'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing field. */
@@ -2920,8 +2920,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing field. */
@@ -2938,17 +2938,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Fields"];
+          'application/json': {
+            data?: components['schemas']['Fields'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Unique name of the field. Field name is unique within the collection. */
           field?: string;
           /** Directus specific data type. Used to cast values in the API. */
@@ -2993,7 +2993,7 @@ export interface operations {
             /** Transformation flag for field */
             special?: string[] | null;
             /** What interface is used in the admin app to edit the value for this field. */
-            "system-interface"?: string | null;
+            'system-interface'?: string | null;
             /** Options for the interface that's used. This format is based on the individual interface. */
             options?: { [key: string]: any } | null;
             /** What display is used in the admin app to display the value for this field. */
@@ -3010,7 +3010,7 @@ export interface operations {
             sort?: number | null;
             /** Width of the field on the edit form. */
             width?:
-              | ("half" | "half-left" | "half-right" | "full" | "fill")
+              | ('half' | 'half-left' | 'half-right' | 'full' | 'fill')
               | null;
             /** What field group this field is part of. */
             group?: number | null;
@@ -3028,32 +3028,32 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Files"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['Files'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Create a new file */
@@ -3062,16 +3062,16 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Files"];
+          'application/json': {
+            data?: components['schemas']['Files'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           data?: string;
         };
       };
@@ -3082,25 +3082,25 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Files"];
+          'application/json': {
+            data?: components['schemas']['Files'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Delete an existing file. */
@@ -3108,13 +3108,13 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
     };
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Update an existing file, and/or replace it's file contents. */
@@ -3122,29 +3122,29 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Files"];
+          'application/json': {
+            data?: components['schemas']['Files'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "multipart/data": {
+        'multipart/data': {
           /** Title for the file. Is extracted from the filename on upload, but can be edited by the user. */
           title?: string;
           /** Preferred filename when file is downloaded. */
@@ -3152,13 +3152,13 @@ export interface operations {
           /** Description for the file. */
           description?: string | null;
           /** Virtual folder where this file resides in. */
-          folder?: (string | components["schemas"]["Folders"]) | null;
+          folder?: (string | components['schemas']['Folders']) | null;
           /** Tags for the file. Is automatically populated based on EXIF data for images. */
           tags?: string[] | null;
           /** File contents. */
           file: { [key: string]: any };
         };
-        "application/json": {
+        'application/json': {
           /** Title for the file. Is extracted from the filename on upload, but can be edited by the user. */
           title?: string;
           /** Preferred filename when file is downloaded. */
@@ -3166,7 +3166,7 @@ export interface operations {
           /** Description for the file. */
           description?: string | null;
           /** Virtual folder where this file resides in. */
-          folder?: (string | components["schemas"]["Folders"]) | null;
+          folder?: (string | components['schemas']['Folders']) | null;
           /** Tags for the file. Is automatically populated based on EXIF data for images. */
           tags?: string[] | null;
         };
@@ -3178,33 +3178,33 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Folders"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['Folders'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Create a new folder. */
@@ -3212,26 +3212,26 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Folders"];
+          'application/json': {
+            data?: components['schemas']['Folders'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Name of the folder. */
           name: string;
           /** Unique identifier of the parent folder. This allows for nested folders. */
@@ -3245,26 +3245,26 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Folders"];
+          'application/json': {
+            data?: components['schemas']['Folders'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing folder */
@@ -3272,14 +3272,14 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
     };
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing folder */
@@ -3287,30 +3287,30 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Folders"];
+          'application/json': {
+            data?: components['schemas']['Folders'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Name of the folder. Can't be null or empty. */
           name?: string;
           /** Unique identifier of the parent folder. This allows for nested folders. */
@@ -3324,35 +3324,35 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
         /** Cursor for use in pagination. Often used in combination with limit. */
-        page?: components["parameters"]["Page"];
+        page?: components['parameters']['Page'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Permissions"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['Permissions'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Create a new permission. */
@@ -3360,36 +3360,36 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Permissions"];
+          'application/json': {
+            data?: components['schemas']['Permissions'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** What collection this permission applies to. */
           collection?: string;
           /** If the user can post comments. */
-          comment?: "none" | "create" | "update" | "full";
+          comment?: 'none' | 'create' | 'update' | 'full';
           /** If the user can create items. */
-          create?: "none" | "full";
+          create?: 'none' | 'full';
           /** If the user can update items. */
-          delete?: "none" | "mine" | "role" | "full";
+          delete?: 'none' | 'mine' | 'role' | 'full';
           /** If the user is required to leave a comment explaining what was changed. */
-          explain?: "none" | "create" | "update" | "always";
+          explain?: 'none' | 'create' | 'update' | 'always';
           /** If the user can read items. */
-          read?: "none" | "mine" | "role" | "full";
+          read?: 'none' | 'mine' | 'role' | 'full';
           /** Unique identifier of the role this permission applies to. */
           role?: number;
           /** Explicitly denies read access for specific fields. */
@@ -3399,7 +3399,7 @@ export interface operations {
           /** Explicitly denies specific statuses to be used. */
           status_blacklist?: string[];
           /** If the user can update items. */
-          update?: "none" | "mine" | "role" | "full";
+          update?: 'none' | 'mine' | 'role' | 'full';
           /** Explicitly denies write access for specific fields. */
           write_field_blacklist?: string[];
         };
@@ -3412,13 +3412,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Permissions"][];
+          'application/json': {
+            data?: components['schemas']['Permissions'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Retrieve a single permissions object by unique identifier. */
@@ -3426,26 +3426,26 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Permissions"];
+          'application/json': {
+            data?: components['schemas']['Permissions'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing permission */
@@ -3453,14 +3453,14 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
     };
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing permission */
@@ -3468,40 +3468,40 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Permissions"];
+          'application/json': {
+            data?: components['schemas']['Permissions'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** What collection this permission applies to. */
           collection?: { [key: string]: any };
           /** If the user can post comments. `full`. */
-          comment?: "none" | "create" | "update";
+          comment?: 'none' | 'create' | 'update';
           /** If the user can create items. */
-          create?: "none" | "full";
+          create?: 'none' | 'full';
           /** If the user can update items. */
-          delete?: "none" | "mine" | "role" | "full";
+          delete?: 'none' | 'mine' | 'role' | 'full';
           /** If the user is required to leave a comment explaining what was changed. */
-          explain?: "none" | "create" | "update" | "always";
+          explain?: 'none' | 'create' | 'update' | 'always';
           /** If the user can read items. */
-          read?: "none" | "mine" | "role" | "full";
+          read?: 'none' | 'mine' | 'role' | 'full';
           /** Explicitly denies read access for specific fields. */
           read_field_blacklist?: { [key: string]: any };
           /** Unique identifier of the role this permission applies to. */
@@ -3511,7 +3511,7 @@ export interface operations {
           /** Explicitly denies specific statuses to be used. */
           status_blacklist?: { [key: string]: any };
           /** If the user can update items. */
-          update?: "none" | "mine" | "role" | "full";
+          update?: 'none' | 'mine' | 'role' | 'full';
           /** Explicitly denies write access for specific fields. */
           write_field_blacklist?: { [key: string]: any };
         };
@@ -3523,34 +3523,34 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** Cursor for use in pagination. Often used in combination with limit. */
-        page?: components["parameters"]["Page"];
+        page?: components['parameters']['Page'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Presets"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['Presets'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Create a new preset. */
@@ -3558,25 +3558,25 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Presets"];
+          'application/json': {
+            data?: components['schemas']['Presets'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** What collection this collection preset is used for. */
           collection: string;
           /** Name for the bookmark. If this is set, the collection preset will be considered to be a bookmark. */
@@ -3606,25 +3606,25 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Presets"];
+          'application/json': {
+            data?: components['schemas']['Presets'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Delete an existing preset. */
@@ -3632,13 +3632,13 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
     };
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
   };
   /** Update an existing preset. */
@@ -3646,29 +3646,29 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Presets"];
+          'application/json': {
+            data?: components['schemas']['Presets'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
+      401: components['responses']['UnauthorizedError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** What collection this collection preset is used for. */
           collection: string;
           /** Name for the bookmark. If this is set, the collection preset will be considered to be a bookmark. */
@@ -3699,34 +3699,34 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
         /** Cursor for use in pagination. Often used in combination with limit. */
-        page?: components["parameters"]["Page"];
+        page?: components['parameters']['Page'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Relations"][];
+          'application/json': {
+            data?: components['schemas']['Relations'][];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Create a new relation. */
@@ -3734,26 +3734,26 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Relations"];
+          'application/json': {
+            data?: components['schemas']['Relations'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Collection that has the field that holds the foreign key. */
           collection_many?: string;
           /** Collection on the _one_ side of the relationship. */
@@ -3773,26 +3773,26 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Relations"];
+          'application/json': {
+            data?: components['schemas']['Relations'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing relation. */
@@ -3800,14 +3800,14 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
     };
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing relation */
@@ -3815,30 +3815,30 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Relations"];
+          'application/json': {
+            data?: components['schemas']['Relations'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Collection that has the field that holds the foreign key. */
           collection_many?: string;
           /** Collection on the _one_ side of the relationship. */
@@ -3858,35 +3858,35 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
         /** Cursor for use in pagination. Often used in combination with limit. */
-        page?: components["parameters"]["Page"];
+        page?: components['parameters']['Page'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Revisions"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['Revisions'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Retrieve a single revision by unique identifier. */
@@ -3894,26 +3894,26 @@ export interface operations {
     parameters: {
       path: {
         /** Index */
-        id: components["parameters"]["Id"];
+        id: components['parameters']['Id'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Revisions"];
+          'application/json': {
+            data?: components['schemas']['Revisions'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** List the roles. */
@@ -3921,35 +3921,35 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
         /** Cursor for use in pagination. Often used in combination with limit. */
-        page?: components["parameters"]["Page"];
+        page?: components['parameters']['Page'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Roles"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['Roles'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Create a new role. */
@@ -3957,26 +3957,26 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Roles"];
+          'application/json': {
+            data?: components['schemas']['Roles'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Description of the role. */
           description?: string;
           /** Whether or not this role enforces the use of 2FA. */
@@ -3998,26 +3998,26 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Roles"];
+          'application/json': {
+            data?: components['schemas']['Roles'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing role */
@@ -4025,14 +4025,14 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
     };
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing role */
@@ -4040,30 +4040,30 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Roles"];
+          'application/json': {
+            data?: components['schemas']['Roles'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Description of the role. */
           description?: string;
           /** Whether or not this role enforces the use of 2FA. */
@@ -4085,26 +4085,26 @@ export interface operations {
     parameters: {
       query: {
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** Cursor for use in pagination. Often used in combination with limit. */
-        page?: components["parameters"]["Page"];
+        page?: components['parameters']['Page'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Settings"];
+          'application/json': {
+            data?: components['schemas']['Settings'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update the settings */
@@ -4113,17 +4113,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Settings"];
+          'application/json': {
+            data?: components['schemas']['Settings'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": { [key: string]: any };
+        'application/json': { [key: string]: any };
       };
     };
   };
@@ -4132,33 +4132,33 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** A limit on the number of objects that are returned. */
-        limit?: components["parameters"]["Limit"];
+        limit?: components['parameters']['Limit'];
         /** How many items to skip when fetching data. */
-        offset?: components["parameters"]["Offset"];
+        offset?: components['parameters']['Offset'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
         /** How to sort the returned items. `sort` is a CSV of fields used to sort the fetched items. Sorting defaults to ascending (ASC) order but a minus sign (` - `) can be used to reverse this to descending (DESC) order. Fields are prioritized by their order in the CSV. You can also use a ` ? ` to sort randomly. */
-        sort?: components["parameters"]["Sort"];
+        sort?: components['parameters']['Sort'];
         /** Select items in collection by given conditions. */
-        filter?: components["parameters"]["Filter"];
+        filter?: components['parameters']['Filter'];
         /** Filter by items that contain the given search query in one of their fields. */
-        search?: components["parameters"]["Search"];
+        search?: components['parameters']['Search'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Users"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['Users'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Create a new user. */
@@ -4166,24 +4166,24 @@ export interface operations {
     parameters: {
       query: {
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Users"];
+          'application/json': {
+            data?: components['schemas']['Users'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["Users"];
+        'application/json': components['schemas']['Users'];
       };
     };
   };
@@ -4192,26 +4192,26 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Users"];
+          'application/json': {
+            data?: components['schemas']['Users'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing user */
@@ -4219,14 +4219,14 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
     };
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing user */
@@ -4234,30 +4234,30 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
+          'application/json': {
             data?: { [key: string]: any };
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["Users"];
+        'application/json': components['schemas']['Users'];
       };
     };
   };
@@ -4267,17 +4267,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Users"];
+          'application/json': {
+            data?: components['schemas']['Users'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Email address or array of email addresses of the to-be-invited user(s). */
           email?: string;
         };
@@ -4290,17 +4290,17 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Users"];
+          'application/json': {
+            data?: components['schemas']['Users'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Accept invite token. */
           token?: string;
           /** Password of the user. */
@@ -4314,22 +4314,22 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Users"];
+          'application/json': {
+            data?: components['schemas']['Users'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update the currently authenticated user. */
@@ -4338,13 +4338,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Users"];
+          'application/json': {
+            data?: components['schemas']['Users'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Updates the last used page field of the currently authenticated user. This is used internally to be able to open the Directus admin app from the last page you used. */
@@ -4352,12 +4352,12 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** Path of the page you used last. */
           last_page?: string;
         };
@@ -4369,8 +4369,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Disables two-factor authentication for the currently authenticated user. */
@@ -4378,8 +4378,8 @@ export interface operations {
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Get all webhooks. */
@@ -4388,13 +4388,13 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Webhooks"];
+          'application/json': {
+            data?: components['schemas']['Webhooks'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Create a new webhook. */
@@ -4402,26 +4402,26 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Roles"];
+          'application/json': {
+            data?: components['schemas']['Roles'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** The name of the webhook. */
           name?: string;
           /** Method used in the webhook. */
@@ -4435,7 +4435,7 @@ export interface operations {
           /** The actions that triggers this webhook. */
           actions?: { [key: string]: any };
           /** The collections that triggers this webhook. */
-          "system-collections"?: { [key: string]: any };
+          'system-collections'?: { [key: string]: any };
         };
       };
     };
@@ -4445,20 +4445,20 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Webhooks"];
+          'application/json': {
+            data?: components['schemas']['Webhooks'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing webhook */
@@ -4466,14 +4466,14 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
     };
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing webhook */
@@ -4481,30 +4481,30 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Roles"];
+          'application/json': {
+            data?: components['schemas']['Roles'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": {
+        'application/json': {
           /** The name of the webhook. */
           name?: string;
           /** Method used in the webhook. */
@@ -4518,7 +4518,7 @@ export interface operations {
           /** The actions that triggers this webhook. */
           actions?: { [key: string]: any };
           /** The collections that triggers this webhook. */
-          "system-collections"?: { [key: string]: any };
+          'system-collections'?: { [key: string]: any };
         };
       };
     };
@@ -4529,14 +4529,14 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Flows"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['Flows'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Create a new flow. */
@@ -4544,26 +4544,26 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Flows"];
+          'application/json': {
+            data?: components['schemas']['Flows'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": Partial<components["schemas"]["Flows"]>;
+        'application/json': Partial<components['schemas']['Flows']>;
       };
     };
   };
@@ -4572,20 +4572,20 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Flows"];
+          'application/json': {
+            data?: components['schemas']['Flows'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing flow */
@@ -4593,14 +4593,14 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
     };
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing flow */
@@ -4608,30 +4608,30 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Flows"];
+          'application/json': {
+            data?: components['schemas']['Flows'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": Partial<components["schemas"]["Flows"]>;
+        'application/json': Partial<components['schemas']['Flows']>;
       };
     };
   };
@@ -4641,14 +4641,14 @@ export interface operations {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Operations"][];
-            meta?: components["schemas"]["x-metadata"];
+          'application/json': {
+            data?: components['schemas']['Operations'][];
+            meta?: components['schemas']['x-metadata'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Create a new operation. */
@@ -4656,26 +4656,26 @@ export interface operations {
     parameters: {
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Operations"];
+          'application/json': {
+            data?: components['schemas']['Operations'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": Partial<components["schemas"]["Operations"]>;
+        'application/json': Partial<components['schemas']['Operations']>;
       };
     };
   };
@@ -4684,20 +4684,20 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Operations"];
+          'application/json': {
+            data?: components['schemas']['Operations'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Delete an existing operation */
@@ -4705,14 +4705,14 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
     };
     responses: {
       /** Successful request */
       200: unknown;
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
   };
   /** Update an existing operation */
@@ -4720,42 +4720,42 @@ export interface operations {
     parameters: {
       path: {
         /** Unique identifier for the object. */
-        id: components["parameters"]["UUId"];
+        id: components['parameters']['UUId'];
       };
       query: {
         /** Control what fields are being returned in the object. */
-        fields?: components["parameters"]["Fields"];
+        fields?: components['parameters']['Fields'];
         /** What metadata to return in the response. */
-        meta?: components["parameters"]["Meta"];
+        meta?: components['parameters']['Meta'];
       };
     };
     responses: {
       /** Successful request */
       200: {
         content: {
-          "application/json": {
-            data?: components["schemas"]["Operations"];
+          'application/json': {
+            data?: components['schemas']['Operations'];
           };
         };
       };
-      401: components["responses"]["UnauthorizedError"];
-      404: components["responses"]["NotFoundError"];
+      401: components['responses']['UnauthorizedError'];
+      404: components['responses']['NotFoundError'];
     };
     requestBody: {
       content: {
-        "application/json": Partial<components["schemas"]["Operations"]>;
+        'application/json': Partial<components['schemas']['Operations']>;
       };
     };
   };
 }
 
 export type DirectusCollections = {
-  blocks: components["schemas"]["ItemsBlocks"];
-  contacts: components["schemas"]["ItemsContacts"];
-  homepage: components["schemas"]["ItemsHomepage"];
-  navigation: components["schemas"]["ItemsNavigation"];
-  project: components["schemas"]["ItemsProject"];
-  project_project_tags: components["schemas"]["ItemsProjectProjectTags"];
-  project_tags: components["schemas"]["ItemsProjectTags"];
-  skills: components["schemas"]["ItemsSkills"];
+  blocks: components['schemas']['ItemsBlocks'];
+  contacts: components['schemas']['ItemsContacts'];
+  homepage: components['schemas']['ItemsHomepage'];
+  navigation: components['schemas']['ItemsNavigation'];
+  project: components['schemas']['ItemsProject'];
+  project_project_tags: components['schemas']['ItemsProjectProjectTags'];
+  project_tags: components['schemas']['ItemsProjectTags'];
+  skills: components['schemas']['ItemsSkills'];
 };

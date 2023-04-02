@@ -1,8 +1,8 @@
-import { getProjects } from "../../data";
-import { getProjectBySlug } from "./data";
-import Gallery from "./gallery";
-import Tags from "./tags";
-import style from "./portfolio.module.scss";
+import { getProjects } from '../../data';
+import { getProjectBySlug } from './data';
+import Gallery from './gallery';
+import Tags from './tags';
+import style from './portfolio.module.scss';
 
 type PageProps = { params: { slug: string } };
 
@@ -17,7 +17,7 @@ async function PortfolioDetail({ params }: PageProps) {
           <div>{project.description}</div>
           <Tags tags={project.tags} />
           <div className="hidden-md-down visit-site-link">
-            <a href={project.link ? project.link : "#"} target="_blank">
+            <a href={project.link ? project.link : '#'} target="_blank">
               <button className="button button-smaller">
                 VISIT SITE &nbsp;&nbsp;
                 <i className="fa fa-external-link" />

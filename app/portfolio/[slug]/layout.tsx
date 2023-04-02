@@ -1,4 +1,4 @@
-import Navigation from "@/components/navigation/navigation";
+import Navigation from '@/components/navigation/navigation';
 
 export default async function PortfolioLayout({
   children,
@@ -9,7 +9,7 @@ export default async function PortfolioLayout({
     <>
       <header
         className="sticky-header hidden-xs-down on"
-        style={{ position: "fixed", top: 0, width: "100%" }}
+        style={{ position: 'fixed', top: 0, width: '100%' }}
       >
         <div className="container-fluid">
           {/* @ts-expect-error Server Component */}

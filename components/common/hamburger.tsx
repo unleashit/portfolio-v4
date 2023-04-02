@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { TOGGLE_HAMBURGER } from "@/lib/clientState/reducer";
-import { useContext } from "react";
-import { GlobalContext } from "@/components/providers";
+import { TOGGLE_HAMBURGER } from '@/lib/clientState/reducer';
+import { useContext } from 'react';
+import { GlobalContext } from '@/components/providers';
 
 const Hamburger = () => {
   const { dispatch } = useContext(GlobalContext);

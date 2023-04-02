@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { Project } from "../../../directus";
-import { assetsURL } from "@/lib/constants";
-import { getProjects } from "../../data";
+import Link from 'next/link';
+import { Project } from '../../../directus';
+import { assetsURL } from '@/lib/constants';
+import { getProjects } from '../../data';
 
 const getNextPrevSlugs = (projects: Project[], currSlug: string) => {
   const currIdx = projects.findIndex((p) => p.slug === currSlug);
@@ -32,7 +32,7 @@ async function Gallery({
         </div>
       )}
       <div className="hidden-lg-up visit-site-link">
-        <a href={link ? link : "#"} target="_blank">
+        <a href={link ? link : '#'} target="_blank">
           <button className="button button-smaller">
             VISIT SITE &nbsp;&nbsp;
             <i className="fa fa-external-link" />
@@ -41,12 +41,12 @@ async function Gallery({
       </div>
       <div className="next-prev-btns">
         {prev && (
-          <Link href={"/portfolio/" + prev}>
+          <Link href={'/portfolio/' + prev}>
             <button className="button button-xs">Previous</button>
           </Link>
         )}
         {next && (
-          <Link href={"/portfolio/" + next}>
+          <Link href={'/portfolio/' + next}>
             <button className="button button-xs">Next</button>
           </Link>
         )}

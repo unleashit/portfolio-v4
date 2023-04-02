@@ -1,18 +1,18 @@
-"use client";
-import { useEffect, useState } from "react";
-import { Skills } from "../directus";
-import { getSkills } from "./data";
-import { directus } from "@/lib/services";
+'use client';
+import { useEffect, useState } from 'react';
+import { Skills } from '../directus';
+import { getSkills } from './data';
+import { directus } from '@/lib/services';
 
 function Client() {
-  console.log("client component called");
+  console.log('client component called');
   const [skills, setSkills] = useState<Skills[]>();
   useEffect(() => {
     getSkills().then((s) => setSkills(s));
 
     directus()
-      .memo("test", () =>
-        fetch("https://jsonplaceholder.typicode.com/users/1").then((r) =>
+      .memo('test', () =>
+        fetch('https://jsonplaceholder.typicode.com/users/1').then((r) =>
           r.json()
         )
       )

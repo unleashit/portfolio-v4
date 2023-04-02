@@ -1,12 +1,12 @@
-import { Project, Skills, Blocks, Navigation } from "../directus";
-import { directus } from "@/lib/services";
+import { Project, Skills, Blocks, Navigation } from '../directus';
+import { directus } from '@/lib/services';
 
 type Data<T> = {
   data: T;
 };
 
 export async function getNavigation() {
-  const fields = "id,title,link,sort";
+  const fields = 'id,title,link,sort';
 
   return (
     await directus().get<Data<Navigation[]>>(
@@ -16,7 +16,7 @@ export async function getNavigation() {
 }
 
 export async function getHomeBlocks() {
-  const fields = "id,title,content,image";
+  const fields = 'id,title,content,image';
 
   return (
     await directus().get<Data<Blocks[]>>(`/items/blocks?fields=${fields}`)
@@ -25,7 +25,7 @@ export async function getHomeBlocks() {
 
 export async function getProjects() {
   const fields =
-    "project_id,date_created,title,decription_short,image_logo,slug,sort";
+    'project_id,date_created,title,decription_short,image_logo,slug,sort';
 
   return (
     await directus().get<Data<Project[]>>(`/items/project?fields=${fields}`)
@@ -33,7 +33,7 @@ export async function getProjects() {
 }
 
 export async function getSkills() {
-  const fields = "sort,id,title";
+  const fields = 'sort,id,title';
 
   return (
     await directus().get<Data<Skills[]>>(`/items/skills?fields=${fields}`)

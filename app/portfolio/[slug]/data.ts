@@ -1,6 +1,6 @@
-import { directus } from "@/lib/services";
-import { Project } from "../../../directus";
-import { getProjects } from "../../data";
+import { directus } from '@/lib/services';
+import { Project } from '../../../directus';
+import { getProjects } from '../../data';
 
 type Tag = {
   project_tags_tag_id: {
@@ -16,7 +16,7 @@ async function getProjectTags(ids: number[]) {
   const tags = (
     await directus().get<Data<Tag[]>>(
       `/items/project_project_tags?fields=project_tags_tag_id.tag&filter[id][_in]=${ids.join(
-        ","
+        ','
       )}`
     )
   ).data;

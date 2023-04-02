@@ -1,14 +1,14 @@
-import React from "react";
-import Link from "next/link";
-import { assetsURL } from "@/lib/constants";
-import { Project } from "../../directus";
+import React from 'react';
+import Link from 'next/link';
+import { assetsURL } from '@/lib/constants';
+import { Project } from '../../directus';
 
 const sluggify = (toSlug: string) =>
   toSlug
     .trim()
-    .split(" ")
-    .join("-")
-    .replace(/[^a-zA-Z_-]/g, "")
+    .split(' ')
+    .join('-')
+    .replace(/[^a-zA-Z_-]/g, '')
     .toLowerCase();
 
 export default function PortfolioItem({
@@ -25,7 +25,7 @@ export default function PortfolioItem({
   // };
   return (
     <div className="portfolio-item">
-      <Link href={"/portfolio/" + item.slug}>
+      <Link href={'/portfolio/' + item.slug}>
         <div className="view-details">
           <span>Learn More</span>
         </div>

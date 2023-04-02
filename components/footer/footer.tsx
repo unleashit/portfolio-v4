@@ -1,16 +1,16 @@
-import ContactForm from "@/components/contactForm/contactForm";
-import { getHomeBlocks } from "../../app/data";
-import { findKeyWithValue } from "@/lib/utils.new";
-import { CMS } from "@/components/common/cms";
-import React from "react";
+import ContactForm from '@/components/contactForm/contactForm';
+import { getHomeBlocks } from '../../app/data';
+import { findKeyWithValue } from '@/lib/utils.new';
+import { CMS } from '@/components/common/cms';
+import React from 'react';
 // import OpenChat from '../ReactHelpDesk/client/openChat';
 // import { animation } from '../../libs/utils';
 
 export async function Footer({ slug }: { slug?: string }) {
   const blocks = await getHomeBlocks();
-  const contact = findKeyWithValue(blocks, "title", "Contact");
-  const aboutTheSite = findKeyWithValue(blocks, "title", "About the Site");
-  const footerID = slug ? "footer-interior" : "";
+  const contact = findKeyWithValue(blocks, 'title', 'Contact');
+  const aboutTheSite = findKeyWithValue(blocks, 'title', 'About the Site');
+  const footerID = slug ? 'footer-interior' : '';
 
   return (
     <footer className="footer" id={footerID}>

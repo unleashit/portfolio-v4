@@ -1,4 +1,4 @@
-import type { UseFormRegisterReturn } from "react-hook-form";
+import type { UseFormRegisterReturn } from 'react-hook-form';
 
 type FieldProps = Partial<HTMLFormElement> & {
   register: UseFormRegisterReturn;

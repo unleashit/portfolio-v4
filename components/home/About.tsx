@@ -1,10 +1,10 @@
-import React, { Suspense } from "react";
-import Skills from "@/components/home/Skills";
-import { getHomeBlocks } from "../../app/data";
-import { findKeyWithValue } from "@/lib/utils.new";
-import { CMS } from "@/components/common/cms";
-import Loader from "@/components/common/loader";
-import { assetsURL } from "@/lib/constants";
+import React, { Suspense } from 'react';
+import Skills from '@/components/home/Skills';
+import { getHomeBlocks } from '../../app/data';
+import { findKeyWithValue } from '@/lib/utils.new';
+import { CMS } from '@/components/common/cms';
+import Loader from '@/components/common/loader';
+import { assetsURL } from '@/lib/constants';
 
 interface AboutProps {
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -13,10 +13,10 @@ interface AboutProps {
 
 export default async function About({ animation }: AboutProps) {
   const blocks = await getHomeBlocks();
-  const about = findKeyWithValue(blocks, "title", "About Me");
+  const about = findKeyWithValue(blocks, 'title', 'About Me');
 
   return (
-    <section className={animation() + "about container-fluid"} id="about">
+    <section className={animation() + 'about container-fluid'} id="about">
       <div className="row">
         <div className="col-md-8">
           <h3>About Me</h3>

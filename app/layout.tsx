@@ -1,26 +1,26 @@
-import logger from "@/lib/logger";
-import GlobalState from "@/components/providers";
-import globalMeta from "./metadata";
-import { Footer } from "@/components/footer/footer";
-import { Oswald, Sanchez } from "next/font/google";
+import logger from '@/lib/logger';
+import GlobalState from '@/components/providers';
+import globalMeta from './metadata';
+import { Footer } from '@/components/footer/footer';
+import { Oswald, Sanchez } from 'next/font/google';
 const oswald = Oswald({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-oswald",
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-oswald',
 });
 const sanchez = Sanchez({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-sanchez",
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-sanchez',
 });
-import "@/assets/scss/global.scss";
+import '@/assets/scss/global.scss';
 
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  logger.info("Root Layout called");
+  logger.info('Root Layout called');
 
   return (
     <html lang="en" className={`${oswald.variable} ${sanchez.variable}`}>

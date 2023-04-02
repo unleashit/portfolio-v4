@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useForm } from "react-hook-form";
-import { Input, Textarea } from "@/components/common/formParts";
-import { sendContact } from "./data";
-import Loader from "@/components/common/loader";
-import { useState } from "react";
+import { useForm } from 'react-hook-form';
+import { Input, Textarea } from '@/components/common/formParts';
+import { sendContact } from './data';
+import Loader from '@/components/common/loader';
+import { useState } from 'react';
 
 export interface ContactFormValues {
   name: string;
@@ -19,7 +19,7 @@ function ContactForm() {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
-  } = useForm<ContactFormValues>({ mode: "onBlur" });
+  } = useForm<ContactFormValues>({ mode: 'onBlur' });
   const [error, setError] = useState<null | Error>(null);
 
   if (isSubmitSuccessful && !error) {
@@ -57,7 +57,7 @@ function ContactForm() {
     return (
       <>
         <p>Error: Unable to send message:</p>
-        <pre style={{ color: "#86af6e" }}>{error.message}</pre>
+        <pre style={{ color: '#86af6e' }}>{error.message}</pre>
         <button
           className="button button-xs"
           onClick={() => {
@@ -75,36 +75,36 @@ function ContactForm() {
     <>
       <Loader
         style={{
-          display: isSubmitting ? "flex" : "none",
-          height: "auto",
-          width: "auto",
+          display: isSubmitting ? 'flex' : 'none',
+          height: 'auto',
+          width: 'auto',
         }}
       />
       <h4
-        style={{ display: isSubmitting ? "none" : "block" }}
+        style={{ display: isSubmitting ? 'none' : 'block' }}
         className="send-message"
       >
         SEND A MESSAGE
       </h4>
       <form
         onSubmit={onSubmit}
-        style={{ display: isSubmitting ? "none" : "block" }}
+        style={{ display: isSubmitting ? 'none' : 'block' }}
       >
         <Input
-          register={register("name", {
-            required: "Please enter your name",
-            maxLength: { value: 50, message: "Name is too long" },
+          register={register('name', {
+            required: 'Please enter your name',
+            maxLength: { value: 50, message: 'Name is too long' },
           })}
           type="text"
           placeholder="Name"
           errors={errors.name}
         />
         <Input
-          register={register("email", {
-            required: "Please enter your email",
+          register={register('email', {
+            required: 'Please enter your email',
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,24}$/i,
-              message: "Please enter a valid email",
+              message: 'Please enter a valid email',
             },
           })}
           type="text"
@@ -112,18 +112,18 @@ function ContactForm() {
           errors={errors.email}
         />
         <Input
-          register={register("phone", {
-            maxLength: { value: 20, message: "Phone is too long" },
+          register={register('phone', {
+            maxLength: { value: 20, message: 'Phone is too long' },
           })}
           type="text"
           placeholder="Phone"
         />
         <Textarea
-          register={register("message", {
-            required: "Please enter a message",
+          register={register('message', {
+            required: 'Please enter a message',
             validate: (value) =>
-              value.trim().split(" ").length > 5 || "Message is too short",
-            maxLength: { value: 3000, message: "Message is too long" },
+              value.trim().split(' ').length > 5 || 'Message is too short',
+            maxLength: { value: 3000, message: 'Message is too long' },
           })}
           placeholder="Message"
           className="form-control message"
