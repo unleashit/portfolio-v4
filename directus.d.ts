@@ -13,9 +13,10 @@ export type Contacts = {
   contact_id: string;
   date_created?: string | null;
   date_updated?: string | null;
-  email?: string | null;
-  message?: string | null;
+  email: string;
+  message: string;
   name?: string | null;
+  phone?: string | null;
 };
 
 export type DirectusActivity = {
