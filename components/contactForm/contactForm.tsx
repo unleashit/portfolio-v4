@@ -35,8 +35,6 @@ function ContactForm() {
   }
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log(data);
-
     const sent = await sendContact(data).catch((e) => {
       console.error(e);
       setError(e);
