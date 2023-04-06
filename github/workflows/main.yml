@@ -1,0 +1,35 @@
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy to Cloudflare Pages
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.15.0
+          cache: npm
+      - name: Install
+        run: npm install
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_CONTENT_API: ${{ secrets.NEXT_PUBLIC_CONTENT_API }}
+          NEXT_PUBLIC_ASSETS_URL: ${{ secrets.NEXT_PUBLIC_ASSETS_URL }}
+          NEXT_TELEMETRY_DISABLED: ${{ secrets.NEXT_TELEMETRY_DISABLED }}
+          PINO_LOG_LEVEL: ${{ secrets.PINO_LOG_LEVEL }}
+          NEXT_PUBLIC_PROMISE_CACHE_DEBUG: ${{ secrets.NEXT_PUBLIC_PROMISE_CACHE_DEBUG }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+      - name: Test
+        run: npm run lint
+      - name: Deploy
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: 'portfolio'
+          directory: 'out'
+          gitHubToken: ${{ secrets.GH_TOKEN }}
