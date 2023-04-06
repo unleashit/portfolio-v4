@@ -8,12 +8,21 @@ jobs:
     name: Deploy to Cloudflare Pages
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
           node-version: 18.15.0
-          cache: npm
+        cache: 'npm'
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
       - name: Install
-        run: npm install
+        run: npm ci
+
       - name: Build
         run: npm run build
         env:
@@ -23,8 +32,10 @@ jobs:
           PINO_LOG_LEVEL: ${{ secrets.PINO_LOG_LEVEL }}
           NEXT_PUBLIC_PROMISE_CACHE_DEBUG: ${{ secrets.NEXT_PUBLIC_PROMISE_CACHE_DEBUG }}
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+
       - name: Test
         run: npm run lint
+
       - name: Deploy
         uses: cloudflare/pages-action@1
         with:
