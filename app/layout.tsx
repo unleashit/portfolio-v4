@@ -1,7 +1,7 @@
+import { ReactNode } from 'react';
 import logger from '@/lib/logger';
 import GlobalState from '@/components/providers';
 import globalMeta from './metadata';
-import { Footer } from '@/components/footer/footer';
 import { Oswald, Sanchez } from 'next/font/google';
 const oswald = Oswald({
   weight: '400',
@@ -18,7 +18,7 @@ import '@/assets/scss/global.scss';
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   logger.info('Root Layout called');
 
@@ -26,8 +26,6 @@ export default async function RootLayout({
     <html lang="en" className={`${oswald.variable} ${sanchez.variable}`}>
       <body>
         <GlobalState>{children}</GlobalState>
-        {/* @ts-expect-error Server Component */}
-        <Footer />
       </body>
     </html>
   );

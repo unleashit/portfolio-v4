@@ -1,5 +1,6 @@
 import { Project, Skills, Blocks, Navigation } from '../directus';
 import { directus } from '@/lib/services';
+import { FormValues } from '@/components/contactForm/contactForm';
 
 type Data<T> = {
   data: T;
@@ -38,6 +39,15 @@ export async function getSkills() {
   return (
     await directus().get<Data<Skills[]>>(`/items/skills?fields=${fields}`)
   ).data;
+}
+
+export async function sendContact<T>(data: T) {
+  return await directus().post<T>('/items/contacts', {
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 }
 
 export default async function getHomeData() {

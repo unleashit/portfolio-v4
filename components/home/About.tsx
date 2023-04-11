@@ -1,9 +1,7 @@
-import React, { Suspense } from 'react';
 import Skills from '@/components/home/Skills';
 import { getHomeBlocks } from '../../app/data';
 import { findKeyWithValue } from '@/lib/utils.new';
 import { CMS } from '@/components/common/cms';
-import Loader from '@/components/common/loader';
 import { assetsURL } from '@/lib/constants';
 
 interface AboutProps {
@@ -38,10 +36,8 @@ export default async function About({ animation }: AboutProps) {
         </div>
         <div className="skills col-lg-4 clearfix" id="skills">
           <h3 className="hidden-lg-up">Skills</h3>
-          <Suspense fallback={<Loader />}>
-            {/* @ts-expect-error Server Component */}
-            <Skills />
-          </Suspense>
+          {/* @ts-expect-error Server Component */}
+          <Skills />
         </div>
       </div>
     </section>

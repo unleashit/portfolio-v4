@@ -27,11 +27,11 @@ async function Gallery({
         <img src={`${assetsURL}/${image_main}?format=webp`} alt="" />
       </div>
       {image_mobile && (
-        <div className="hidden-md-down mobile-image">
+        <div className="d-none d-lg-block mobile-image">
           <img src={`${assetsURL}/${image_mobile}?format=webp`} alt="" />
         </div>
       )}
-      <div className="hidden-lg-up visit-site-link">
+      <div className="d-lg-none visit-site-link">
         <a href={link ? link : '#'} target="_blank">
           <button className="button button-smaller">
             VISIT SITE &nbsp;&nbsp;

@@ -11,7 +11,7 @@ const Hamburger = () => {
   };
 
   return (
-    <div className="hamburger hidden-md-up container-fluid">
+    <div className="hamburger d-md-none container-fluid">
       <div onClick={toggleHamburger}>
         <i className="fa fa-bars" /> MENU
       </div>

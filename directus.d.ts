@@ -15,7 +15,7 @@ export type Contacts = {
   date_updated?: string | null;
   email: string;
   message: string;
-  name?: string | null;
+  name: string;
   phone?: string | null;
 };
 

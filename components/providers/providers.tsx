@@ -5,6 +5,19 @@ import { initialState, reducer } from '@/lib/clientState/reducer';
 import type { Action, GlobalState } from '@/lib/clientState/reducer';
 import { GlobalContext } from '@/lib/clientState/context';
 import { arrayEquals } from '@/lib/utils.new';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+// import { faFaceFlushed } from '@fortawesome/free-regular-svg-icons';
+import {
+  faFileText,
+  faEnvelope,
+  faComments,
+  faBars,
+  faClose,
+  faExternalLink,
+  faRefresh,
+  faRotate,
+  faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
 
 const handleLocalStorage = (
   state: GlobalState,
@@ -45,6 +58,21 @@ function GlobalState({ children }: React.PropsWithChildren) {
     // set local storage on state change or rehydrate on session loss
     handleLocalStorage(state, dispatch);
   }, [state, dispatch]);
+
+  React.useEffect(() => {
+    dom.watch();
+    library.add(
+      faFileText,
+      faEnvelope,
+      faComments,
+      faBars,
+      faClose,
+      faExternalLink,
+      faRefresh,
+      faRotate,
+      faSpinner
+    );
+  }, []);
 
   return (
     <GlobalContext.Provider value={{ state, dispatch }}>

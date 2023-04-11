@@ -88,6 +88,9 @@ html.menu-open body {
     &:hover {
       background-color: #333;
     }
+    &.logo {
+      background: none;
+    }
   }
 }
 

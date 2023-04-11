@@ -16,7 +16,7 @@ async function PortfolioDetail({ params }: PageProps) {
           <h3>{project.title}</h3>
           <div>{project.description}</div>
           <Tags tags={project.tags} />
-          <div className="hidden-md-down visit-site-link">
+          <div className="d-none d-lg-block visit-site-link">
             <a href={project.link ? project.link : '#'} target="_blank">
               <button className="button button-smaller">
                 VISIT SITE &nbsp;&nbsp;

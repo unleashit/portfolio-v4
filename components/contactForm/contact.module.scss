@@ -1,0 +1,41 @@
+@import "../../assets/scss/variables.scss";
+@import "../../assets/scss/bootstrap_vars.scss";
+
+.contactForm {
+  h4 {
+    margin-bottom: 15px;
+  }
+  .message {
+    height: 160px;
+  }
+  .error {
+    color: $footer-links;
+    padding-left: 13px;
+    }
+  :global {
+    .button {
+      width: 140px;
+    }
+    .form-control:focus {
+      color: #999;
+      background-color: #444;
+      border: 0;
+      outline: none;
+    }
+  }
+}
+
+.thanks {
+  text-align: center;
+  font-family: "Sanchez", serif;
+  font-size: 2em;
+  color: $footer-links;
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, md)) {
+  .contact-form {
+    button {
+      width: 100%;
+    }
+  }
+}

@@ -96,20 +96,20 @@ $link-hover-decoration:      underline !default;
 // Define the minimum and maximum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 
-//$grid-breakpoints: (
-//  // Extra small screen / phone
-//  xs: 0,
-//  // Small screen / phone
-//  sm: 544px,
-//  // Medium screen / tablet
-//  md: 768px,
-//  // Large screen / desktop
-//  lg: 992px,
-//  // Extra large screen / wide desktop
-//  xl: 1200px,
-//  // custom larger breakpoint
-//  xxl: 1400px
-//);
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px,
+  // custom larger breakpoint
+  xxl: 1400px
+);
 
 // Grid containers
 //

@@ -1,46 +1,21 @@
-// export default async function Home() {
-//
-//   const project = await getProject("b141dd40-77ae-4b86-8284-58f95d26ae80");
-//
-//   return !project ? (
-//     <div>loading...</div>
-//   ) : (
-//     <div>
-//       <Head>
-//         <title>Jason Gallagher</title>
-//       </Head>
-//       <h1>this is the home page</h1>
-//       <pre><code>{project && JSON.stringify(project, null, 2)}</code></pre>
-//     </div>
-//   );
-// }
-
-// import StickyHeader from '@/components/stickyHeader/stickyHeader';
-// import ResponsiveMenu from '@/components/navigation/responsiveMenu';
 import Header from '@/components/home/Header';
 import WhoWhatWhere from '@/components/home/WhoWhatWhere';
 import About from '@/components/home/About';
-// import Client from "./Client";
-import logger from '@/lib/logger';
 import Portfolio from '@/components/portfolio/Portfolio';
-import { StickyHeader } from '@/components/stickyHeader/stickyHeader';
+import { PrimaryHeader } from '@/components/primaryHeader/primaryHeader';
 import Navigation from '@/components/navigation/navigation';
 import getHomeData from './data';
+import { Footer } from '@/components/footer/footer';
+import MobileNavigation from '@/components/mobileNavigation/mobileNavigation';
+import Loader from '@/components/common/loader';
+import React, { Suspense } from 'react';
 
 // import { animation, getEnvironment } from "@/lib/utils";
 
 // import throttle from 'lodash/throttle';
 export default async function Home() {
-  logger.info('HOME called');
   await getHomeData();
 
-  // static readyOnActions(dispatch) {
-  //   return Promise.all([
-  //     dispatch(portfolioActions.fetchPortfolioIfNeeded()),
-  //     dispatch(portfolioActions.fetchPortfolioIfNeeded()),
-  //   ]);
-  // }
-  //
   // constructor(props) {
   //   super(props);
   //   this.boundHandleScroll = throttle(this.handleScroll.bind(this), 150);
@@ -100,14 +75,6 @@ export default async function Home() {
   //     ['contact-area', 'animateContact'],
   //   ].forEach((animation) => this.triggerAnimation(animation));
   // }
-  //
-  // openBurger() {
-  //   this.props.dispatch(globalActions.openHamburger());
-  // }
-  //
-  // closeBurger() {
-  //   this.props.dispatch(globalActions.closeHamburger());
-  // }
 
   // const {
   //   hamburgerState,
@@ -120,23 +87,22 @@ export default async function Home() {
 
   return (
     <div id="home">
-      <StickyHeader
-      // remoteId={this.props.liveChat.remoteId}
-      // openBurger={this.openBurger.bind(this)}
+      <PrimaryHeader
+        isHome
+        // remoteId={this.props.liveChat.remoteId}
       >
         {/* @ts-expect-error Server Component */}
         <Navigation template="interior" ulClass="sticky-nav" />
-      </StickyHeader>
-      {/*<ResponsiveMenu*/}
-      {/*  closeBurger={this.closeBurger.bind(this)}*/}
-      {/*  menuVisible={hamburgerState}*/}
-      {/*/>*/}
+      </PrimaryHeader>
+      <MobileNavigation>
+        {/* @ts-expect-error Server Component */}
+        <Navigation template="hamburger" ulClass="responsive-nav" />
+      </MobileNavigation>
 
       {/* @ts-expect-error Server Component */}
       <Header
       // openBurger={this.openBurger.bind(this)}
       />
-      {/*<Client />*/}
       {/* @ts-expect-error Server Component */}
       <WhoWhatWhere />
       {/* @ts-expect-error Server Component */}
@@ -144,22 +110,18 @@ export default async function Home() {
         animation={() => undefined}
         // animation={animation.bind(this, animateAbout, animateOff)}
       />
+      <Suspense fallback={<Loader />}>
+        {/* @ts-expect-error Server Component */}
+        <Portfolio
+        // animation={animation.bind(
+        //   this,
+        //   animatePortfolio,
+        //   animateOff
+        // )}
+        />
+      </Suspense>
       {/* @ts-expect-error Server Component */}
-      <Portfolio
-      // animation={animation.bind(
-      //   this,
-      //   animatePortfolio,
-      //   animateOff
-      // )}
-      />
+      <Footer />
     </div>
   );
 }
-
-// function mapStateToProps(state) {
-//   return {
-//     portfolio: state.portfolio,
-//     global: state.global,
-//     liveChat: state.liveChat,
-//   };
-// }

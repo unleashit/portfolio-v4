@@ -2,88 +2,109 @@
 
 import { useForm } from 'react-hook-form';
 import { Input, Textarea } from '@/components/common/formParts';
-import { sendContact } from './data';
+
 import Loader from '@/components/common/loader';
 import { useState } from 'react';
+import { sendContact } from '../../app/data';
+import { NextPromiseCacheError } from 'next-promise-cache';
+import styles from './contact.module.scss';
 
-export interface ContactFormValues {
+export interface FormValues {
   name: string;
   email: string;
   phone?: string;
   message: string;
 }
 
+interface ServerFormSubmitError<T extends string = string> {
+  message: string;
+  extensions: {
+    code: string;
+    field: T;
+    type: string;
+  };
+}
+
+const mapServerErrors = (errors: ServerFormSubmitError<keyof FormValues>[]) => {
+  const obj: Record<string, boolean> = {};
+  return errors.reduce<Record<string, any>[]>((a, b) => {
+    if (!(b.extensions.field in obj)) {
+      obj[b.extensions.field] = true;
+      a.push({
+        key: b.extensions.field,
+        val: `${b.extensions.field} is invalid`,
+      });
+    }
+    return a;
+  }, []);
+};
+
 function ContactForm() {
   const {
     register,
     handleSubmit,
     reset,
+    setError,
     formState: { errors, isSubmitting, isSubmitSuccessful },
-  } = useForm<ContactFormValues>({ mode: 'onBlur' });
-  const [error, setError] = useState<null | Error>(null);
+  } = useForm<FormValues>({ mode: 'onBlur' });
+  const [fetchError, setFetchError] = useState<null | Error>(null);
 
-  if (isSubmitSuccessful && !error) {
+  const onSubmit = handleSubmit(async (data) => {
+    await sendContact(data).catch(async (err: NextPromiseCacheError) => {
+      if (err.status === 400) {
+        const resp = await err.response.json();
+        const serverErrors = mapServerErrors(resp.errors);
+
+        serverErrors.forEach((e) => {
+          setError(e.key, {
+            type: 'server',
+            message: e.val,
+          });
+        });
+      } else {
+        console.error(err.status);
+        setFetchError(err);
+      }
+    });
+  });
+
+  if (isSubmitSuccessful && !fetchError) {
     setTimeout(() => {
       reset();
     }, 5000);
 
-    return (
-      <div className="col-lg-8">
-        <p className="thanks">Thanks for your email!</p>
-      </div>
-    );
+    return <p className={styles.thanks}>Thanks for your email!</p>;
   }
 
-  const onSubmit = handleSubmit(async (data) => {
-    const sent = await sendContact(data).catch((e) => {
-      console.error(e);
-      setError(e);
-    });
-    console.log(sent);
-  });
-
-  // const onSubmit = handleSubmit((data) => {
-  //   return new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       console.log(data);
-  //       resolve("");
-  //     }, 2000);
-  //   });
-  // });
-
-  if (error) {
+  if (fetchError) {
     return (
-      <>
+      <div className={styles.contactForm}>
         <p>Error: Unable to send message:</p>
-        <pre style={{ color: '#86af6e' }}>{error.message}</pre>
+        <pre style={{ color: '#86af6e' }}>{fetchError.message}</pre>
         <button
           className="button button-xs"
           onClick={() => {
             reset();
-            setError(null);
+            setFetchError(null);
           }}
         >
           Try again
         </button>
-      </>
+      </div>
     );
   }
 
   return (
-    <>
-      <Loader
-        style={{
-          display: isSubmitting ? 'flex' : 'none',
-          height: 'auto',
-          width: 'auto',
-        }}
-      />
-      <h4
-        style={{ display: isSubmitting ? 'none' : 'block' }}
-        className="send-message"
-      >
-        SEND A MESSAGE
-      </h4>
+    <div className={styles.contactForm}>
+      {isSubmitting && (
+        <Loader
+          style={{
+            height: 'auto',
+            width: 'auto',
+          }}
+        />
+      )}
+      {!isSubmitting && <h4 className="send-message">SEND A MESSAGE</h4>}
       <form
         onSubmit={onSubmit}
         style={{ display: isSubmitting ? 'none' : 'block' }}
@@ -95,6 +116,7 @@ function ContactForm() {
           })}
           type="text"
           placeholder="Name"
+          className="form-control"
           errors={errors.name}
         />
         <Input
@@ -107,6 +129,7 @@ function ContactForm() {
           })}
           type="text"
           placeholder="Email"
+          className="form-control"
           errors={errors.email}
         />
         <Input
@@ -115,6 +138,7 @@ function ContactForm() {
           })}
           type="text"
           placeholder="Phone"
+          className="form-control"
         />
         <Textarea
           register={register('message', {
@@ -124,7 +148,7 @@ function ContactForm() {
             maxLength: { value: 3000, message: 'Message is too long' },
           })}
           placeholder="Message"
-          className="form-control message"
+          className={`form-control ${styles.message}`}
           errors={errors.message}
         />
         <div>
@@ -137,7 +161,7 @@ function ContactForm() {
           </button>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 

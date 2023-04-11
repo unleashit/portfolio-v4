@@ -13,6 +13,7 @@ const nextConfig = {
   },
   reactStrictMode: false,
   swcMinify: true,
+  poweredByHeader: false,
 };
 
 // module.exports = withBundleAnalyzer(nextConfig);

@@ -53,7 +53,7 @@ export async function Footer({ slug }: { slug?: string }) {
               {/*  performance, accessibility and SEO!*/}
               {/*</p>*/}
             </div>
-            <div className="contact-form col-lg-8">
+            <div className="col-lg-8">
               <ContactForm />
             </div>
           </div>

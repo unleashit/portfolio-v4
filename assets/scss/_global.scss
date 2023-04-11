@@ -19,7 +19,7 @@ h3 {
 }
 
 input,
-textarea {
+textarea, .form-control {
   &:focus {
     box-shadow: 0 0 25px rgba(0,0,0,0.4) inset;
     color: #999;
@@ -124,9 +124,15 @@ html input[disabled] {
   }
 }
 
-html.not-found-page body {
+//html.not-found-page body {
+//  background-color: #eaeaea;
+//}
+
+// temp
+.center-container.not-found {
   background-color: #eaeaea;
 }
+
 .not-found-404 {
   width: 447px;
   text-align: center;
