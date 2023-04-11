@@ -20,7 +20,7 @@
     "bootstrap": "^5.2.3",
     "lodash": "^4.17.21",
     "next": "^13.3.1-canary.3",
-    "next-promise-cache": "file:../../next-promise-cache",
+    "next-promise-cache": "^0.6.2",
     "pino": "^8.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
