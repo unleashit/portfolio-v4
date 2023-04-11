@@ -1,6 +1,5 @@
 import { Project, Skills, Blocks, Navigation } from '../directus';
 import { directus } from '@/lib/services';
-import { FormValues } from '@/components/contactForm/contactForm';
 
 type Data<T> = {
   data: T;
