@@ -51,7 +51,7 @@ const handleLocalStorage = (
   }
 };
 
-function GlobalState({ children }: React.PropsWithChildren) {
+function GlobalState({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
   React.useEffect(() => {
