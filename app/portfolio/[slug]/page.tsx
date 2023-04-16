@@ -2,7 +2,8 @@ import { getProjects } from '../../data';
 import { getProjectBySlug } from './data';
 import Gallery from './gallery';
 import Tags from './tags';
-import style from './portfolio.module.scss';
+import styles from './portfolio.module.scss';
+import { CMSMarkup } from '@/components/common/CMSMarkup';
 
 type PageProps = { params: { slug: string } };
 
@@ -10,22 +11,24 @@ async function PortfolioDetail({ params }: PageProps) {
   const project = await getProjectBySlug(params.slug);
 
   return (
-    <div className="portfolio-detail container-fluid">
+    <div className={`${styles.portfolioDetail} container-fluid`}>
       <div className="row">
         <div className="col-lg-4">
           <h3>{project.title}</h3>
-          <div>{project.description}</div>
+          <div>
+            <CMSMarkup html={project.description} name="project-description" />
+          </div>
           <Tags tags={project.tags} />
-          <div className="d-none d-lg-block visit-site-link">
+          <div className={`d-none d-lg-block ${styles.visitSiteLink}`}>
             <a href={project.link ? project.link : '#'} target="_blank">
               <button className="button button-smaller">
                 VISIT SITE &nbsp;&nbsp;
-                <i className="fa fa-external-link" />
+                {/*<i className="fa fa-external-link" />*/}
               </button>
             </a>
           </div>
         </div>
-        <div className={`col-lg-6 ${style.gallery}`}>
+        <div className={`col-lg-6 ${styles.gallery}`}>
           {/* @ts-expect-error Server Component */}
           <Gallery project={project} slug={params.slug} />
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const CMS = ({
+export const CMSMarkup = ({
   html,
   name,
 }: {

@@ -1,10 +1,10 @@
-import React from 'react';
+import styles from './portfolio.module.scss';
 
 const Tags = ({ tags }: { tags: string[] }) => {
   return (
-    <ul className="portfolio-tags">
+    <ul className={styles.portfolioTags}>
       {tags.map((tag, i) => (
-        <li key={i} className="skill">
+        <li key={i} className={styles.skill}>
           {tag}
         </li>
       ))}

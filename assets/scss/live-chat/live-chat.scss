@@ -2,7 +2,7 @@
   overflow: hidden;
   transition: all cubic-bezier(0.65, 0.05, 0.36, 1) 0.5s;
   &.live-chat-open {
-    transform: translate(-$chat-width, 0);
+    transform: translate(var(--jg-chat-width), 0);
   }
 }
 
@@ -20,7 +20,7 @@
   box-shadow: 0 0 0 5px rgba(0,0,0,0.3);
   color: #ddd;
   text-align: center;
-  font-family: Oswald, sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   text-transform: uppercase;
@@ -41,11 +41,11 @@
   border-radius: 50%;
   opacity: 1;
   &.chat-online {
-    background-color: $light-green;
+    background-color: var(--jg-lime-green);
     animation: blink-animation 2.5s infinite;
   }
   &.chat-offline {
-    background-color: $chat-offline;
+    background-color: var(--jg-crimson);
   }
 }
 
@@ -64,11 +64,11 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: $chat-width;
+  width: var(--jg-chat-width);
   padding: 60px 30px 30px 30px;
   background: #292929;
   color: #eee;
-  transform: translate($chat-width, 0);
+  transform: translate(var(--jg-chat-width), 0);
   transition: transform cubic-bezier(0.65, 0.05, 0.36, 1) 0.5s;
   &.live-chat-open {
     transform: translate(0, 0);
@@ -137,7 +137,7 @@
     background: forestgreen;
   }
   .not-connected {
-    background: $chat-offline;
+    background: var(--jg-crimson);
   }
   .posting {
     border-bottom: 1px solid #555;
@@ -173,13 +173,13 @@
   font-size: 0.9rem;
   .fa {
     animation: blink-animation 2.5s infinite;
-    color: $chat-online;
+    color: var(--jg-lime-green);
   }
 }
 .chat-offline {
   font-size: 0.9rem;
   .fa {
-    color: $chat-offline;
+    color: var(--jg-crimson);
   }
 }
 

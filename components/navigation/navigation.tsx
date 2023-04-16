@@ -3,15 +3,16 @@ import Link from 'next/link';
 import { navWithCtx } from '@/components/navigation/navWithCtx';
 import { JGLogo } from '@/lib/constants';
 import { getNavigation } from '../../app/data';
+import styles from './navigation.module.scss';
 
 export interface NavigationProps {
   template?: 'home' | 'interior' | 'hamburger';
-  ulClass?: string;
+  ulClass?: 'mainNav' | 'responsiveNav' | 'primaryNav';
 }
 
 export default async function Navigation({
   template = 'home',
-  ulClass = 'main-nav',
+  ulClass = 'mainNav',
 }: NavigationProps) {
   const navData = await getNavigation();
   const navigation = navWithCtx(navData, template);
@@ -19,7 +20,7 @@ export default async function Navigation({
 
   return (
     <nav>
-      <ul className={ulClass}>
+      <ul className={styles[ulClass]}>
         {navigation.map((item: any) => {
           return item.title === '##LOGO##' ? (
             <Logo key="logo" isMobile={isMobile} />
@@ -55,11 +56,11 @@ export function Logo({ isMobile }: { isMobile: boolean }) {
   const size = isMobile ? 100 : 42;
   return (
     <li>
-      <Link href="/" className="logo">
+      <Link href="/" className={styles.logo}>
         <img
           src={JGLogo}
-          alt="Jason Gallagher"
-          className={isMobile ? 'jg-logo-menu' : 'jg-logo'}
+          alt="jg logo"
+          className={isMobile ? styles.jgLogoMobile : styles.jgLogo}
           width={size}
           height={size}
         />

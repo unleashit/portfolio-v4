@@ -1,186 +1,186 @@
-@import "../bootstrap_vars";
-@import "../_variables";
-@import "../_mixins";
-
-#interior-page .sticky-header {
-  display: block !important;
-  transition: none;
-  h3,
-  p,
-  a {
-    transition: none;
-  }
-}
-.hamburger-alt {
-  padding-left: 35px;
-  color: #fff;
-  font-size: 1.2rem;
-  cursor: pointer;
-  i {
-    font-size: 1.5rem;
-  }
-}
-
-.portfolio-detail-loading {
-  height: 400px;
-  color: #333;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  .caption {
-    padding-top: 10px;
-  }
-}
-.portfolio-detail {
-  min-height: 400px;
-}
-.portfolio-detail, .portfolio-detail-loading {
-  margin-top: 140px;
-  margin-bottom: 80px;
-}
-
-.detail-page-header {
-  margin: $section-padding 0 85px;
-  nav {
-    text-align: center;
-  }
-}
-
-.detail-page-nav {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  li {
-    display: inline-block;
-    /*    &:first-child {
-      margin-right: 25px;
-    }*/
-  }
-  a {
-    display: inline-block;
-    padding: 0 17px;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    &:link,
-    &:hover,
-    &:active,
-    &:visited {
-      color: #000;
-      text-decoration: none;
-    }
-  }
-}
-
-.visit-site-link {
-  margin-top: 30px;
-}
-
-.gallery {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  li {
-    // border: 4px solid #ddd;
-  }
-}
-
-.mobile-image {
-  position: absolute;
-  top: 115px;
-  right: -176px;
-  transform: rotate(9deg);
-  animation: slide-mobile 0.8s;
-  img {
-    width: 82%;
-  }
-}
-
-.portfolio-tags {
-  margin: 30px 0 0 0;
-  padding: 0;
-  list-style: none;
-  .skill {
-    display: inline-block;
-    width: 31%;
-    margin-right: 2%;
-    padding: 5px 10px;
-    font-size: 0.8rem;
-    box-shadow: none;
-  }
-}
-
-.next-prev-btns {
-  margin-top: 30px;
-  button {
-    width: 80px;
-    text-transform: none;
-    &:first-child {
-      margin-right: 8px;
-    }
-  }
-}
-
-#footer-interior .footer-border {
-  background-color: #fff;
-}
-
-@keyframes slide-mobile {
-  0% {
-    right: -4000px;
-  }
-  75% {
-    right: -4000px;
-  }
-  100% {
-    right: -176px;
-  }
-}
-
-@media screen and (max-width: map-get($grid-breakpoints, lg)) {
-  .portfolio-detail {
-    margin-top: 104px;
-  }
-  .gallery {
-    margin-top: 25px;
-    img {
-      width: 100%;
-    }
-  }
-  .portfolio-tags {
-    .skill {
-      width: 47% !important;
-    }
-  }
-  .mobile-image {
-    top: 70px;
-    img {
-      width: 65%;
-    }
-  }
-  .next-prev-btns {
-    text-align: center;
-  }
-  .visit-site-link button {
-    width: 100%;
-  }
-}
-
-
-@media screen and (max-width: map-get($grid-breakpoints, lg)) {
-  .portfolio-tags {
-    .skill {
-      width: 31% !important;
-    }
-  }
-}
-
-@media screen and (max-width: 340px) {
-  .portfolio-tags {
-    .skill {
-      width: 47% !important;
-    }
-  }
-}
+//@import "../bootstrap_vars";
+//@import "../_variables";
+//@import "../_mixins";
+//
+//#interior-page .sticky-header {
+//  display: block !important;
+//  transition: none;
+//  h3,
+//  p,
+//  a {
+//    transition: none;
+//  }
+//}
+//.hamburger-alt {
+//  padding-left: 35px;
+//  color: #fff;
+//  font-size: 1.2rem;
+//  cursor: pointer;
+//  i {
+//    font-size: 1.5rem;
+//  }
+//}
+//
+//.interior .footer-border {
+//  background-color: #fff;
+//}
+//
+//.portfolio-detail-loading {
+//  height: 400px;
+//  color: #333;
+//  text-align: center;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  justify-content: center;
+//  .caption {
+//    padding-top: 10px;
+//  }
+//}
+//.portfolio-detail {
+//  min-height: 400px;
+//}
+//.portfolio-detail, .portfolio-detail-loading {
+//  margin-top: 140px;
+//  margin-bottom: 80px;
+//}
+//
+//.detail-page-header {
+//  margin: $section-padding 0 85px;
+//  nav {
+//    text-align: center;
+//  }
+//}
+//
+//.detail-page-nav {
+//  display: inline-block;
+//  margin: 0;
+//  padding: 0;
+//  list-style: none;
+//  li {
+//    display: inline-block;
+//    /*    &:first-child {
+//      margin-right: 25px;
+//    }*/
+//  }
+//  a {
+//    display: inline-block;
+//    padding: 0 17px;
+//    font-size: 1.5rem;
+//    text-transform: uppercase;
+//    &:link,
+//    &:hover,
+//    &:active,
+//    &:visited {
+//      color: #000;
+//      text-decoration: none;
+//    }
+//  }
+//}
+//
+//.visit-site-link {
+//  margin-top: 30px;
+//}
+//
+//.gallery {
+//  margin: 0;
+//  padding: 0;
+//  list-style: none;
+//  li {
+//    // border: 4px solid #ddd;
+//  }
+//}
+//
+//.mobile-image {
+//  position: absolute;
+//  top: 115px;
+//  right: -176px;
+//  transform: rotate(9deg);
+//  animation: slide-mobile 0.8s;
+//  img {
+//    width: 82%;
+//  }
+//}
+//
+//.portfolio-tags {
+//  margin: 30px 0 0 0;
+//  padding: 0;
+//  list-style: none;
+//  .skill {
+//    display: inline-block;
+//    width: 31%;
+//    margin-right: 2%;
+//    padding: 5px 10px;
+//    font-size: 0.8rem;
+//    box-shadow: none;
+//  }
+//}
+//
+//.next-prev-btns {
+//  margin-top: 30px;
+//  button {
+//    width: 80px;
+//    text-transform: none;
+//    &:first-child {
+//      margin-right: 8px;
+//    }
+//  }
+//}
+//
+//@keyframes slide-mobile {
+//  0% {
+//    right: -4000px;
+//  }
+//  75% {
+//    right: -4000px;
+//  }
+//  100% {
+//    right: -176px;
+//  }
+//}
+//
+//@media screen and (max-width: map-get($grid-breakpoints, lg)) {
+//  .portfolio-detail {
+//    margin-top: 104px;
+//  }
+//  .gallery {
+//    margin-top: 25px;
+//    img {
+//      width: 100%;
+//    }
+//  }
+//  .portfolio-tags {
+//    .skill {
+//      width: 47% !important;
+//    }
+//  }
+//  .mobile-image {
+//    top: 70px;
+//    img {
+//      width: 65%;
+//    }
+//  }
+//  .next-prev-btns {
+//    text-align: center;
+//  }
+//  .visit-site-link button {
+//    width: 100%;
+//  }
+//}
+//
+//
+//@media screen and (max-width: map-get($grid-breakpoints, lg)) {
+//  .portfolio-tags {
+//    .skill {
+//      width: 31% !important;
+//    }
+//  }
+//}
+//
+//@media screen and (max-width: 340px) {
+//  .portfolio-tags {
+//    .skill {
+//      width: 47% !important;
+//    }
+//  }
+//}

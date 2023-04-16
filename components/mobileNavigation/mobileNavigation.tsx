@@ -1,8 +1,10 @@
 'use client';
 
-import { ReactNode, useContext } from 'react';
+import { ReactNode, useContext, useEffect } from 'react';
 import { GlobalContext } from '@/lib/clientState/context';
 import { TOGGLE_HAMBURGER } from '@/lib/clientState/reducer';
+import styles from './mobile-navigation.module.scss';
+import clsx from 'clsx';
 
 interface MobileNavigationProps {
   // menuVisible?: boolean;
@@ -13,19 +15,37 @@ export default function MobileNavigation({
 }: // menuVisible = false,
 MobileNavigationProps) {
   const { state, dispatch } = useContext(GlobalContext);
+
+  useEffect(() => {
+    const de = document.documentElement;
+
+    if (state.hamburgerState) {
+      de.classList.add('mobile-menu-open');
+    } else {
+      de.classList.remove('mobile-menu-open');
+    }
+    return () => {
+      de.classList.remove('mobile-menu-open');
+    };
+  }, [state.hamburgerState]);
+
   const closeBurger = () => {
     dispatch({ type: TOGGLE_HAMBURGER });
   };
 
-  const classes = `resp-menu d-none-md${state.hamburgerState ? ' on' : ' off'}`;
-
   return (
-    <div className={classes}>
-      <div className="close-menu" onClick={closeBurger}>
+    <div
+      className={clsx(
+        styles.respMenu,
+        'd-none-md',
+        !state.hamburgerState && styles.off
+      )}
+    >
+      <div className={styles.closeMenu} onClick={closeBurger}>
         <i className="fa fa-close" /> CLOSE
       </div>
-      <h3 className="name">Jason Gallagher</h3>
-      <h3 className="title">Front End Engineer</h3>
+      <h3 className={styles.name}>Jason Gallagher</h3>
+      <h3 className={styles.title}>Front End Engineer</h3>
       <div onClick={closeBurger}>{children}</div>
     </div>
   );

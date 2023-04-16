@@ -1,17 +1,19 @@
 'use client';
 
 import { TOGGLE_HAMBURGER } from '@/lib/clientState/reducer';
-import { useContext } from 'react';
+import { useCallback, useContext } from 'react';
 import { GlobalContext } from '@/components/providers';
+import styles from './header.module.scss';
+import clsx from 'clsx';
 
 const Hamburger = () => {
   const { dispatch } = useContext(GlobalContext);
-  const toggleHamburger = () => {
+  const toggleHamburger = useCallback(() => {
     dispatch({ type: TOGGLE_HAMBURGER });
-  };
+  }, [dispatch]);
 
   return (
-    <div className="hamburger d-md-none container-fluid">
+    <div className={clsx(styles.hamburger, 'd-md-none', 'container-fluid')}>
       <div onClick={toggleHamburger}>
         <i className="fa fa-bars" /> MENU
       </div>

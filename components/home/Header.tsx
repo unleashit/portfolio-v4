@@ -3,24 +3,24 @@ import Link from 'next/link';
 import Navigation from '@/components/navigation/navigation';
 import { getHomeBlocks } from '../../app/data';
 import { findKeyWithValue } from '@/lib/utils.new';
-import { CMS } from '@/components/common/cms';
-import Hamburger from '@/components/common/hamburger';
-// import Hamburger from "@/components/common/hamburger";
+import { CMSMarkup } from '@/components/common/CMSMarkup';
+import Hamburger from '@/components/home/hamburger';
+import styles from './header.module.scss';
 
 export default async function Header() {
   const blocks = await getHomeBlocks();
   const fEE = findKeyWithValue(blocks, 'title', 'Front End Engineer');
 
   return (
-    <header className="main-header">
+    <header className={styles.mainHeader}>
       <Hamburger />
       {/* @ts-expect-error Server Component */}
       <Navigation />
-      <div className="title-tagline-wrapper">
+      <div className={styles.titleTaglineWrapper}>
         <h1>{fEE.title}</h1>
-        <CMS html={fEE.content} name={'front end engineer'} />
+        <CMSMarkup html={fEE.content} name={'front end engineer'} />
       </div>
-      <div className="button-wrapper">
+      <div className={styles.buttonWrapper}>
         <Link href="/#work">
           <button className="button button-green">See my work</button>
         </Link>

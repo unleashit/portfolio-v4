@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { getSkills } from '../../app/data';
+import styles from './about.module.scss';
 
 type SkillProps = {
   title?: string;
@@ -16,7 +17,7 @@ type MappedSkills = [
 function Skill({ title, size, color }: SkillProps) {
   return (
     <div
-      className={`skill ${size}`}
+      className={`${styles.skill} ${styles[size]}`}
       style={{ borderLeft: `4px solid ${color}` }}
     >
       {title}
@@ -25,18 +26,7 @@ function Skill({ title, size, color }: SkillProps) {
 }
 
 async function Skills() {
-  console.log('Skills called');
-
   const skills = await getSkills();
-
-  // skills = skills || [];
-
-  // const {
-  //   state: { skills },
-  // } = useContext(GlobalContext);
-
-  //const mappedSkillsMemo = React.useMemo<MappedSkills>(() => {
-  // if (!skills || skills.length) return [];
 
   const mappedSkills: MappedSkills = skills.map(({ title }, i) => {
     const colors = [
@@ -54,10 +44,10 @@ async function Skills() {
     const color = colors[i % colors.length];
     return [title, size, color];
   });
-  //}, [skills]);
 
   return (
     <>
+      <h3>Skills</h3>
       {mappedSkills.map(([title, size, color]) => (
         <Skill key={title} title={title} size={size} color={color} />
       ))}

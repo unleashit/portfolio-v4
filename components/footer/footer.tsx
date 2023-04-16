@@ -1,21 +1,22 @@
 import ContactForm from '@/components/contactForm/contactForm';
 import { getHomeBlocks } from '../../app/data';
 import { findKeyWithValue } from '@/lib/utils.new';
-import { CMS } from '@/components/common/cms';
+import { CMSMarkup } from '@/components/common/CMSMarkup';
 import React from 'react';
 // import OpenChat from '../ReactHelpDesk/client/openChat';
 // import { animation } from '../../libs/utils';
+import styles from './footer.module.scss';
+import clsx from 'clsx';
 
-export async function Footer({ slug }: { slug?: string }) {
+export async function Footer({ isInterior }: { isInterior?: boolean }) {
   const blocks = await getHomeBlocks();
   const contact = findKeyWithValue(blocks, 'title', 'Contact');
   const aboutTheSite = findKeyWithValue(blocks, 'title', 'About the Site');
-  const footerID = slug ? 'footer-interior' : '';
 
   return (
-    <footer className="footer" id={footerID}>
-      <div className="footer-border" />
-      <div className="footer-wrap" id="contact-area">
+    <footer className={clsx(styles.footer, isInterior && styles.interior)}>
+      <div className={styles.footerBorder} />
+      <div className={styles.footerWrap} id="contact-area">
         <div
           // className={`${animation(
           //         this.props.global.animateContact,
@@ -24,7 +25,7 @@ export async function Footer({ slug }: { slug?: string }) {
           // }
           className="container-fluid"
         >
-          <div className="contact row" id="contact">
+          <div className={`${styles.contact} row`} id="contact">
             <div className="col-lg-4">
               <h4>{contact.title}</h4>
               {/*<p className="contact-method chat">*/}
@@ -42,9 +43,9 @@ export async function Footer({ slug }: { slug?: string }) {
               {/*    Email*/}
               {/*  </a>*/}
               {/*</p>*/}
-              <CMS html={contact.content} name="contact" />
+              <CMSMarkup html={contact.content} name="contact" />
               <h4 className="about-this-site">{aboutTheSite.title}</h4>
-              <CMS html={aboutTheSite.content} name="aboutTheSite" />
+              <CMSMarkup html={aboutTheSite.content} name="aboutTheSite" />
               {/*<p className="about-this-site-text">*/}
               {/*  This site is 100% <span>HANDCRAFTED</span> with React, Redux,*/}
               {/*  Node, PostgreSQL, and <span>OF COURSE</span> Html and CSS. It is{" "}*/}

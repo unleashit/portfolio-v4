@@ -1,5 +1,4 @@
-@import "../../assets/scss/variables.scss";
-@import "../../assets/scss/bootstrap_vars.scss";
+@import "../../assets/scss/bootstrap_vars_override";
 
 .contactForm {
   h4 {
@@ -9,7 +8,7 @@
     height: 160px;
   }
   .error {
-    color: $footer-links;
+    color: var(--jg-lime-green-light);
     padding-left: 13px;
     }
   :global {
@@ -27,9 +26,9 @@
 
 .thanks {
   text-align: center;
-  font-family: "Sanchez", serif;
+  font-family: var(--font-sanchez), serif;;
   font-size: 2em;
-  color: $footer-links;
+  color: var(--jg-lime-green-light);
 }
 
 @media screen and (max-width: map-get($grid-breakpoints, md)) {

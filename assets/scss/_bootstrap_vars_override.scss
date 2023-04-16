@@ -1,3 +1,6 @@
+@import "../../node_modules/bootstrap/scss/mixins";
+@import 'mixins';
+
 // Table of Contents
 //
 // Colors
@@ -317,7 +320,24 @@ $input-group-addon-border-color: $input-border-color !default;
 $cursor-disabled:                not-allowed !default;
 
 
+// custom vars
 
+// $body-text: #373a3c; // body text
 
+// colors
+$lime-green: #52b235; // primary => green btns
+$lime-green-light: #86af6e; // footer-links
+$light-purple: #B1B1C9; // secondary => lighter purple from hone page graphics old: #afafc8
+$dark-purple: #595982; // darker purple from hone page graphics
+$dark-gray-dark: #333333; // primary header color
+$dark-gray: #353535; // portfolio grid dark gray
+$dark-gray-med: #828282; // med dark gray btns
+$light-gray: #f0ecec; // skills/project tags
+$crimson: #bc2828; // chat offline indicator
 
+// layout
+$section-padding: 3rem;
+$chat-width: 400px;
 
+// constants
+$assets-url: "https://content.jasongallagher.org/assets"

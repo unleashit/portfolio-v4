@@ -1,7 +1,8 @@
 import Navigation from '@/components/navigation/navigation';
 import { PrimaryHeader } from '@/components/primaryHeader/primaryHeader';
 import { Footer } from '@/components/footer/footer';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
+import Loader from '@/components/common/portfolioLoader';
 
 export default async function PortfolioLayout({
   children,
@@ -21,11 +22,11 @@ export default async function PortfolioLayout({
       {/*</header>*/}
       <PrimaryHeader>
         {/* @ts-expect-error Server Component */}
-        <Navigation template="interior" ulClass="sticky-nav" />
+        <Navigation template="interior" ulClass="primaryNav" />
       </PrimaryHeader>
       {children}
       {/* @ts-expect-error Server Component */}
-      <Footer />
+      <Footer isInterior />
     </>
   );
 }

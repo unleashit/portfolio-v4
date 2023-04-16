@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import Header from '@/components/home/Header';
 import WhoWhatWhere from '@/components/home/WhoWhatWhere';
 import About from '@/components/home/About';
@@ -7,8 +8,7 @@ import Navigation from '@/components/navigation/navigation';
 import getHomeData from './data';
 import { Footer } from '@/components/footer/footer';
 import MobileNavigation from '@/components/mobileNavigation/mobileNavigation';
-import Loader from '@/components/common/loader';
-import React, { Suspense } from 'react';
+import PortfolioLoader from '@/components/common/portfolioLoader';
 
 // import { animation, getEnvironment } from "@/lib/utils";
 
@@ -92,11 +92,11 @@ export default async function Home() {
         // remoteId={this.props.liveChat.remoteId}
       >
         {/* @ts-expect-error Server Component */}
-        <Navigation template="interior" ulClass="sticky-nav" />
+        <Navigation template="interior" ulClass="primaryNav" />
       </PrimaryHeader>
       <MobileNavigation>
         {/* @ts-expect-error Server Component */}
-        <Navigation template="hamburger" ulClass="responsive-nav" />
+        <Navigation template="hamburger" ulClass="responsiveNav" />
       </MobileNavigation>
 
       {/* @ts-expect-error Server Component */}
@@ -107,10 +107,9 @@ export default async function Home() {
       <WhoWhatWhere />
       {/* @ts-expect-error Server Component */}
       <About
-        animation={() => undefined}
-        // animation={animation.bind(this, animateAbout, animateOff)}
+      // animation={animation.bind(this, animateAbout, animateOff)}
       />
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<PortfolioLoader />}>
         {/* @ts-expect-error Server Component */}
         <Portfolio
         // animation={animation.bind(

@@ -1,34 +1,16 @@
-.main-header {
+@import "../../assets/scss/bootstrap_vars_override";
+
+.mainHeader {
   height: 825px;
-  background: url("https://content.jasongallagher.org/assets/a9824768-3995-46a6-a3c8-5a5689778498/header-image.webp?width=3000&format=webp") #46823c no-repeat center top;
+  @include backgroundImgFallback('#{$assets-url}/a9824768-3995-46a6-a3c8-5a5689778498/header-image', 'width=3000');
+  background-color: #46823c;
+  background-repeat: no-repeat;
+  background-position: center top;
   background-size: auto 825px;
   overflow: hidden;
 }
 
-.main-nav {
-  margin: 60px 0 0;
-  padding: 0;
-  text-align: center;
-  list-style: none;
-  li {
-    display: inline-block;
-    line-height: 59px;
-  }
-  a {
-    padding: 0 20px;
-    font-size: 1.7em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #fff;
-    outline: none !important;
-  }
-  .jg-logo {
-    display: inline-block;
-    margin-top: -8px;
-  }
-}
-
-.title-tagline-wrapper {
+.titleTaglineWrapper {
   margin: 0 auto;
   margin-top: 165px;
   padding-left: 0.9375rem;
@@ -50,6 +32,11 @@
   }
 }
 
+.buttonWrapper {
+  margin-top: 152px;
+  text-align: center;
+}
+
 .hamburger {
   position: absolute;
   top: 25px;
@@ -62,30 +49,21 @@
   cursor: pointer;
 }
 
-.button-wrapper {
-  margin-top: 152px;
-  text-align: center;
-}
-
-@media screen and (max-width: map-get($grid-breakpoints, md)) {
-  .main-nav {
-    display: none;
-  }
-
-  .title-tagline-wrapper {
+@include media-breakpoint-down(md) {
+  .titleTaglineWrapper {
     margin-top: 104px;
     h1 {
       font-size: 3.3rem;
       letter-spacing: 1px;
     }
   }
-  .button-wrapper {
+  .buttonWrapper {
     margin-top: 60px;
   }
 }
 
-@media screen and (max-width: map-get($grid-breakpoints, sm)) {
-  .title-tagline-wrapper {
+@include media-breakpoint-down(sm) {
+  .titleTaglineWrapper {
     margin-top: 90px;
     h1 {
       font-size: 2.7rem;
@@ -100,7 +78,8 @@
     top: 18px;
     font-size: 1.7rem;
   }
-  .button-wrapper {
+  .buttonWrapper {
     margin-top: 37px;
   }
 }
+

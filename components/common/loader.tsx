@@ -16,7 +16,7 @@ const Loader = ({ height, style = {} }: LoaderProps) => {
         ...{ ...style },
       }}
     >
-      <i className="fa-solid fa-rotate fa-spiner" />
+      <i className="fa-solid fa-rotate fa-spinner" />
       <div className="caption">Stay tuned...</div>
     </div>
   );

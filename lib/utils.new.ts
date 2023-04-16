@@ -21,3 +21,11 @@ export function arrayEquals<T extends unknown[]>(a: T, b: T) {
     a.every((val, index) => val === b[index])
   );
 }
+
+export const sluggify = (toSlug: string) =>
+  toSlug
+    .trim()
+    .split(' ')
+    .join('-')
+    .replace(/[^a-zA-Z_-]/g, '')
+    .toLowerCase();

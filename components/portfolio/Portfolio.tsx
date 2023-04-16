@@ -1,8 +1,21 @@
 import PortfolioItem from './PortfolioItem';
 import { getProjects } from '../../app/data';
+import styles from './portfolio.module.scss';
 
 export default async function Portfolio() {
   const projects = await getProjects();
+
+  if (!projects || projects.length === 0) {
+    return (
+      <section
+        // className={this.props.animation() + "portfolio clearfix"}
+        className={`${styles.portfolio} clearfix`}
+        id="work"
+      >
+        <p>There are no projects yet.</p>
+      </section>
+    );
+  }
   // renderPortfolio() {
   //     const { readyState, items } = this.props.portfolio;
   //
@@ -43,24 +56,22 @@ export default async function Portfolio() {
   return (
     <section
       // className={this.props.animation() + "portfolio clearfix"}
-      className={'portfolio clearfix'}
+      className={`${styles.portfolio} clearfix`}
       id="work"
     >
-      <div>
-        {projects
-          .sort((a, b) => +a.sort - +b.sort)
-          .map((item, index) => {
-            const color = index % 2 ? '#000' : '#353535';
-            return (
-              <PortfolioItem
-                key={index}
-                index={index}
-                color={color}
-                item={item}
-              />
-            );
-          })}
-      </div>
+      {projects
+        .sort((a, b) => +a.sort - +b.sort)
+        .map((item, index) => {
+          const color = index % 2 ? '#000' : '#353535';
+          return (
+            <PortfolioItem
+              key={index}
+              index={index}
+              color={color}
+              item={item}
+            />
+          );
+        })}
     </section>
   );
 }

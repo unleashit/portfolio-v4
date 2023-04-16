@@ -86,3 +86,13 @@ export default GlobalState;
 // export default function Providers({ children }: { children: React.ReactNode }) {
 //   return <GlobalState>{children}</GlobalState>;
 // }
+
+// fa-file-text
+// fa-github
+// fa-comments
+// fa-envelope
+// fa-bars
+// fa-close
+// fa-external-link
+// fa-refresh
+// fa-spin

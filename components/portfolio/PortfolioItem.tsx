@@ -1,22 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
 import { assetsURL } from '@/lib/constants';
-import { Project } from '../../directus';
-
-const sluggify = (toSlug: string) =>
-  toSlug
-    .trim()
-    .split(' ')
-    .join('-')
-    .replace(/[^a-zA-Z_-]/g, '')
-    .toLowerCase();
+import { DirectusFiles, Project } from '../../directus';
+import { sluggify } from '@/lib/utils.new';
+import styles from './portfolio.module.scss';
+import Img from '@/components/common/Img';
 
 export default function PortfolioItem({
   item,
 }: // index,
 // color,
 {
-  item: Project;
+  item: Omit<Project, 'image_logo'> & {
+    image_logo: DirectusFiles;
+  };
   index: any;
   color: string;
 }) {
@@ -24,20 +21,23 @@ export default function PortfolioItem({
   //   backgroundColor: this.props.color,
   // };
   return (
-    <div className="portfolio-item">
+    <div className={styles.portfolioItem}>
       <Link href={'/portfolio/' + item.slug}>
-        <div className="view-details">
+        <div className={styles.viewDetails}>
           <span>Learn More</span>
         </div>
         <div>
-          <img
-            src={`${assetsURL}/${item.image_logo}/${sluggify(
+          <Img
+            src={`${assetsURL}/${item.image_logo.id}/${sluggify(
               item.title
             )}.webp?format=webp`}
             alt={item.title}
+            {...(item.image_logo.width && { width: item.image_logo.width })}
+            {...(item.image_logo.height && { height: item.image_logo.height })}
+            loading="lazy"
           />
 
-          <div className="portfolio-caption">
+          <div className={styles.portfolioCaption}>
             <p>{item.decription_short}</p>
           </div>
         </div>

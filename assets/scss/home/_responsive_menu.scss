@@ -1,115 +1,24 @@
-html.menu-open body {
-  overflow: hidden;
-  position: fixed;
-}
+//html.menu-open body {
+//  overflow: hidden;
+//  position: fixed;
+//}
 
-.resp-menu {
-  visibility: visible;
-  position: fixed;
-  z-index: 10000;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  padding-top: 70px;
-  background: #333;
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-  opacity: 1;
-  transition: all 0.3s;
-  h3,
-  p,
-  a {
-  }
-  .name {
-    margin-bottom: 4px;
-    font-size: 1.4rem;
-    font-family: "Sanchez", serif;
-  }
-  .title {
-    font-size: 1.9rem;
-  }
-  &.off {
-    visibility: hidden;
-    left: -1000px;
-    opacity: 0;
-    h3,
-    p,
-    a {
-    }
-    .close {
-      right: -1000px;
-    }
-    .jg-logo-menu {
-    }
-  }
-  .jg-logo-menu {
-    display: inline-block;
-    width: 125px;
-    margin-top: 20px;
-    opacity: 0.7;
-  }
-  .close-menu {
-    position: absolute;
-    right: 30px;
-    top: 15px;
-    font-size: 1rem;
-    color: #fff;
-    cursor: pointer;
-    transition: right 0.3s;
-    i {
-      transform: translateY(-2px);
-    }
-  }
-}
-
-.responsive-nav {
-  margin: 34px 0 0;
-  padding: 0;
-  list-style: none;
-  a {
-    display: block;
-    margin-bottom: 5px;
-    padding: 0.6rem;
-    background-color: #111;
-    font-size: 1.1rem;
-    transition: background 350ms ease-in;
-    &:link,
-    &:hover,
-    &:active,
-    &:visited {
-      color: #eee;
-      text-decoration: none;
-    }
-    &:hover {
-      background-color: #333;
-    }
-    &.logo {
-      background: none;
-    }
-  }
-}
-
-@media screen and (max-width: map-get($grid-breakpoints, sm)) {
-  .resp-menu {
-    padding-top: 55px;
-    .close-menu {
-      top: 13px;
-      right: 16px;
-    }
-    .jg-logo-menu {
-      margin-top: 15px;
-    }
-  }
-  .responsive-nav {
-    margin-top: 26px;
-    a {
-      padding: 0.5rem;
-      margin-bottom: 4px;
-    }
-  }
-}
+//@media screen and (max-width: map-get($grid-breakpoints, sm)) {
+//  .resp-menu {
+//    padding-top: 55px;
+//    .close-menu {
+//      top: 13px;
+//      right: 16px;
+//    }
+//    .jg-logo-menu {
+//      margin-top: 15px;
+//    }
+//  }
+//  .responsive-nav {
+//    margin-top: 26px;
+//    a {
+//      padding: 0.5rem;
+//      margin-bottom: 4px;
+//    }
+//  }
+//}

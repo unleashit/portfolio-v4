@@ -1,0 +1,92 @@
+@import "../../assets/scss/bootstrap_vars_override";
+
+.primaryHeader {
+  visibility: visible;
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #333;
+  font-family: var(--font-oswald), sans-serif;;
+  line-height: 70px;
+  text-transform: uppercase;
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transform: translateY(0);
+  transition: transform 0.4s;
+  &.interior {
+    display: block;
+    transition: none;
+  }
+  //h3,
+  //p,
+  //a {
+  //  // transition: all 0.4s;
+  //  // outline: none !important;
+  //}
+  &.off {
+    // visibility: hidden;
+    //opacity: 0;
+    //height: 0;
+    transform: translateY(-70px);
+    //h3,
+    //p,
+    //a {
+    //  font-size: 0;
+    //}
+    //.jgLogo {
+    //  width: 0;
+    //}
+  }
+  nav {
+    display: inline-block;
+  }
+}
+
+.hamburgerAlt {
+  padding-left: 35px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+.contactInfo {
+  font-family: var(--font-sanchez), serif;
+  color: #fff;
+  .chat-status {
+    padding-left: 18px;
+    cursor: pointer;
+    a {
+      &:hover,
+      &:active,
+      &:visited,
+      &:target {
+        outline: none !important;
+        text-decoration: none !important;
+        border: 0;
+      }
+    }
+  }
+}
+
+
+//@media screen and (max-width: map-get($grid-breakpoints, md)) {
+//  .sticky-header .jg-logo {
+//    margin-right: 8px;
+//  }
+//  .sticky-nav {
+//    a {
+//      padding: 0 14px;
+//    }
+//    li:not(:first-child) {
+//      display: none;
+//    }
+//  }
+//}
+
