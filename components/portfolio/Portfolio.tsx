@@ -1,9 +1,9 @@
-import PortfolioItem from './PortfolioItem';
+import PortfolioItem, { ProjectWithMeta } from './PortfolioItem';
 import { getProjects } from '../../app/data';
 import styles from './portfolio.module.scss';
 
 export default async function Portfolio() {
-  const projects = await getProjects();
+  const projects = (await getProjects()) as ProjectWithMeta[];
 
   if (!projects || projects.length === 0) {
     return (
@@ -68,7 +68,7 @@ export default async function Portfolio() {
               key={index}
               index={index}
               color={color}
-              item={item}
+              item={item as any}
             />
           );
         })}

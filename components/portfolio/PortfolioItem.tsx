@@ -6,14 +6,16 @@ import { sluggify } from '@/lib/utils.new';
 import styles from './portfolio.module.scss';
 import Img from '@/components/common/Img';
 
+export type ProjectWithMeta = Omit<Project, 'image_logo'> & {
+  image_logo: DirectusFiles;
+};
+
 export default function PortfolioItem({
   item,
 }: // index,
 // color,
 {
-  item: Omit<Project, 'image_logo'> & {
-    image_logo: DirectusFiles;
-  };
+  item: ProjectWithMeta;
   index: any;
   color: string;
 }) {
