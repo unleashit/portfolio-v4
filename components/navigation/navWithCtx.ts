@@ -1,5 +1,5 @@
 import type { NavigationProps } from './navigation';
-import type { Navigation } from '../../directus';
+import type { Navigation } from '@/services/types/directus';
 
 export const navWithCtx = (
   links: Navigation[],

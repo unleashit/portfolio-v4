@@ -37,7 +37,7 @@ export function PrimaryHeader({
       <div className="container-fluid">
         {children}
         <div
-          className={`${styles.hamburgerAlt} d-sm-none float-end`}
+          className={`${styles.hamburgerAlt} d-md-none float-end`}
           onClick={toggleHamburger}
         >
           <i className="fa fa-bars" /> &nbsp;MENU

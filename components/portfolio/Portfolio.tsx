@@ -16,9 +16,6 @@ export default async function Portfolio() {
       </section>
     );
   }
-  // renderPortfolio() {
-  //     const { readyState, items } = this.props.portfolio;
-  //
   //     if (readyState === 'WORK_FETCHING') {
   //         return (
   //             <div className="portfolio-loading">
@@ -26,32 +23,6 @@ export default async function Portfolio() {
   //                 <div className="caption">Work loading...</div>
   //             </div>
   //         );
-  //     } else if (readyState === 'WORK_FETCHED') {
-  //         return (
-  //             <div>
-  //                 {items
-  //                     .sort((a, b) => {
-  //                         if (a.sort > b.sort) return 1;
-  //                         if (a.sort < b.sort) return -1;
-  //                         return 0;
-  //                     })
-  //                     .map((item, index) => {
-  //                         let color = index % 2 ? '#000' : '#353535';
-  //                         return (
-  //                             <PortfolioItem
-  //                                 key={index}
-  //                                 index={index}
-  //                                 color={color}
-  //                                 item={item}
-  //                             />
-  //                         );
-  //                     })}
-  //             </div>
-  //         );
-  //     } else {
-  //         return 'nothing found.';
-  //     }
-  // }
 
   return (
     <section

@@ -10,7 +10,7 @@
   left: 0;
   overflow: hidden;
   background: #333;
-  font-family: var(--font-oswald), sans-serif;;
+  // font-family: var(--font-oswald), sans-serif;;
   line-height: 70px;
   text-transform: uppercase;
   opacity: 1;
@@ -21,25 +21,8 @@
     display: block;
     transition: none;
   }
-  //h3,
-  //p,
-  //a {
-  //  // transition: all 0.4s;
-  //  // outline: none !important;
-  //}
   &.off {
-    // visibility: hidden;
-    //opacity: 0;
-    //height: 0;
     transform: translateY(-70px);
-    //h3,
-    //p,
-    //a {
-    //  font-size: 0;
-    //}
-    //.jgLogo {
-    //  width: 0;
-    //}
   }
   nav {
     display: inline-block;

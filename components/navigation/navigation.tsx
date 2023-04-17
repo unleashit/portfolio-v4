@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { navWithCtx } from '@/components/navigation/navWithCtx';
-import { JGLogo } from '@/lib/constants';
+import { JG_LOGO } from '@/lib/constants';
 import { getNavigation } from '../../app/data';
 import styles from './navigation.module.scss';
 
@@ -47,7 +47,7 @@ const NavLink = ({
   title: string;
   isMobile: boolean;
 }) => (
-  <li className={!isMobile ? 'd-none d-sm-inline-block' : undefined}>
+  <li className={!isMobile ? 'd-none d-md-inline-block' : undefined}>
     <a href={href}>{title}</a>
   </li>
 );
@@ -58,7 +58,7 @@ export function Logo({ isMobile }: { isMobile: boolean }) {
     <li>
       <Link href="/" className={styles.logo}>
         <img
-          src={JGLogo}
+          src={JG_LOGO}
           alt="jg logo"
           className={isMobile ? styles.jgLogoMobile : styles.jgLogo}
           width={size}

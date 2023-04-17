@@ -2,7 +2,7 @@
 
 import { TOGGLE_HAMBURGER } from '@/lib/clientState/reducer';
 import { useCallback, useContext } from 'react';
-import { GlobalContext } from '@/components/providers';
+import { GlobalContext } from '@/lib/clientState/context';
 import styles from './header.module.scss';
 import clsx from 'clsx';
 

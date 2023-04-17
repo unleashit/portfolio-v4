@@ -1,15 +1,11 @@
 import { directus } from '@/lib/services';
-import { Project } from '../../../directus';
 import { getProjects } from '../../data';
+import type { Data, ProjectWithMeta } from '@/services/types/directus.data';
 
 type Tag = {
   project_tags_tag_id: {
     tag: string;
   };
-};
-
-type Data<T> = {
-  data: T;
 };
 
 async function getProjectTags(ids: number[]) {
@@ -40,7 +36,7 @@ async function getProjectTags(ids: number[]) {
 
 export async function getProjectBySlug(
   slug: string
-): Promise<Project & { tags: string[] }> {
+): Promise<ProjectWithMeta & { tags: string[] }> {
   const projects = await getProjects();
   const foundProject = projects.find((p) => p.slug === slug);
 
@@ -50,7 +46,7 @@ export async function getProjectBySlug(
   const fields = '*,image_main.*,image_mobile.*';
 
   const project = (
-    await directus().get<Data<Project>>(
+    await directus().get<Data<ProjectWithMeta>>(
       `/items/project/${foundProject.project_id}?fields=${fields}`
     )
   ).data;

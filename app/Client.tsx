@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { Skills } from '../directus';
+import { Skills } from '@/services/types/directus';
 import { getSkills } from './data';
 import { directus } from '@/lib/services';
 

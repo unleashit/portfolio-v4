@@ -9,6 +9,11 @@
 .whereIamImage {
   display: block;
   margin: 38px auto 0 auto;
+  width: auto;
+  height: 115px;
+  @include hiDPI_MQ {
+    height: 115px;
+  }
 }
 
 // who, what, where media queries

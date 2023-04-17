@@ -1,9 +1,6 @@
-import { Project, Skills, Blocks, Navigation } from '../directus';
+import { Navigation, Project, Skills } from '@/services/types/directus';
 import { directus } from '@/lib/services';
-
-type Data<T> = {
-  data: T;
-};
+import { BlockWithMeta, Data } from '@/services/types/directus.data';
 
 export async function getNavigation() {
   const fields = 'id,title,link,sort';
@@ -16,10 +13,12 @@ export async function getNavigation() {
 }
 
 export async function getHomeBlocks() {
-  const fields = 'id,title,content,image';
+  const fields = 'id,title,content,image,image.id,image.width,image.height';
 
   return (
-    await directus().get<Data<Blocks[]>>(`/items/blocks?fields=${fields}`)
+    await directus().get<Data<BlockWithMeta[]>>(
+      `/items/blocks?fields=${fields}`
+    )
   ).data;
 }
 

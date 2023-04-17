@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { assetsURL } from '@/lib/constants';
-import { DirectusFiles, Project } from '../../directus';
+import { ASSETS_URL } from '@/lib/constants';
+import { DirectusFiles, Project } from '@/services/types/directus';
 import { sluggify } from '@/lib/utils.new';
 import styles from './portfolio.module.scss';
 import Img from '@/components/common/Img';
@@ -22,6 +22,11 @@ export default function PortfolioItem({
   // const color = {
   //   backgroundColor: this.props.color,
   // };
+
+  const {
+    image_logo: { width, height },
+  } = item;
+
   return (
     <div className={styles.portfolioItem}>
       <Link href={'/portfolio/' + item.slug}>
@@ -30,12 +35,15 @@ export default function PortfolioItem({
         </div>
         <div>
           <Img
-            src={`${assetsURL}/${item.image_logo.id}/${sluggify(
+            src={`${ASSETS_URL}/${item.image_logo.id}/${sluggify(
               item.title
-            )}.webp?format=webp`}
+            )}.webp?format=webp${width && '&width=' + Math.ceil(+width * 0.8)}`}
+            hidpi={`${ASSETS_URL}/${item.image_logo.id}/${sluggify(
+              item.title
+            )}.webp?format=webp${width && '&width=' + width}`}
             alt={item.title}
-            {...(item.image_logo.width && { width: item.image_logo.width })}
-            {...(item.image_logo.height && { height: item.image_logo.height })}
+            {...(width && { width })}
+            {...(height && { height })}
             loading="lazy"
           />
 
