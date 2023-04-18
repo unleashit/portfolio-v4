@@ -5,6 +5,8 @@ import { useCallback, useContext } from 'react';
 import { GlobalContext } from '@/lib/clientState/context';
 import styles from './header.module.scss';
 import clsx from 'clsx';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Hamburger = () => {
   const { dispatch } = useContext(GlobalContext);
@@ -15,7 +17,7 @@ const Hamburger = () => {
   return (
     <div className={clsx(styles.hamburger, 'd-md-none', 'container-fluid')}>
       <div onClick={toggleHamburger}>
-        <i className="fa fa-bars" /> MENU
+        <FontAwesomeIcon icon={faBars} /> MENU
       </div>
     </div>
   );

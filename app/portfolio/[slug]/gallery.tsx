@@ -6,6 +6,8 @@ import styles from './portfolio.module.scss';
 import { sluggify } from '@/lib/utils.new';
 import Img from '@/components/common/Img';
 import { ProjectWithMeta } from '@/services/types/directus.data';
+import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const getNextPrevSlugs = (projects: Project[], currSlug: string) => {
   // get slugs for next/prev links
@@ -56,7 +58,7 @@ async function Gallery({
         <a href={link ? link : '#'} target="_blank">
           <button className="button button-smaller">
             VISIT SITE &nbsp;&nbsp;
-            {/*<i className="fa fa-external-link" />*/}
+            <FontAwesomeIcon icon={faExternalLink} />
           </button>
         </a>
       </div>

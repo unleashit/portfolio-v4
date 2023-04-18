@@ -73,7 +73,7 @@ function ContactForm() {
       reset();
     }, 5000);
 
-    return <p className={styles.thanks}>Thanks for your email!</p>;
+    return <div className={styles.thanks}>Thanks for your email!</div>;
   }
 
   if (fetchError) {

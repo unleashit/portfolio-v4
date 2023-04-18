@@ -1,11 +1,18 @@
-import { getProjects } from '../../data';
 import { getProjectBySlug } from './data';
 import Gallery from './gallery';
 import Tags from './tags';
 import styles from './portfolio.module.scss';
 import { CMSMarkup } from '@/components/common/CMSMarkup';
+import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getProjects } from '../../data';
 
 type PageProps = { params: { slug: string } };
+
+// const Loading = () => {
+//   console.log('LOADING.......');
+//   return <div>loading..........</div>;
+// };
 
 async function PortfolioDetail({ params }: PageProps) {
   const project = await getProjectBySlug(params.slug);
@@ -23,7 +30,7 @@ async function PortfolioDetail({ params }: PageProps) {
             <a href={project.link ? project.link : '#'} target="_blank">
               <button className="button button-smaller">
                 VISIT SITE &nbsp;&nbsp;
-                {/*<i className="fa fa-external-link" />*/}
+                <FontAwesomeIcon icon={faExternalLink} />
               </button>
             </a>
           </div>

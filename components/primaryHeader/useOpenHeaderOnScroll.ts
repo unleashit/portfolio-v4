@@ -10,7 +10,6 @@ function useOpenHeaderOnScroll(isHome: boolean) {
     if (!isHome) {
       return;
     }
-
     const handleScroll = throttle(() => {
       const top = window.scrollY;
 
@@ -23,6 +22,10 @@ function useOpenHeaderOnScroll(isHome: boolean) {
         dispatch({ type: SET_HEADER, payload: false });
       }
     }, 150);
+
+    // run once on mount to detect if user arrived at a scrolled position
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {

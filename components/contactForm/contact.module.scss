@@ -25,6 +25,10 @@
 }
 
 .thanks {
+  display: flex;
+  min-height: 350px;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   font-family: var(--font-sanchez), serif;;
   font-size: 2em;

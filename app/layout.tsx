@@ -3,6 +3,16 @@ import logger from '@/lib/logger';
 import GlobalState from '@/components/providers';
 import globalMeta from './metadata';
 import { Oswald, Sanchez } from 'next/font/google';
+
+// prevents flash of large icons during SSR
+// https://github.com/FortAwesome/react-fontawesome/issues/134
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@/assets/scss/global.scss';
+
+// prevent duplicate FA css
+config.autoAddCss = false;
+
 const oswald = Oswald({
   weight: '400',
   subsets: ['latin'],
@@ -13,7 +23,6 @@ const sanchez = Sanchez({
   subsets: ['latin'],
   variable: '--font-sanchez',
 });
-import '@/assets/scss/global.scss';
 
 export default async function RootLayout({
   children,
@@ -33,7 +42,7 @@ export default async function RootLayout({
 
 export const metadata = globalMeta;
 
-// export const dynamic = "auto"; // auto or force-dynamic
+// export const dynamic = 'force-dynamic'; // auto or force-dynamic
 // export const dynamicParams = true
 // export const revalidate = false
 // export const fetchCache = 'auto'

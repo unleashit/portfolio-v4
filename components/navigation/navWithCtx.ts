@@ -7,10 +7,12 @@ export const navWithCtx = (
 ) => {
   const newNav: Partial<Navigation>[] = [...links];
 
+  // `interior` template: add logo placeholder to beginning of the list
   if (template === 'interior') {
     newNav.unshift({ title: '##LOGO##' });
   }
 
+  // `home` template: remove home link then add logo placeholder in the middle of list
   if (template === 'home') {
     newNav.shift();
     newNav.splice(Math.ceil(newNav.length / 2), 0, {
@@ -18,6 +20,7 @@ export const navWithCtx = (
     });
   }
 
+  // `hamburger` template: add logo placeholder to the end of the list
   if (template === 'hamburger') {
     newNav.push({ title: '##LOGO##' });
   }

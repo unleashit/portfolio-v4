@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import Header from '@/components/home/Header';
 import WhoWhatWhere from '@/components/home/WhoWhatWhere';
 import About from '@/components/home/About';
@@ -8,7 +7,6 @@ import Navigation from '@/components/navigation/navigation';
 import getHomeData from './data';
 import { Footer } from '@/components/footer/footer';
 import MobileNavigation from '@/components/mobileNavigation/mobileNavigation';
-import PortfolioLoader from '@/components/common/portfolioLoader';
 
 // import { animation, getEnvironment } from "@/lib/utils";
 
@@ -109,16 +107,16 @@ export default async function Home() {
       <About
       // animation={animation.bind(this, animateAbout, animateOff)}
       />
-      <Suspense fallback={<PortfolioLoader />}>
-        {/* @ts-expect-error Server Component */}
-        <Portfolio
-        // animation={animation.bind(
-        //   this,
-        //   animatePortfolio,
-        //   animateOff
-        // )}
-        />
-      </Suspense>
+      {/*<Suspense fallback={<PortfolioLoader />}>*/}
+      {/* @ts-expect-error Server Component */}
+      <Portfolio
+      // animation={animation.bind(
+      //   this,
+      //   animatePortfolio,
+      //   animateOff
+      // )}
+      />
+      {/*</Suspense>*/}
       {/* @ts-expect-error Server Component */}
       <Footer />
     </div>

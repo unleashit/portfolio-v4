@@ -5,6 +5,8 @@ import { GlobalContext } from '@/lib/clientState/context';
 import { TOGGLE_HAMBURGER } from '@/lib/clientState/reducer';
 import styles from './mobile-navigation.module.scss';
 import clsx from 'clsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 
 interface MobileNavigationProps {
   // menuVisible?: boolean;
@@ -42,7 +44,7 @@ MobileNavigationProps) {
       )}
     >
       <div className={styles.closeMenu} onClick={closeBurger}>
-        <i className="fa fa-close" /> CLOSE
+        <FontAwesomeIcon icon={faClose} /> CLOSE
       </div>
       <h3 className={styles.name}>Jason Gallagher</h3>
       <h3 className={styles.title}>Front End Engineer</h3>

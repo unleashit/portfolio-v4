@@ -48,7 +48,7 @@ const NavLink = ({
   isMobile: boolean;
 }) => (
   <li className={!isMobile ? 'd-none d-md-inline-block' : undefined}>
-    <a href={href}>{title}</a>
+    <Link href={href}>{title}</Link>
   </li>
 );
 

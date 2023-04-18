@@ -8,6 +8,8 @@ import { TOGGLE_HAMBURGER } from '@/lib/clientState/reducer';
 import styles from './header.module.scss';
 import clsx from 'clsx';
 import useOpenHeaderOnScroll from '@/components/primaryHeader/useOpenHeaderOnScroll';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 export function PrimaryHeader({
   isHome = false,
@@ -40,16 +42,15 @@ export function PrimaryHeader({
           className={`${styles.hamburgerAlt} d-md-none float-end`}
           onClick={toggleHamburger}
         >
-          <i className="fa fa-bars" /> &nbsp;MENU
+          <FontAwesomeIcon icon={faBars} /> &nbsp;MENU
         </div>
         <div className={`${styles.contactInfo} float-end d-sm-block`}>
           <div>
-            <span className="chat-status">
-              I'm online
-              {/*<OpenChat>*/}
-              {/*  <LiveChatStatus remoteId={this.props.remoteId} />*/}
-              {/*</OpenChat>*/}
-            </span>
+            {/*<span className="chat-status">*/}
+            {/*<OpenChat>*/}
+            {/*  <LiveChatStatus remoteId={this.props.remoteId} />*/}
+            {/*</OpenChat>*/}
+            {/*</span>*/}
           </div>
         </div>
       </div>

@@ -6,17 +6,11 @@ import type { Action, GlobalState } from '@/lib/clientState/reducer';
 import { GlobalContext } from '@/lib/clientState/context';
 import { arrayEquals } from '@/lib/utils.new';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-// import { faFaceFlushed } from '@fortawesome/free-regular-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
   faFileText,
   faEnvelope,
   faComments,
-  faBars,
-  faClose,
-  faExternalLink,
-  faRefresh,
-  faRotate,
-  faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 
 const handleLocalStorage = (
@@ -65,12 +59,13 @@ function GlobalState({ children }: { children: React.ReactNode }) {
       faFileText,
       faEnvelope,
       faComments,
-      faBars,
-      faClose,
-      faExternalLink,
-      faRefresh,
-      faRotate,
-      faSpinner
+      faGithub
+      // faBars,
+      // faClose,
+      // faExternalLink,
+      // faRefresh,
+      // faRotate,
+      // faSpinner
     );
   }, []);
 

@@ -44,6 +44,12 @@
   :global {
     .contact-method {
       margin-bottom: 3px;
+      svg {
+        margin-right: 11px;
+      }
+      &.chat svg {
+        margin-right: 5px;
+      }
     }
 
     .about-this-site {
