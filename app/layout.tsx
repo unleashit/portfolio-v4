@@ -37,10 +37,9 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${oswald.variable} ${sanchez.variable}`}>
       <body>
-        {/* eslint-disable @typescript-eslint/ban-ts-comment */}
+        {/* HACK since NextJS metatdata api doesn't currently support <link /> */}
         <link
           rel="preload"
-          // @ts-ignore
           fetchPriority="high"
           as="image"
           href={`${ASSETS_URL}/a9824768-3995-46a6-a3c8-5a5689778498/header-image.webp?format=webp`}
