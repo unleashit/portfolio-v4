@@ -55,18 +55,7 @@ function GlobalState({ children }: { children: React.ReactNode }) {
 
   React.useEffect(() => {
     dom.watch();
-    library.add(
-      faFileText,
-      faEnvelope,
-      faComments,
-      faGithub
-      // faBars,
-      // faClose,
-      // faExternalLink,
-      // faRefresh,
-      // faRotate,
-      // faSpinner
-    );
+    library.add(faFileText, faEnvelope, faComments, faGithub);
   }, []);
 
   return (
@@ -81,13 +70,3 @@ export default GlobalState;
 // export default function Providers({ children }: { children: React.ReactNode }) {
 //   return <GlobalState>{children}</GlobalState>;
 // }
-
-// fa-file-text
-// fa-github
-// fa-comments
-// fa-envelope
-// fa-bars
-// fa-close
-// fa-external-link
-// fa-refresh
-// fa-spin
