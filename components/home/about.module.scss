@@ -7,19 +7,19 @@
   :global {
     .about-buttons {
       margin-top: 30px;
-      .button {
-        margin-right: 21px;
-        display: inline-block;
-        @include media-breakpoint-down(sm) {
-          display: block;
-          width: 100%;
-          margin-bottom: 10px;
-          font-size: 0.8rem;
-        }
-        svg {
-          margin-right: 6px;
-          color: #000;
-        }
+    }
+    .button {
+      margin-right: 21px;
+      display: inline-block;
+      @include media-breakpoint-down(sm) {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 0.8rem;
+      }
+      svg {
+        margin-right: 6px;
+        color: #000;
       }
     }
   }
