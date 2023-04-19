@@ -3,7 +3,7 @@ import { Project } from '@/services/types/directus';
 import { ASSETS_URL } from '@/lib/constants';
 import { getProjects } from '../../data';
 import styles from './portfolio.module.scss';
-import { sluggify } from '@/lib/utils.new';
+import { sluggify } from '@/lib/utils';
 import Img from '@/components/common/Img';
 import { ProjectWithMeta } from '@/services/types/directus.data';
 import { faExternalLink } from '@fortawesome/free-solid-svg-icons';

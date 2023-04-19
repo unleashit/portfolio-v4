@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Navigation from '@/components/navigation/navigation';
 import { getHomeBlocks } from '../../app/data';
-import { findKeyWithValue } from '@/lib/utils.new';
+import { findKeyWithValue } from '@/lib/utils';
 import { CMSMarkup } from '@/components/common/CMSMarkup';
 import Hamburger from '@/components/home/hamburger';
 import styles from './header.module.scss';

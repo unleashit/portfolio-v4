@@ -1,6 +1,6 @@
 import Skills from '@/components/home/Skills';
 import { getHomeBlocks } from '../../app/data';
-import { findKeyWithValue } from '@/lib/utils.new';
+import { findKeyWithValue } from '@/lib/utils';
 import { CMSMarkup } from '@/components/common/CMSMarkup';
 import { ASSETS_URL } from '@/lib/constants';
 import styles from './about.module.scss';

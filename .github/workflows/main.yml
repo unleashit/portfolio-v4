@@ -29,7 +29,6 @@ jobs:
           NEXT_PUBLIC_CONTENT_API: ${{ secrets.NEXT_PUBLIC_CONTENT_API }}
           NEXT_PUBLIC_ASSETS_URL: ${{ secrets.NEXT_PUBLIC_ASSETS_URL }}
           NEXT_TELEMETRY_DISABLED: ${{ secrets.NEXT_TELEMETRY_DISABLED }}
-          PINO_LOG_LEVEL: ${{ secrets.PINO_LOG_LEVEL }}
           NEXT_PUBLIC_PROMISE_CACHE_DEBUG: ${{ secrets.NEXT_PUBLIC_PROMISE_CACHE_DEBUG }}
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
 

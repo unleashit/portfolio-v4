@@ -4,7 +4,7 @@ import * as React from 'react';
 import { initialState, reducer } from '@/lib/clientState/reducer';
 import type { Action, GlobalState } from '@/lib/clientState/reducer';
 import { GlobalContext } from '@/lib/clientState/context';
-import { arrayEquals } from '@/lib/utils.new';
+import { arrayEquals } from '@/lib/utils';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import {

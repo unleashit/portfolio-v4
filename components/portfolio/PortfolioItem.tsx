@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ASSETS_URL } from '@/lib/constants';
 import { DirectusFiles, Project } from '@/services/types/directus';
-import { sluggify } from '@/lib/utils.new';
+import { sluggify } from '@/lib/utils';
 import styles from './portfolio.module.scss';
 import Img from '@/components/common/Img';
 
