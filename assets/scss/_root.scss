@@ -1,0 +1,35 @@
+$custom-vars: (
+  "jg-lime-green": $lime-green, // primary => green btns
+  "jg-light-purple": $light-purple, // secondary => lighter purple from hone page graphics old: #afafc8
+  "jg-dark-purple": $dark-purple, // darker purple from hone page graphics
+  "jg-dark-gray-med": $dark-gray-med, // med dark gray btns
+  "jg-crimson": $crimson, // chat offline indicator
+  "jg-dark-gray": $dark-gray, // portfolio grid dark gray
+  "jg-lime-green-light": $lime-green-light, // footer-links
+  "jg-light-gray": $light-gray, // skills/project tags
+  "jg-dark-gray-dark": $dark-gray-dark, // primary header color
+  "jg-section-padding": $section-padding,
+  "jg-chat-width": $chat-width,
+  "jg-chat-online": $lime-green,
+  "jg-chat-offline": $crimson
+);
+
+$cust-theme-colors: (
+  "primary":    $lime-green-light,
+  "secondary":  $light-purple,
+  //"success":    $success,
+  //"info":       $info,
+  //"warning":    $warning,
+  //"danger":     $danger,
+  //"light":      $light,
+  //"dark":       $dark
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $cust-theme-colors);
+
+:root {
+  @each $color, $value in $custom-vars {
+    --#{$color}: #{$value};
+  }
+}

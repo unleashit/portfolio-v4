@@ -1,0 +1,93 @@
+@import '../../assets/scss/bootstrap_vars_override';
+
+.about {
+  margin-top: var(--jg-section-padding);
+  padding-top: var(--jg-section-padding);
+  border-top: 1px solid #ccc;
+  :global {
+    .about-buttons {
+      margin-top: 30px;
+    }
+    .button {
+      margin-right: 21px;
+      display: inline-block;
+      @include media-breakpoint-down(sm) {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 0.8rem;
+      }
+      svg {
+        margin-right: 6px;
+        color: #000;
+      }
+    }
+  }
+}
+
+.jgImage {
+  width: clamp(125px, 130px, 100%);
+  max-width: 160px;
+  @include media-breakpoint-down(md) {
+    padding-bottom: 25px;
+  }
+}
+
+.skill {
+  padding: 6px 12px;
+  margin-bottom: 11px;
+  font-size: 1.15rem;
+  text-align: center;
+  background-color: var(--jg-light-gray);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+  clear: both;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .skills {
+    padding-top: var(--jg-section-padding);
+  }
+}
+
+@include media-breakpoint-between(sm, lg) {
+  .skill {
+    font-size: 1.15rem;
+    &.full {
+      clear: both;
+      float: none;
+      width: 100%;
+    }
+    &.half {
+      float: left;
+      width: 48%;
+      clear: none;
+    }
+    &.half:nth-of-type(odd) {
+      float: right;
+      width: 48%;
+      clear: none;
+    }
+  }
+}
+@include media-breakpoint-up(xl) {
+  .skill {
+    &.full {
+      clear: both;
+      float: none;
+      width: 100%;
+    }
+    &.half {
+      float: left;
+      width: 48%;
+      clear: none;
+    }
+    &.half:nth-of-type(odd) {
+      float: right;
+      width: 48%;
+      clear: none;
+    }
+  }
+}

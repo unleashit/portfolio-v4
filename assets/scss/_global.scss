@@ -1,0 +1,170 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h3 {
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+input,
+textarea,
+.form-control {
+  &:focus {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4) inset;
+    color: #999;
+  }
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: not-allowed;
+}
+
+// global utility styles
+
+.clearfix:after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  &-focusable:active,
+  &-focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
+.container-fluid {
+  max-width: 1300px;
+}
+
+// bootstrap gutter mods
+//.no-gutter > [class*="col-"] {
+//  padding-right: 0;
+//  padding-left: 0;
+//}
+//.mo-gutter > [class*="col-"] {
+//  padding-right: 25px;
+//  padding-left: 25px;
+//}
+
+// global classes
+.main-content {
+  padding: 40px 15px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 26px;
+  color: #fff;
+  background-color: var(--jg-dark-gray-med);
+  border: 0;
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none !important;
+  &.button-green {
+    background-color: var(--jg-lime-green);
+  }
+  &.button-charcoal {
+    background-color: var(--jg-dark-gray-dark);
+  }
+  &.button-smaller {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+  &.button-xs {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+    border-radius: 20px;
+    border: 2px solid #b2b2b2;
+    color: #b2b2b2;
+    background: 0;
+  }
+  &.button-block {
+    display: block;
+    width: 100%;
+  }
+  &:link,
+  &:visited,
+  &:active,
+  &:target {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+// temp
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.not-found-404 {
+  text-align: center;
+  h2 {
+    margin-bottom: 30px;
+  }
+  button {
+    margin-top: 50px;
+  }
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    img {
+      width: 85%;
+    }
+  }
+}
+
+.center-container.not-found {
+  background-color: #eaeaea;
+}
+
+.animated {
+  animation-duration: 1600ms;
+}
+
+button.animated {
+  animation-duration: 700ms;
+}
+
+// temp added global styles
+
+html.mobile-menu-open body {
+  overflow: hidden;
+  position: fixed;
+}
+html.primary-header-open body {
+  padding-top: 50px;
+}

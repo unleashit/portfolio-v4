@@ -1,0 +1,105 @@
+@import "../../assets/scss/bootstrap_vars_override";
+
+.mainHeader {
+  height: 825px;
+  @include backgroundImgFallback('#{$assets-url}/a9824768-3995-46a6-a3c8-5a5689778498/header-image', 'width=3000');
+  background-color: #46823c;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: auto 825px;
+  overflow: hidden;
+}
+
+.titleTaglineWrapper {
+  margin: 0 auto;
+  margin-top: 165px;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  max-width: 800px;
+  color: #fff;
+  text-align: center;
+  h1 {
+    font-size: 3.55em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    line-height: 3.8rem;
+  }
+  h2 {
+    margin: 0;
+    font-family: var(--font-sanchez), serif;
+    font-size: 1.55em;
+    line-height: 1.3em;
+  }
+}
+
+.buttonWrapper {
+  margin-top: 152px;
+  text-align: center;
+}
+
+.hamburger {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+@include media-breakpoint-down(md) {
+  .titleTaglineWrapper {
+    margin-top: 104px;
+    h1 {
+      font-size: 3.3rem;
+      letter-spacing: 1px;
+    }
+  }
+  .buttonWrapper {
+    margin-top: 60px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .titleTaglineWrapper {
+    margin-top: 90px;
+    h1 {
+      font-size: 2.7rem;
+      line-height: 3rem;
+      letter-spacing: 1px;
+    }
+    h2 {
+      font-size: 1.35rem;
+    }
+  }
+  .hamburger {
+    top: 18px;
+    font-size: 1.7rem;
+  }
+  .buttonWrapper {
+    margin-top: 37px;
+  }
+}
+
+@include hiDPI_MQ {
+  .mainHeader {
+    @include backgroundImgFallback('#{$assets-url}/a9824768-3995-46a6-a3c8-5a5689778498/header-image');
+    background-color: #3f7e37;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: auto 725px;
+    height: 725px;
+  }
+  .titleTaglineWrapper {
+    margin-top: 130px;
+    h1 {
+      margin-bottom: 26px;
+    }
+  }
+  .buttonWrapper {
+    margin-top: 120px;
+  }
+}
+

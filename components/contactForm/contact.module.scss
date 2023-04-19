@@ -1,0 +1,40 @@
+@import "../../assets/scss/bootstrap_vars_override";
+
+.contactForm {
+  h4 {
+    margin-bottom: 15px;
+  }
+  .message {
+    height: 160px;
+  }
+  .error {
+    color: var(--jg-lime-green-light);
+    padding-left: 13px;
+    }
+  :global {
+    .button {
+      width: 140px;
+      @include media-breakpoint-down(sm)  {
+        display: block;
+        width: 100%;
+      }
+    }
+    .form-control:focus {
+      color: #999;
+      background-color: #444;
+      border: 0;
+      outline: none;
+    }
+  }
+}
+
+.thanks {
+  display: flex;
+  min-height: 350px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-sanchez), serif;;
+  font-size: 2em;
+  color: var(--jg-lime-green-light);
+}

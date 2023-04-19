@@ -1,0 +1,83 @@
+@import "../../assets/scss/bootstrap_vars_override";
+
+.footerWrap {
+  background-color: #3e6f22;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+.footerBorder {
+  @include backgroundImgFallback('#{$assets-url}/ca68252a-2078-41ad-8801-0cef47444183/footer-tile');
+  background-color: #000;
+  background-repeat: repeat-x;
+  background-position: top left;
+  height: 232px;
+}
+
+.interior {
+  .footerBorder {
+    background-color: transparent;
+  }
+}
+
+.contact {
+  margin-top: var(--jg-section-padding);
+  color: #292929;
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: var(--jg-lime-green-light);
+    text-decoration: none;
+    transition: color 300ms;
+  }
+  a:hover {
+    color: darken($lime-green-light, 15%);
+  }
+}
+
+/*
+* these classes are assigned in CMS WYSIWYG editor
+* and must be global
+*/
+.footer {
+  :global {
+    .contact-method {
+      margin-bottom: 3px;
+      svg {
+        margin-right: 11px;
+      }
+      &.chat svg {
+        margin-right: 5px;
+      }
+    }
+
+    .about-this-site {
+      margin-top: 30px;
+      @include media-breakpoint-down(lg) {
+        margin-top: 45px;
+      }
+    }
+    .about-this-site-text {
+      span {
+        color: var(--jg-lime-green-light);
+        white-space: nowrap;
+      }
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 45px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, lg)) {
+  .footer {
+    :global {
+      .contact-me {
+        margin-top: 45px;
+      }
+    }
+  }
+}
+
+

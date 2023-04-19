@@ -1,0 +1,29 @@
+@import "../../assets/scss/bootstrap_vars_override";
+
+.whoWhatWhere {
+  margin-top: var(--jg-section-padding);
+}
+
+.whoIamImage,
+.whatIdoImage,
+.whereIamImage {
+  display: block;
+  margin: 38px auto 0 auto;
+  width: auto;
+  height: 115px;
+  @include hiDPI_MQ {
+    height: 115px;
+  }
+}
+
+// who, what, where media queries
+@include media-breakpoint-down(md) {
+  .whoWhatWhere {
+    :global(.col-md-4) {
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
