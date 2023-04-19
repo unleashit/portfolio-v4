@@ -164,3 +164,10 @@ html.mobile-menu-open body {
 html.primary-header-open body {
   padding-top: 50px;
 }
+
+// hack to prevent Font Awesome FOUC
+.svg-inline--fa {
+  max-width: 35px;
+  max-height: 1em;
+  vertical-align: -0.125em;
+}

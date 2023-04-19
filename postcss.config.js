@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'production') {
         './components/**/*.{js,jsx,ts,tsx}',
       ],
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-      safelist: ['html', 'body'],
+      safelist: ['html', 'body', 'svg-inline--fa'],
     },
   ]);
 }

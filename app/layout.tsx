@@ -1,14 +1,17 @@
 import { ReactNode } from 'react';
 import GlobalState from '@/components/providers';
 import { Oswald, Sanchez } from 'next/font/google';
-
 // prevents flash of large icons during SSR
 // https://github.com/FortAwesome/react-fontawesome/issues/134
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@/assets/scss/global.scss';
 import { Metadata } from 'next';
-import { META_DEFAULT_DESC, META_DEFAULT_TITLE } from '@/lib/constants';
+import {
+  ASSETS_URL,
+  META_DEFAULT_DESC,
+  META_DEFAULT_TITLE,
+} from '@/lib/constants';
 import MobileNavigation from '@/components/mobileNavigation/mobileNavigation';
 import Navigation from '@/components/navigation/navigation';
 
@@ -34,6 +37,16 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${oswald.variable} ${sanchez.variable}`}>
       <body>
+        {/* eslint-disable @typescript-eslint/ban-ts-comment */}
+        <link
+          rel="preload"
+          // @ts-ignore
+          fetchPriority="high"
+          as="image"
+          href={`${ASSETS_URL}/a9824768-3995-46a6-a3c8-5a5689778498/header-image.webp?format=webp`}
+          type="image/webp"
+        />
+
         <GlobalState>
           <MobileNavigation>
             {/* @ts-expect-error Server Component */}
