@@ -62,16 +62,6 @@ html input[disabled] {
   max-width: 1300px;
 }
 
-// bootstrap gutter mods
-//.no-gutter > [class*="col-"] {
-//  padding-right: 0;
-//  padding-left: 0;
-//}
-//.mo-gutter > [class*="col-"] {
-//  padding-right: 25px;
-//  padding-left: 25px;
-//}
-
 // global classes
 .main-content {
   padding: 40px 15px;
@@ -154,8 +144,6 @@ html input[disabled] {
 button.animated {
   animation-duration: 700ms;
 }
-
-// temp added global styles
 
 html.mobile-menu-open body {
   overflow: hidden;
