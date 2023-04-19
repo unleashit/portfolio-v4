@@ -1,6 +1,9 @@
-import { ASSETS_URL } from '@/lib/constants';
+'use client';
+
+import { ASSETS_URL, META_DEFAULT_DESC } from '@/lib/constants';
 
 import GoHomeBtn from '@/components/common/GoHomeBtn';
+import { Metadata } from 'next';
 
 function NotFound() {
   return (
@@ -18,7 +21,7 @@ function NotFound() {
 
 export default NotFound;
 
-// <Helmet
-//   title="404 Not Found"
-//   htmlAttributes={{ class: 'not-found-page' }}
-// />
+export const metadata: Metadata = {
+  title: '404 Not Found | Jason Gallagher',
+  description: META_DEFAULT_DESC,
+};

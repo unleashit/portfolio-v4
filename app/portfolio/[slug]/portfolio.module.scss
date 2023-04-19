@@ -1,4 +1,4 @@
-@import "../../../assets/scss/bootstrap_vars_override";
+@import '../../../assets/scss/bootstrap_vars_override';
 
 .gallery {
   position: relative;
@@ -28,7 +28,8 @@
 .portfolioDetail {
   min-height: 400px;
 }
-.portfolioDetail, .portfolioDetailLoading {
+.portfolioDetail,
+.portfolioDetailLoading {
   margin-top: 140px;
   margin-bottom: 80px;
 }
@@ -47,9 +48,6 @@
   list-style: none;
   li {
     display: inline-block;
-    /*    &:first-child {
-      margin-right: 25px;
-    }*/
   }
   a {
     display: inline-block;
@@ -131,7 +129,7 @@
   }
 }
 
-@media screen and (max-width: map-get($grid-breakpoints, lg)) {
+@include media-breakpoint-down(lg) {
   .portfolioDetail {
     margin-top: 104px;
   }
@@ -144,6 +142,12 @@
   .portfolioTags {
     .skill {
       width: 47% !important;
+      @include media-breakpoint-down(lg) {
+        width: 31% !important;
+      }
+      @include media-breakpoint-down(sm) {
+        width: 47% !important;
+      }
     }
   }
   .mobileImage {
@@ -157,21 +161,5 @@
   }
   .visitSiteLink button {
     width: 100%;
-  }
-}
-
-@media screen and (max-width: map-get($grid-breakpoints, lg)) {
-  .portfolio-tags {
-    .skill {
-      width: 31% !important;
-    }
-  }
-}
-
-@media screen and (max-width: 340px) {
-  .portfolio-tags {
-    .skill {
-      width: 47% !important;
-    }
   }
 }

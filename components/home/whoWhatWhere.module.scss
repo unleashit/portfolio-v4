@@ -18,10 +18,12 @@
 
 // who, what, where media queries
 @include media-breakpoint-down(md) {
-  .whoWhatWhere .col-md-4 {
-    margin-bottom: 40px;
-    &:last-child {
-      margin-bottom: 0;
+  .whoWhatWhere {
+    :global(.col-md-4) {
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

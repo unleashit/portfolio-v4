@@ -9,14 +9,16 @@
       margin-top: 30px;
       .button {
         margin-right: 21px;
+        display: inline-block;
+        @include media-breakpoint-down(sm) {
+          display: block;
+          width: 100%;
+          margin-bottom: 10px;
+          font-size: 0.8rem;
+        }
         svg {
           margin-right: 6px;
           color: #000;
-        }
-        &.resume {
-          i {
-            font-size: 1.4em;
-          }
         }
       }
     }
@@ -24,8 +26,11 @@
 }
 
 .jgImage {
-  width: clamp(130px, 150px, 100%);
+  width: clamp(125px, 130px, 100%);
   max-width: 160px;
+  @include media-breakpoint-down(md) {
+    padding-bottom: 25px;
+  }
 }
 
 .skill {
@@ -47,18 +52,6 @@
   }
 }
 
-@include media-breakpoint-down(md) {
-  .jg-image {
-    padding-bottom: 25px;
-  }
-  .about-buttons {
-    .button {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 0.8rem;
-    }
-  }
-}
 @include media-breakpoint-between(sm, lg) {
   .skill {
     font-size: 1.15rem;

@@ -6,11 +6,8 @@ import { PrimaryHeader } from '@/components/primaryHeader/primaryHeader';
 import Navigation from '@/components/navigation/navigation';
 import getHomeData from './data';
 import { Footer } from '@/components/footer/footer';
-import MobileNavigation from '@/components/mobileNavigation/mobileNavigation';
-
 // import { animation, getEnvironment } from "@/lib/utils";
 
-// import throttle from 'lodash/throttle';
 export default async function Home() {
   await getHomeData();
 
@@ -74,15 +71,6 @@ export default async function Home() {
   //   ].forEach((animation) => this.triggerAnimation(animation));
   // }
 
-  // const {
-  //   hamburgerState,
-  //   htmlClass,
-  //   animateOff,
-  //   animateAbout,
-  //   animatePortfolio,
-  // } = this.props.global;
-  //
-
   return (
     <div id="home">
       <PrimaryHeader
@@ -92,22 +80,14 @@ export default async function Home() {
         {/* @ts-expect-error Server Component */}
         <Navigation template="interior" ulClass="primaryNav" />
       </PrimaryHeader>
-      <MobileNavigation>
-        {/* @ts-expect-error Server Component */}
-        <Navigation template="hamburger" ulClass="responsiveNav" />
-      </MobileNavigation>
-
       {/* @ts-expect-error Server Component */}
-      <Header
-      // openBurger={this.openBurger.bind(this)}
-      />
+      <Header />
       {/* @ts-expect-error Server Component */}
       <WhoWhatWhere />
       {/* @ts-expect-error Server Component */}
       <About
       // animation={animation.bind(this, animateAbout, animateOff)}
       />
-      {/*<Suspense fallback={<PortfolioLoader />}>*/}
       {/* @ts-expect-error Server Component */}
       <Portfolio
       // animation={animation.bind(
@@ -116,7 +96,6 @@ export default async function Home() {
       //   animateOff
       // )}
       />
-      {/*</Suspense>*/}
       {/* @ts-expect-error Server Component */}
       <Footer />
     </div>

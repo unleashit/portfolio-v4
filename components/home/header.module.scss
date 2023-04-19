@@ -83,3 +83,23 @@
   }
 }
 
+@include hiDPI_MQ {
+  .mainHeader {
+    @include backgroundImgFallback('#{$assets-url}/a9824768-3995-46a6-a3c8-5a5689778498/header-image');
+    background-color: #3f7e37;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: auto 725px;
+    height: 725px;
+  }
+  .titleTaglineWrapper {
+    margin-top: 130px;
+    h1 {
+      margin-bottom: 26px;
+    }
+  }
+  .buttonWrapper {
+    margin-top: 120px;
+  }
+}
+

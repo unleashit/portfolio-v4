@@ -21,9 +21,10 @@ h4 {
 }
 
 input,
-textarea, .form-control {
+textarea,
+.form-control {
   &:focus {
-    box-shadow: 0 0 25px rgba(0,0,0,0.4) inset;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4) inset;
     color: #999;
   }
 }
@@ -36,7 +37,7 @@ html input[disabled] {
 // global utility styles
 
 .clearfix:after {
-  content: " ";
+  content: ' ';
   display: table;
   clear: both;
 }
@@ -127,31 +128,28 @@ html input[disabled] {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  height: 100vh;
 }
 
 .not-found-404 {
-  width: 447px;
   text-align: center;
   h2 {
     margin-bottom: 30px;
   }
   button {
-    margin-top: 30px;
+    margin-top: 50px;
+  }
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    img {
+      width: 85%;
+    }
   }
 }
 
 .center-container.not-found {
   background-color: #eaeaea;
 }
-
-//html.not-found-page body {
-//  background-color: #eaeaea;
-//}
 
 .animated {
   animation-duration: 1600ms;
@@ -170,5 +168,3 @@ html.mobile-menu-open body {
 html.primary-header-open body {
   padding-top: 50px;
 }
-
-

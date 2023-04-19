@@ -1,18 +1,15 @@
 import { getProjectBySlug } from './data';
 import Gallery from './gallery';
 import Tags from './tags';
+import { Metadata } from 'next';
 import styles from './portfolio.module.scss';
 import { CMSMarkup } from '@/components/common/CMSMarkup';
 import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getProjects } from '../../data';
+import { META_DEFAULT_DESC } from '@/lib/constants';
 
-type PageProps = { params: { slug: string } };
-
-// const Loading = () => {
-//   console.log('LOADING.......');
-//   return <div>loading..........</div>;
-// };
+type PageProps = { params: { slug: string; description: string } };
 
 async function PortfolioDetail({ params }: PageProps) {
   const project = await getProjectBySlug(params.slug);
@@ -35,7 +32,7 @@ async function PortfolioDetail({ params }: PageProps) {
             </a>
           </div>
         </div>
-        <div className={`col-lg-6 ${styles.gallery}`}>
+        <div className={`col-lg-6`}>
           {/* @ts-expect-error Server Component */}
           <Gallery project={project} slug={params.slug} />
         </div>
@@ -44,6 +41,8 @@ async function PortfolioDetail({ params }: PageProps) {
   );
 }
 
+export default PortfolioDetail;
+
 export async function generateStaticParams() {
   const projects = await getProjects();
   return projects.map((project) => ({
@@ -51,6 +50,22 @@ export async function generateStaticParams() {
   }));
 }
 
-export default PortfolioDetail;
-
 export const dynamicParams = false;
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { description } = await getProjectBySlug(params.slug);
+  const titleSlug = params.slug
+    .split('-')
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(' ');
+
+  return {
+    title: titleSlug,
+    description: description || `${params.slug} - ${META_DEFAULT_DESC}`,
+    alternates: {
+      canonical: `https://jasongallagher.org/portfolio/${params.slug}`,
+    },
+  };
+}

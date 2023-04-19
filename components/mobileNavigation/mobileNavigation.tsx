@@ -9,13 +9,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 
 interface MobileNavigationProps {
-  // menuVisible?: boolean;
   children: ReactNode;
 }
-export default function MobileNavigation({
-  children,
-}: // menuVisible = false,
-MobileNavigationProps) {
+export default function MobileNavigation({ children }: MobileNavigationProps) {
   const { state, dispatch } = useContext(GlobalContext);
 
   useEffect(() => {
