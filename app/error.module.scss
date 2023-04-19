@@ -1,0 +1,12 @@
+@import "../assets/scss/bootstrap_vars_override";
+
+.errorBoundary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: var(--jg-light-gray);
+  border: 10px solid var(--jg-crimson);
+}
