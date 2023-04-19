@@ -25,7 +25,7 @@
         "./components/*"
       ],
       "@/assets/*": [
-        "./assets/*"
+        "./lib/assets/*"
       ],
       "@/lib/*": [
         "./lib/*"
