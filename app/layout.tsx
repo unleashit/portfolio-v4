@@ -1,28 +1,21 @@
 import { ReactNode } from 'react';
-import GlobalState from '@/components/providers';
-import { Oswald, Sanchez } from 'next/font/google';
-// prevents flash of large icons during SSR
-// https://github.com/FortAwesome/react-fontawesome/issues/134
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@/assets/scss/global.scss';
 import { Metadata } from 'next';
+import GlobalState from '@/components/providers';
+import MobileNavigation from '@/components/mobileNavigation/mobileNavigation';
+import Navigation from '@/components/navigation/navigation';
+import { Oswald, Sanchez } from 'next/font/google';
 import {
   ASSETS_URL,
   META_DEFAULT_DESC,
   META_DEFAULT_TITLE,
 } from '@/lib/constants';
-import MobileNavigation from '@/components/mobileNavigation/mobileNavigation';
-import Navigation from '@/components/navigation/navigation';
-
-// prevent duplicate FA css
-config.autoAddCss = false;
-
 const oswald = Oswald({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-oswald',
 });
+import '@/assets/scss/global.scss';
+
 const sanchez = Sanchez({
   weight: '400',
   subsets: ['latin'],
