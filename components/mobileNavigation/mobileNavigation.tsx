@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useContext, useEffect } from 'react';
+import { ReactNode, useContext, useEffect, useRef } from 'react';
 import { GlobalContext } from '@/lib/clientState/context';
 import { TOGGLE_HAMBURGER } from '@/lib/clientState/reducer';
 import styles from './mobile-navigation.module.scss';
@@ -13,17 +13,18 @@ interface MobileNavigationProps {
 }
 export default function MobileNavigation({ children }: MobileNavigationProps) {
   const { state, dispatch } = useContext(GlobalContext);
+  const body = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const de = document.documentElement;
+    body.current = document.body;
 
     if (state.hamburgerState) {
-      de.classList.add('mobile-menu-open');
+      body.current.classList.add('mobile-menu-open');
     } else {
-      de.classList.remove('mobile-menu-open');
+      body.current.classList.remove('mobile-menu-open');
     }
     return () => {
-      de.classList.remove('mobile-menu-open');
+      body.current && body.current.classList.remove('mobile-menu-open');
     };
   }, [state.hamburgerState]);
 

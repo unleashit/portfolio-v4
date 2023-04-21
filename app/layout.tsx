@@ -4,11 +4,7 @@ import GlobalState from '@/components/providers';
 import MobileNavigation from '@/components/mobileNavigation/mobileNavigation';
 import Navigation from '@/components/navigation/navigation';
 import { Oswald, Sanchez } from 'next/font/google';
-import {
-  ASSETS_URL,
-  META_DEFAULT_DESC,
-  META_DEFAULT_TITLE,
-} from '@/lib/constants';
+import { META_DEFAULT_DESC, META_DEFAULT_TITLE } from '@/lib/constants';
 const oswald = Oswald({
   weight: '400',
   subsets: ['latin'],
@@ -30,15 +26,6 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${oswald.variable} ${sanchez.variable}`}>
       <body>
-        {/* HACK since NextJS metatdata api doesn't currently support <link /> */}
-        <link
-          rel="preload"
-          fetchPriority="high"
-          as="image"
-          href={`${ASSETS_URL}/a9824768-3995-46a6-a3c8-5a5689778498/header-image.webp?format=webp`}
-          type="image/webp"
-        />
-
         <GlobalState>
           <MobileNavigation>
             {/* @ts-expect-error Server Component */}

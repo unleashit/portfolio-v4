@@ -145,11 +145,11 @@ button.animated {
   animation-duration: 700ms;
 }
 
-html.mobile-menu-open body {
+body.mobile-menu-open {
   overflow: hidden;
   position: fixed;
 }
-html.primary-header-open body {
+body.primary-header-open {
   padding-top: 50px;
 }
 
