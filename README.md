@@ -1,8 +1,14 @@
 ## jasongallagher.org v4
 
-My personal site and portfolio in NextJS 13 using the app directory and React Server Components. Static site built off from a headless CMS and deployed to Cloudflare Pages. Significantly slimmer payload and better performance over V3, with a Page Speed Insights score of 98 on mobile (versus ~78 for v3).
+![jasongallagher.org](https://content.jasongallagher.org/assets/39ce3e85-dd47-4b00-8e52-1552de9654c9)
 
-> Note: this code is NOT an open source. You have a right to view, or install a local copy for personal viewing only. You are not granted the right to use this in any other way, either for commercial or non-commercial reasons. You may not distribute this code. Please see the LICENSE file for more details.
+My personal site and portfolio. This is a rewrite from a custom SSR rendered React site to NextJS 13 and React Server Components. It is is statically exported with data from a headless CMS and deployed to Cloudflare Pages. The result is a significantly slimmer payload and noticeably better performance over V3. Page Speed Insights score is now ~95 on mobile versus ~78 for v3 (Next 13 sends a lot of not always needed RSC output to the client which is most of what is keeping it from being even higher).
+
+> Note: this code is NOT open source. You have a right to view, or install a local copy for personal viewing only. You are not granted the right to use this in any other way, either for commercial or non-commercial reasons. You may not distribute this code. Please see the LICENSE file for more details.
+
+### Demo
+
+https://jasongallagher.org
 
 ### Prerequisites
 
