@@ -1,6 +1,6 @@
 {
-  "name": "next.jasongallagher.org",
-  "version": "0.1.0",
+  "name": "jasongallagher.org",
+  "version": "4.0.6",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
