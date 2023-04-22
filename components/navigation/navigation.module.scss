@@ -23,6 +23,12 @@
       color: #eee;
       text-decoration: none;
     }
+    .jgLogo {
+       margin-right: 8px;
+      @include media-breakpoint-down(md) {
+        margin-right: 4px;
+      }
+    }
   }
   @include media-breakpoint-down(lg) {
     a {
@@ -108,12 +114,9 @@
 
 .jgLogo {
   display: inline-block;
-  margin-right: 8px;
   margin-top: -2px;
+  font-size: 0; // hide alt text
   transition: all 0.4s;
-  @include media-breakpoint-down(md) {
-    margin-right: 4px;
-  }
 }
 
 .jgLogoMobile {

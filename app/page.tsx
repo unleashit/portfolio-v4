@@ -6,6 +6,7 @@ import { PrimaryHeader } from '@/components/primaryHeader/primaryHeader';
 import Navigation from '@/components/navigation/navigation';
 import getHomeData from './data';
 import { Footer } from '@/components/footer/footer';
+import { ASSETS_URL } from '@/lib/constants';
 // import { animation, getEnvironment } from "@/lib/utils";
 
 export default async function Home() {
@@ -73,6 +74,14 @@ export default async function Home() {
 
   return (
     <div id="home">
+      {/* HACK since NextJS metatdata api doesn't currently support <link /> */}
+      <link
+        rel="preload"
+        fetchPriority="high"
+        as="image"
+        href={`${ASSETS_URL}/a9824768-3995-46a6-a3c8-5a5689778498/header-image.webp?format=webp`}
+        type="image/webp"
+      />
       <PrimaryHeader
         isHome
         // remoteId={this.props.liveChat.remoteId}
