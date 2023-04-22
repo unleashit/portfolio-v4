@@ -98,7 +98,7 @@ function ContactForm() {
     <div className={styles.contactForm}>
       {isSubmitting && (
         <Loader
-          style={{
+          styles={{
             height: 'auto',
             width: 'auto',
           }}

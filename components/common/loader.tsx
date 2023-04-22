@@ -1,21 +1,25 @@
 'use client';
 
-import React from 'react';
+import { CSSProperties, useEffect } from 'react';
 import { faRotate } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './loader.module.scss';
+import cssModule from './loader.module.scss';
 
 interface LoaderProps {
-  height?: number;
-  style?: React.CSSProperties;
+  height?: string;
+  styles?: CSSProperties;
 }
 
-const Loader = ({ height, style }: LoaderProps) => {
+const Loader = ({ height, styles }: LoaderProps) => {
+  useEffect(() => {
+    console.log('LOADING...');
+  }, []);
+
   return (
     <div
-      className={styles.loading}
-      {...(height && { height })}
-      {...(style && { styles: style })}
+      className={cssModule.loading}
+      {...(styles && { styles: styles })}
+      {...(height && { styles: { height } })}
     >
       <FontAwesomeIcon
         icon={faRotate}

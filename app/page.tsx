@@ -7,6 +7,8 @@ import Navigation from '@/components/navigation/navigation';
 import getHomeData from './data';
 import { Footer } from '@/components/footer/footer';
 import { ASSETS_URL } from '@/lib/constants';
+import { Suspense } from 'react';
+import Loader from '@/components/common/loader';
 // import { animation, getEnvironment } from "@/lib/utils";
 
 export default async function Home() {
@@ -97,14 +99,16 @@ export default async function Home() {
       <About
       // animation={animation.bind(this, animateAbout, animateOff)}
       />
-      {/* @ts-expect-error Server Component */}
-      <Portfolio
-      // animation={animation.bind(
-      //   this,
-      //   animatePortfolio,
-      //   animateOff
-      // )}
-      />
+      <Suspense fallback={<Loader height="300px" />}>
+        {/* @ts-expect-error Server Component */}
+        <Portfolio
+        // animation={animation.bind(
+        //   this,
+        //   animatePortfolio,
+        //   animateOff
+        // )}
+        />
+      </Suspense>
       {/* @ts-expect-error Server Component */}
       <Footer />
     </div>
