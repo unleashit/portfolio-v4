@@ -5,12 +5,13 @@ import MobileNavigation from '@/components/mobileNavigation/mobileNavigation';
 import Navigation from '@/components/navigation/navigation';
 import { Oswald, Sanchez } from 'next/font/google';
 import { META_DEFAULT_DESC, META_DEFAULT_TITLE } from '@/lib/constants';
+import '@/assets/scss/global.scss';
+
 const oswald = Oswald({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-oswald',
 });
-import '@/assets/scss/global.scss';
 
 const sanchez = Sanchez({
   weight: '400',
