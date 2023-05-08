@@ -6,7 +6,7 @@ function GoHomeBtn() {
       <button
         type="button"
         // temp fix
-        onClick={() => (window.location.href = '/')}
+        onClick={() => (window.location.href = '/#home')}
         className="button button-green button-smaller"
       >
         Go Home
