@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import GlobalState from '@/components/providers';
-import MobileNavigation from '@/components/mobileNavigation/mobileNavigation';
+import MobileMenu from '@/components/mobileMenu/mobileMenu';
 import Navigation from '@/components/navigation/navigation';
 import { Oswald, Sanchez } from 'next/font/google';
 import { META_DEFAULT_DESC, META_DEFAULT_TITLE } from '@/lib/constants';
@@ -28,10 +28,10 @@ export default async function RootLayout({
     <html lang="en" className={`${oswald.variable} ${sanchez.variable}`}>
       <body id="home">
         <GlobalState>
-          <MobileNavigation>
+          <MobileMenu>
             {/* @ts-expect-error Server Component */}
             <Navigation template="hamburger" ulClass="responsiveNav" />
-          </MobileNavigation>
+          </MobileMenu>
 
           {children}
         </GlobalState>
