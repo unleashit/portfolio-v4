@@ -3,7 +3,7 @@
 import { ReactNode, useContext, useEffect, useRef } from 'react';
 import { GlobalContext } from '@/lib/clientState/context';
 import { TOGGLE_HAMBURGER } from '@/lib/clientState/reducer';
-import styles from './mobile-navigation.module.scss';
+import styles from './mobile-menu.module.scss';
 import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +11,7 @@ import { faClose } from '@fortawesome/free-solid-svg-icons';
 interface MobileNavigationProps {
   children: ReactNode;
 }
-export default function MobileNavigation({ children }: MobileNavigationProps) {
+export default function MobileMenu({ children }: MobileNavigationProps) {
   const { state, dispatch } = useContext(GlobalContext);
   const body = useRef<HTMLElement | null>(null);
 

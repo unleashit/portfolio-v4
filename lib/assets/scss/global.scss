@@ -1,14 +1,8 @@
-// @import "~animate.css";
-
 // Functions first
 @import "../../../node_modules/bootstrap/scss/functions";
 
 // custom bootstrap var overrides (in between funcs and stock vars)
 @import "bootstrap_vars_override";
-
-// enable css grid (step 1, step 2 fix class assignments in markup)
-//$enable-grid-classes: false;
-//$enable-cssgrid: true;
 
 // Required Bootstrap imports
 @import "../../../node_modules/bootstrap/scss/variables";
@@ -61,6 +55,4 @@ $theme-colors-rgb: ();
 //@import "../../node_modules/bootstrap/scss/placeholders";
 
 // custom
-
 @import "_global";
-// @import "./live-chat/live-chat";
