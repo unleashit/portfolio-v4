@@ -12,19 +12,34 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.15.0
-          cache: 'npm'
+          cache: 'pnpm'
 
-      - name: Cache NPM dependencies
-        uses: actions/cache@v3
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install
-        run: npm ci
+        run: pnpm install
 
       - name: Build
-        run: npm run build
+        run: pnpm build
         env:
           NEXT_PUBLIC_CONTENT_API: ${{ secrets.NEXT_PUBLIC_CONTENT_API }}
           NEXT_PUBLIC_ASSETS_URL: ${{ secrets.NEXT_PUBLIC_ASSETS_URL }}
@@ -33,7 +48,7 @@ jobs:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
 
       - name: Test
-        run: npm run lint
+        run: pnpm lint
 
       - name: Deploy
         uses: cloudflare/pages-action@1
