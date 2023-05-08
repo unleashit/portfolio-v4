@@ -8,7 +8,7 @@ import { ReactNode, useEffect } from 'react';
 
 function ForceScrollToTop({ children }: { children: ReactNode }) {
   useEffect(() => {
-    return window.document.scrollingElement?.scrollTo(0, 0);
+    window.document.scrollingElement?.scrollTo(0, 0);
   }, []);
   return <>{children}</>;
 }

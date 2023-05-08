@@ -26,7 +26,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className={`${oswald.variable} ${sanchez.variable}`}>
-      <body>
+      <body id="home">
         <GlobalState>
           <MobileNavigation>
             {/* @ts-expect-error Server Component */}

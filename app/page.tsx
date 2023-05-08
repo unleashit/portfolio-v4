@@ -73,7 +73,7 @@ export default async function Home() {
   // }
 
   return (
-    <div id="home">
+    <div>
       {/* HACK since NextJS metatdata api doesn't currently support <link /> */}
       <link
         rel="preload"
