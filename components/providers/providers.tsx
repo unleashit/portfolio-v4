@@ -54,7 +54,16 @@ import {
 //   return appState ? appState : initialState;
 // }
 
-function LocalStorage({ children }: { children: React.ReactNode }) {
+function FontAwesome({ children }: { children: React.ReactNode }) {
+  React.useEffect(() => {
+    dom.watch();
+    library.add(faFileText, faEnvelope, faComments, faGithub);
+  }, []);
+
+  // React.useEffect(() => {
+  //   window.document.scrollingElement?.scrollTo(0, 0);
+  // });
+
   // const { state, dispatch } = React.useContext(GlobalContext);
 
   // React.useEffect(() => {
@@ -62,25 +71,11 @@ function LocalStorage({ children }: { children: React.ReactNode }) {
   //   handleLocalStorage(state, dispatch);
   // }, [state, dispatch]);
 
-  React.useEffect(() => {
-    dom.watch();
-    library.add(faFileText, faEnvelope, faComments, faGithub);
-  }, []);
   return <>{children}</>;
 }
 
 function GlobalState({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = React.useReducer(reducer, initialState);
-
-  // React.useEffect(() => {
-  //   // set local storage on state change or rehydrate on session loss
-  //   handleLocalStorage(state, dispatch);
-  // }, [state, dispatch]);
-
-  React.useEffect(() => {
-    dom.watch();
-    library.add(faFileText, faEnvelope, faComments, faGithub);
-  }, []);
 
   return (
     <GlobalContext.Provider value={{ state, dispatch }}>
@@ -94,7 +89,7 @@ function GlobalState({ children }: { children: React.ReactNode }) {
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <GlobalState>
-      <LocalStorage>{children}</LocalStorage>
+      <FontAwesome>{children}</FontAwesome>
     </GlobalState>
   );
 }

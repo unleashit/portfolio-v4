@@ -8,7 +8,7 @@ type Tag = {
   };
 };
 
-async function getProjectTags(ids: number[]) {
+async function getProjectTags(ids: number[] = []) {
   const tags = (
     await directus().get<Data<Tag[]>>(
       `/items/project_project_tags?fields=project_tags_tag_id.tag&filter[id][_in]=${ids.join(
