@@ -56,7 +56,7 @@ export function Logo({ isMobile }: { isMobile: boolean }) {
   const size = isMobile ? 100 : 42;
   return (
     <li>
-      <Link href="/#home" className={styles.logo}>
+      <Link href="/" className={styles.logo}>
         <img
           src={JG_LOGO}
           alt="jg logo"
