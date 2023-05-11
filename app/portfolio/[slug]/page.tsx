@@ -16,29 +16,34 @@ async function PortfolioDetail({ params }: PageProps) {
   const project = await getProjectBySlug(params.slug);
 
   return (
-    <div className={`${styles.portfolioDetail} container-fluid`}>
-      <div className="row">
-        <div className="col-lg-4">
-          <h3>{project.title}</h3>
-          <div>
-            <CMSMarkup html={project.description} name="project-description" />
+    <ForceScrollToTop>
+      <div className={`${styles.portfolioDetail} container-fluid`}>
+        <div className="row">
+          <div className="col-lg-4">
+            <h3>{project.title}</h3>
+            <div>
+              <CMSMarkup
+                html={project.description}
+                name="project-description"
+              />
+            </div>
+            <Tags tags={project.tags} />
+            <div className={`d-none d-lg-block ${styles.visitSiteLink}`}>
+              <a href={project.link ? project.link : '#'} target="_blank">
+                <button className="button button-smaller">
+                  VISIT SITE &nbsp;&nbsp;
+                  <FontAwesomeIcon icon={faExternalLink} />
+                </button>
+              </a>
+            </div>
           </div>
-          <Tags tags={project.tags} />
-          <div className={`d-none d-lg-block ${styles.visitSiteLink}`}>
-            <a href={project.link ? project.link : '#'} target="_blank">
-              <button className="button button-smaller">
-                VISIT SITE &nbsp;&nbsp;
-                <FontAwesomeIcon icon={faExternalLink} />
-              </button>
-            </a>
+          <div className={`col-lg-6`} style={{ position: 'relative' }}>
+            {/* @ts-expect-error Server Component */}
+            <Gallery project={project} slug={params.slug} />
           </div>
-        </div>
-        <div className={`col-lg-6`} style={{ position: 'relative' }}>
-          {/* @ts-expect-error Server Component */}
-          <Gallery project={project} slug={params.slug} />
         </div>
       </div>
-    </div>
+    </ForceScrollToTop>
   );
 }
 
