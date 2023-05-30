@@ -5,8 +5,8 @@ function GoHomeBtn() {
     <div>
       <button
         type="button"
-        // temp fix
-        onClick={() => (window.location.href = '/#home')}
+        // temp fix for Link not working in not-found.tsx
+        onClick={() => (window.location.href = '/')}
         className="button button-green button-smaller"
       >
         Go Home

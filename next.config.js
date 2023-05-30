@@ -8,9 +8,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   output: 'export',
   distDir: 'out',
-  experimental: {
-    appDir: true,
-  },
   reactStrictMode: true,
   swcMinify: true,
   poweredByHeader: false,
