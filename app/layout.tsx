@@ -29,7 +29,6 @@ export default async function RootLayout({
       <body id="home">
         <GlobalState>
           <MobileMenu>
-            {/* @ts-expect-error Server Component */}
             <Navigation template="hamburger" ulClass="responsiveNav" />
           </MobileMenu>
 

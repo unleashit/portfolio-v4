@@ -86,18 +86,13 @@ export default async function Home() {
         isHome
         // remoteId={this.props.liveChat.remoteId}
       >
-        {/* @ts-expect-error Server Component */}
         <Navigation template="interior" ulClass="primaryNav" />
       </PrimaryHeader>
-      {/* @ts-expect-error Server Component */}
       <Header />
-      {/* @ts-expect-error Server Component */}
       <WhoWhatWhere />
-      {/* @ts-expect-error Server Component */}
       <About
       // animation={animation.bind(this, animateAbout, animateOff)}
       />
-      {/* @ts-expect-error Server Component */}
       <Portfolio
       // animation={animation.bind(
       //   this,
@@ -105,7 +100,6 @@ export default async function Home() {
       //   animateOff
       // )}
       />
-      {/* @ts-expect-error Server Component */}
       <Footer />
     </div>
   );

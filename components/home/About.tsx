@@ -38,7 +38,6 @@ export default async function About() {
 
         <div className="col-lg-4">
           <div className={`${styles.skills} col-lg-12`} id="skills">
-            {/* @ts-expect-error Server Component */}
             <Skills />
           </div>
         </div>

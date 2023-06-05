@@ -33,7 +33,6 @@ async function PortfolioDetail({ params }: PageProps) {
           </div>
         </div>
         <div className={`col-lg-6`} style={{ position: 'relative' }}>
-          {/* @ts-expect-error Server Component */}
           <Gallery project={project} slug={params.slug} />
         </div>
       </div>

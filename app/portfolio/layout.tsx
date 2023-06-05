@@ -7,11 +7,9 @@ async function PortfolioLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <PrimaryHeader>
-        {/* @ts-expect-error Server Component */}
         <Navigation template="interior" ulClass="primaryNav" />
       </PrimaryHeader>
       {children}
-      {/* @ts-expect-error Server Component */}
       <Footer isInterior />
     </>
   );

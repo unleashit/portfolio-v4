@@ -14,7 +14,6 @@ export default async function Header() {
   return (
     <header className={styles.mainHeader}>
       <Hamburger />
-      {/* @ts-expect-error Server Component */}
       <Navigation />
       <div className={styles.titleTaglineWrapper}>
         <h1>{fEE.title}</h1>
