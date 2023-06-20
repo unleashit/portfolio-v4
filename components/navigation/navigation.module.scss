@@ -20,7 +20,7 @@
     &:hover,
     &:active,
     &:visited {
-      color: #eee;
+      color: #fff;
       text-decoration: none;
     }
     .jgLogo {
@@ -58,11 +58,18 @@
   }
   a {
     padding: 0 20px;
-    font-size: 1.7em;
+    font-size: 1.7rem;
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
     outline: none !important;
+    &:link,
+    &:hover,
+    &:active,
+    &:visited {
+      color: #fff;
+      text-decoration: none;
+    }
   }
   .jgLogo {
     display: inline-block;
@@ -86,13 +93,7 @@
     background-color: #111;
     font-size: 1.1rem;
     transition: background 350ms ease-in;
-    &:link,
-    &:hover,
-    &:active,
-    &:visited {
-      color: #eee;
-      text-decoration: none;
-    }
+    text-decoration: none;
     &:hover {
       background-color: #333;
     }
@@ -135,5 +136,13 @@
   }
   .primaryNav a {
     font-size: 1.1rem;
+    &:link,
+    &:hover,
+    &:active,
+    &:visited {
+      font-size: 1.1rem;
+      color: #fff;
+      text-decoration: none;
+    }
   }
 }
