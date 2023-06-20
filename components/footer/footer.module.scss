@@ -40,6 +40,7 @@
 * these classes are assigned in CMS WYSIWYG editor
 * and must be global
 */
+/* purgecss start ignore */
 .footer {
   :global {
     .contact-method {
@@ -69,6 +70,7 @@
     }
   }
 }
+/* purgecss end ignore */
 
 @include media-breakpoint-down(lg) {
   .footer {

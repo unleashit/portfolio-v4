@@ -10,19 +10,7 @@ export type ProjectWithMeta = Omit<Project, 'image_logo'> & {
   image_logo: DirectusFiles;
 };
 
-export default function PortfolioItem({
-  item,
-}: // index,
-// color,
-{
-  item: ProjectWithMeta;
-  index: any;
-  color: string;
-}) {
-  // const color = {
-  //   backgroundColor: this.props.color,
-  // };
-
+export default function PortfolioItem({ item }: { item: ProjectWithMeta }) {
   const {
     image_logo: { width, height },
   } = item;
