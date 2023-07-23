@@ -1,16 +1,15 @@
 'use client';
 
+import Link from 'next/link';
+
 function GoHomeBtn() {
   return (
     <div>
-      <button
-        type="button"
-        // temp fix for Link not working in not-found.tsx
-        onClick={() => (window.location.href = '/')}
-        className="button button-green button-smaller"
-      >
-        Go Home
-      </button>
+      <Link href="/">
+        <button type="button" className="button button-green button-smaller">
+          Go Home
+        </button>
+      </Link>
     </div>
   );
 }
