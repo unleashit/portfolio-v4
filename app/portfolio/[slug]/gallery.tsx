@@ -34,10 +34,10 @@ async function Gallery({
       <div className={`${styles.gallery}`}>
         <Img
           src={`${ASSETS_URL}/${image_main.id}/${sluggify(
-            title
+            title,
           )}.webp?format=webp${width && '&width=650'}`}
           hidpi={`${ASSETS_URL}/${image_main.id}/${sluggify(
-            title
+            title,
           )}.webp?format=webp`}
           {...(width && { width })}
           {...(height && { height })}
@@ -48,7 +48,7 @@ async function Gallery({
         <div className={`d-none d-lg-block ${styles.mobileImage}`}>
           <Img
             src={`${ASSETS_URL}/${image_mobile.id}/${sluggify(
-              title
+              title,
             )}-mobile.webp?format=webp`}
             alt={`${title} mobile version`}
           />

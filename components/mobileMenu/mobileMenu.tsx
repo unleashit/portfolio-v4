@@ -37,7 +37,7 @@ export default function MobileMenu({ children }: MobileNavigationProps) {
       className={clsx(
         styles.respMenu,
         'd-none-md',
-        !state.hamburgerState && styles.off
+        !state.hamburgerState && styles.off,
       )}
     >
       <div className={styles.closeMenu} onClick={closeBurger}>

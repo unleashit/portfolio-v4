@@ -3,7 +3,7 @@ import type { Navigation } from '@/services/types/directus';
 
 export const navWithCtx = (
   links: Navigation[],
-  template: NavigationProps['template']
+  template: NavigationProps['template'],
 ) => {
   const newNav: Partial<Navigation>[] = [...links];
 

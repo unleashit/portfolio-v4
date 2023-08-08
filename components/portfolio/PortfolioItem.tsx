@@ -24,10 +24,10 @@ export default function PortfolioItem({ item }: { item: ProjectWithMeta }) {
         <div>
           <Img
             src={`${ASSETS_URL}/${item.image_logo.id}/${sluggify(
-              item.title
+              item.title,
             )}.webp?format=webp${width && '&width=' + Math.ceil(+width * 0.8)}`}
             hidpi={`${ASSETS_URL}/${item.image_logo.id}/${sluggify(
-              item.title
+              item.title,
             )}.webp?format=webp${width && '&width=' + width}`}
             alt={item.title}
             {...(width && { width })}

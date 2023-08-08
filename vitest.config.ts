@@ -8,6 +8,6 @@ export default defineConfig({
     environment: 'jsdom',
     include: ['./**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     sequence: { shuffle: false },
-    coverage: { provider: 'c8', exclude: ['src/tests'] },
+    coverage: { provider: 'v8', exclude: ['src/tests'] },
   },
 });

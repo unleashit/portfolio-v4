@@ -12,8 +12,8 @@ async function getProjectTags(ids: number[] = []) {
   const tags = (
     await directus().get<Data<Tag[]>>(
       `/items/project_project_tags?fields=project_tags_tag_id.tag&filter[id][_in]=${ids.join(
-        ','
-      )}`
+        ',',
+      )}`,
     )
   ).data;
 
@@ -35,7 +35,7 @@ async function getProjectTags(ids: number[] = []) {
 // }
 
 export async function getProjectBySlug(
-  slug: string
+  slug: string,
 ): Promise<ProjectWithMeta & { tags: string[] }> {
   const projects = await getProjects();
   const foundProject = projects.find((p) => p.slug === slug);
@@ -47,7 +47,7 @@ export async function getProjectBySlug(
 
   const project = (
     await directus().get<Data<ProjectWithMeta>>(
-      `/items/project/${foundProject.project_id}?fields=${fields}`
+      `/items/project/${foundProject.project_id}?fields=${fields}`,
     )
   ).data;
 

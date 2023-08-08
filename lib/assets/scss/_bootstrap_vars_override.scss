@@ -4,6 +4,9 @@
 // Colors
 // Grayscale and brand colors for use across Bootstrap.
 
+// make upgrade to bootstrap 5.3.0 work without fixes
+$enable-dark-mode: false;
+
 $gray-dark:                 #373a3c !default;
 $gray:                      #55595c !default;
 $gray-light:                #818a91 !default;
@@ -34,10 +37,10 @@ $brand-danger:              #d9534f !default;
 
 // Links
 
-$link-color:                 inital;
-$link-decoration:            inital;
-$link-hover-color:           inital;
-$link-hover-decoration:      inital;
+$link-color:                 initial;
+$link-decoration:            initial;
+$link-hover-color:           initial;
+$link-hover-decoration:      initial;
 
 // breakpoints
 

@@ -7,7 +7,7 @@ export async function getNavigation() {
 
   return (
     await directus().get<Data<Navigation[]>>(
-      `/items/navigation?fields=${fields}`
+      `/items/navigation?fields=${fields}`,
     )
   ).data;
 }
@@ -17,7 +17,7 @@ export async function getHomeBlocks() {
 
   return (
     await directus().get<Data<BlockWithMeta[]>>(
-      `/items/blocks?fields=${fields}`
+      `/items/blocks?fields=${fields}`,
     )
   ).data;
 }

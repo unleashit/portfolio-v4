@@ -11,7 +11,7 @@ type SkillProps = {
 type MappedSkills = [
   SkillProps['title'],
   SkillProps['size'],
-  SkillProps['color']
+  SkillProps['color'],
 ][];
 
 function Skill({ title, size, color }: SkillProps) {

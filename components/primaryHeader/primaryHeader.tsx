@@ -33,7 +33,7 @@ export function PrimaryHeader({
       className={clsx(
         styles.primaryHeader,
         !isHome && styles.interior,
-        !isHome || state.headerState ? styles.on : styles.off
+        !isHome || state.headerState ? styles.on : styles.off,
       )}
     >
       <div className="container-fluid">

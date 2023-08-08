@@ -1,10 +1,10 @@
 export const findKeyWithValue = <T extends Record<string, unknown>>(
   objs: T[],
   prop: keyof T,
-  title: string
+  title: string,
 ) => {
   const found = objs.find(
-    (obj) => (obj[prop] as string).toLowerCase() === title.toLowerCase()
+    (obj) => (obj[prop] as string).toLowerCase() === title.toLowerCase(),
   );
   if (!found) {
     throw new Error(`Couldn't find '${title}' block`);
