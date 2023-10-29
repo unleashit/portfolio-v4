@@ -9,5 +9,6 @@ export default defineConfig({
     include: ['./**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     sequence: { shuffle: false },
     coverage: { provider: 'v8', exclude: ['src/tests'] },
-  },
+    globals: true
+  }
 });
