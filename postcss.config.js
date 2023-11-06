@@ -1,25 +1,24 @@
 // after an upgrade, vite started throwing errors because plugins aren't required/imported in the config
 // but Next.js just wants the string name. Oddly, the problem only happens with the first plugin in the array
-const getPlugin = (plugin) => {
-  return process.env.NODE_ENV === 'test' ? require(plugin) : plugin;
-}
+const getPlugin = (plugin) =>
+  process.env.NODE_ENV === 'test' ? require(plugin) : plugin;
 
-module.exports = {
+let config = {
   plugins: [
-    getPlugin('postcss-flexbugs-fixes')
+    getPlugin('postcss-flexbugs-fixes'),
     [
       'postcss-preset-env',
       {
         autoprefixer: { flexbox: 'no-2009' },
         stage: 3,
         features: { 'custom-properties': false },
-      }
+      },
     ],
   ],
 };
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.plugins.push([
+  config.plugins.push([
     '@fullhuman/postcss-purgecss',
     {
       content: [
@@ -31,3 +30,5 @@ if (process.env.NODE_ENV === 'production') {
     },
   ]);
 }
+
+module.exports = config;
