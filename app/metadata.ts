@@ -4,11 +4,11 @@ const globalMeta: Metadata = {
   robots: 'noindex, nofollow',
   title: {
     default:
-      'Front End / Full Stack Engineer in Seattle, WA specializing in React, Typescript, Javascript, Node.Js and more',
+      'Front End / Full Stack Engineer in Portland, OR specializing in React, Typescript, Javascript, Node.Js and more',
     template: 'Jason Gallagher | %s',
   },
   description:
-    'Full Stack Engineer in Seattle focused on React, Node.Js, Typescript, Javascript, Frontend, Backend, Devops, AWS, Serverless',
+    'Full Stack Engineer in Portland focused on React, Node.Js, Typescript, Javascript, Frontend, Backend, Devops, AWS, Serverless',
 
   // alternates: {
   //   canonical: "https://jasongallagher.org",

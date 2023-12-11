@@ -11,9 +11,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   poweredByHeader: false,
-  experimental: {
-    webpackBuildWorker: true
-  },
+  // experimental: {
+  //   webpackBuildWorker: true
+  // },
 };
 
 module.exports = withBundleAnalyzer(nextConfig);
