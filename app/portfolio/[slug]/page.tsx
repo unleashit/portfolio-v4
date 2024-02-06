@@ -11,6 +11,13 @@ import { META_DEFAULT_DESC } from '@/lib/constants';
 
 type PageProps = { params: { slug: string; description: string } };
 
+export async function generateStaticParams() {
+  const projects = await getProjects();
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
 async function PortfolioDetail({ params }: PageProps) {
   const project = await getProjectBySlug(params.slug);
 
@@ -41,15 +48,6 @@ async function PortfolioDetail({ params }: PageProps) {
 }
 
 export default PortfolioDetail;
-
-export async function generateStaticParams() {
-  const projects = await getProjects();
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-}
-
-export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
