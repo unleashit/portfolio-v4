@@ -8,6 +8,7 @@
   "rules": {
     "react/no-unescaped-entities": 0,
     "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-unused-expressions": [2, { "allowShortCircuit": true }],
     "@next/next/no-img-element": 0,
     "@next/next/no-html-link-for-pages": 0
   }
