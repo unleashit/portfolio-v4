@@ -4,31 +4,34 @@
 //   process.env.NODE_ENV === 'test' ? require(plugin) : plugin;
 
 let config = {
-  plugins: [
-    'postcss-flexbugs-fixes',
-    [
-      'postcss-preset-env',
-      {
-        autoprefixer: { flexbox: 'no-2009' },
-        stage: 3,
-        features: { 'custom-properties': false },
-      },
-    ],
-  ],
+  plugins: [],
 };
 
 if (process.env.NODE_ENV === 'production') {
-  config.plugins.push([
-    '@fullhuman/postcss-purgecss',
-    {
-      content: [
-        './app/**/*.{js,jsx,ts,tsx}',
-        './components/**/*.{js,jsx,ts,tsx}',
+  config.plugins.push(
+    [
+      'postcss-flexbugs-fixes',
+      [
+        'postcss-preset-env',
+        {
+          autoprefixer: { flexbox: 'no-2009' },
+          stage: 3,
+          features: { 'custom-properties': false },
+        },
       ],
-      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-      safelist: ['html', 'body', 'svg-inline--fa'],
-    },
-  ]);
+    ],
+    [
+      '@fullhuman/postcss-purgecss',
+      {
+        content: [
+          './app/**/*.{js,jsx,ts,tsx}',
+          './components/**/*.{js,jsx,ts,tsx}',
+        ],
+        defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+        safelist: ['html', 'body', 'svg-inline--fa'],
+      },
+    ],
+  );
 }
 
 module.exports = config;
