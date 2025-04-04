@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const purgeCSSPlugin = require('@fullhuman/postcss-purgecss').default;
+const { purgeCSSPlugin } = require('@fullhuman/postcss-purgecss');
 
 if (process.env.NODE_ENV === 'production') {
   plugins = {
