@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getProjects } from '../../data';
 import { META_DEFAULT_DESC } from '@/lib/constants';
 
-type PageProps = { params: { slug: string; description: string } };
+type Params = Promise<{ slug: string; description: string }>;
 
 export async function generateStaticParams() {
   const projects = await getProjects();
@@ -18,8 +18,9 @@ export async function generateStaticParams() {
   }));
 }
 
-async function PortfolioDetail({ params }: PageProps) {
-  const project = await getProjectBySlug(params.slug);
+async function PortfolioDetail(props: { params: Params }) {
+  const { slug } = await props.params;
+  const project = await getProjectBySlug(slug);
 
   return (
     <div className={`${styles.portfolioDetail} container-fluid`}>
@@ -40,7 +41,7 @@ async function PortfolioDetail({ params }: PageProps) {
           </div>
         </div>
         <div className={`col-lg-6`} style={{ position: 'relative' }}>
-          <Gallery project={project} slug={params.slug} />
+          <Gallery project={project} slug={slug} />
         </div>
       </div>
     </div>
@@ -49,20 +50,21 @@ async function PortfolioDetail({ params }: PageProps) {
 
 export default PortfolioDetail;
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  const { description } = await getProjectBySlug(params.slug);
-  const titleSlug = params.slug
+export async function generateMetadata(props: {
+  params: Params;
+}): Promise<Metadata> {
+  const { slug } = await props.params;
+  const { description } = await getProjectBySlug(slug);
+  const titleSlug = slug
     .split('-')
     .map((word) => word[0].toUpperCase() + word.slice(1))
     .join(' ');
 
   return {
     title: titleSlug,
-    description: description || `${params.slug} - ${META_DEFAULT_DESC}`,
+    description: description || `${slug} - ${META_DEFAULT_DESC}`,
     alternates: {
-      canonical: `https://jasongallagher.org/portfolio/${params.slug}`,
+      canonical: `https://jasongallagher.org/portfolio/${slug}`,
     },
   };
 }
