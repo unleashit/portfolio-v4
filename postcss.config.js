@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const { purgeCSSPlugin } = require('@fullhuman/postcss-purgecss');
+//const { purgeCSSPlugin } = require('@fullhuman/postcss-purgecss');
 
 if (process.env.NODE_ENV === 'production') {
   plugins = {
@@ -13,14 +13,14 @@ if (process.env.NODE_ENV === 'production') {
         'custom-properties': false,
       },
     },
-    purgeCSSPlugin: purgeCSSPlugin({
-      content: [
-        './app/**/*.{js,jsx,ts,tsx}',
-        './components/**/*.{js,jsx,ts,tsx}',
-      ],
-      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-      safelist: ['html', 'body', 'svg-inline--fa'],
-    }),
+    // purgeCSSPlugin: purgeCSSPlugin({
+    //   content: [
+    //     './app/**/*.{js,jsx,ts,tsx}',
+    //     './components/**/*.{js,jsx,ts,tsx}',
+    //   ],
+    //   defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+    //   safelist: ['html', 'body', 'svg-inline--fa'],
+    // }),
   };
 }
 
