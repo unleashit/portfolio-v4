@@ -1,6 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 //const { purgeCSSPlugin } = require('@fullhuman/postcss-purgecss');
 
+let plugins = {};
+
 if (process.env.NODE_ENV === 'production') {
   plugins = {
     'postcss-flexbugs-fixes': {},
