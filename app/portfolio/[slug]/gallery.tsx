@@ -35,7 +35,7 @@ async function Gallery({
         <Img
           src={`${ASSETS_URL}/${image_main.id}/${sluggify(
             title,
-          )}.webp?format=webp${width && '&width=650'}`}
+          )}.webp?format=webp${width ? '&width=650' : ''}`}
           hidpi={`${ASSETS_URL}/${image_main.id}/${sluggify(
             title,
           )}.webp?format=webp`}

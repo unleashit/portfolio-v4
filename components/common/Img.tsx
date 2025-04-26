@@ -1,49 +1,108 @@
-'use client';
+import path from 'path';
+import { writeFile } from 'fs/promises';
+import fs from 'node:fs';
+import { ImgHTMLAttributes } from 'react';
+import { STATIC_MEDIA_PATH } from '@/lib/constants';
 
-import { ImgHTMLAttributes, useState } from 'react';
-import { PLACEHOLDER_IMG } from '@/lib/constants';
+async function fetchWithRetry(url: string, retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const response = await fetch(url);
+      if (response.ok) return response;
+    } catch (error) {
+      if (i === retries - 1) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 1000 * (i + 1)));
+    }
+  }
+  throw new Error(`Failed to fetch ${url} after ${retries} attempts`);
+}
 
-function Img({
-  src = '',
-  width = '',
-  height = '',
-  alt = '',
-  hidpi,
+type ImgProps = {
+  src: string;
+  alt: string;
+  hidpi?: string;
+};
+
+async function getImages(src: string, hidpi?: string) {
+  return await Promise.all(
+    [src, hidpi, src].map(async (url, i) => {
+      if (!url) return null;
+
+      const fileType = i === 0 ? 'main' : i === 1 ? 'hidpi' : 'fallback';
+      const assetURL = new URL(url as string);
+
+      const [imageID, imageFileName] = assetURL.pathname
+        .split('/assets/')[1]
+        .split('/');
+      const [imageTitle, imageExtension] = imageFileName.split('.');
+
+      // don't make extra thumbs for svgs
+      if (imageExtension === 'svg' && fileType !== 'main') {
+        return null;
+      }
+
+      let filename;
+
+      // generate jpeg fallback from main image
+      if (fileType === 'fallback') {
+        assetURL.pathname = assetURL.pathname.replace(/\.webp$/, '.jpg');
+        assetURL.search = assetURL.search.replace(/format=webp/, 'format=jpg');
+        filename = `${imageTitle}-${fileType}-${imageID}.jpg`;
+      } else {
+        filename = `${imageTitle}-${fileType}-${imageID}.${imageExtension}`;
+      }
+
+      const filePath = path.join(STATIC_MEDIA_PATH, filename);
+      if (fs.existsSync(filePath)) {
+        return filename;
+      }
+
+      try {
+        const response = await fetchWithRetry(assetURL.href);
+        const buffer = await response.arrayBuffer();
+        await writeFile(filePath, Buffer.from(buffer));
+        return filename;
+      } catch (error) {
+        console.error(`Failed to fetch ${assetURL.href} image:`, error);
+        return null;
+      }
+    }),
+  );
+}
+
+async function Img({
+  src,
+  alt,
+  hidpi = '',
   ...rest
-}: ImgHTMLAttributes<HTMLImageElement> & { hidpi?: string }) {
-  const [error, setError] = useState(false);
+}: ImgProps & ImgHTMLAttributes<HTMLImageElement>) {
+  const [mainImg, hidpiImg, fallbackImg] = await getImages(src, hidpi);
 
-  const legacySrc = new URL(src);
-  legacySrc.pathname = legacySrc.pathname.replace(/\.webp$/, '.jpg');
-  legacySrc.search = legacySrc.search.replace(/format=webp/, 'format=jpg');
-
-  // fallback image not working after server hydration (only when client mounts).
-  // https://github.com/facebook/react/issues/15446
-  return error ? (
+  return mainImg?.endsWith('.svg') ? (
     <img
+      src={'/assets/' + mainImg}
+      {...(rest.width && { width: rest.width })}
+      {...(rest.height && { width: rest.height })}
       alt={alt}
-      {...(width && { width })}
-      {...(height && { height })}
       {...rest}
-      src={PLACEHOLDER_IMG}
     />
   ) : (
     <picture>
-      {hidpi && (
+      {hidpiImg && (
         <source
-          srcSet={`${hidpi} 1.1x`}
+          srcSet={`/assets/${hidpiImg} 1.1x`}
           media="(min-width: 2000px)"
           type="image/webp"
         />
       )}
-      <source srcSet={src} type="image/webp" />
+      <source srcSet={'/assets/' + mainImg} type="image/webp" />
 
       <img
-        src={error ? PLACEHOLDER_IMG : legacySrc.href}
-        width={width}
-        height={height}
+        src={'/assets/' + fallbackImg}
+        {...(rest.width && { width: rest.width })}
+        {...(rest.height && { width: rest.height })}
         alt={alt}
-        onError={() => setError(true)}
+        // onError={() => setError(true)}
         {...rest}
       />
     </picture>
