@@ -5,3 +5,8 @@ declare module 'react' {
     fetchPriority?: 'high' | 'low' | 'auto';
   }
 }
+
+export interface CustomCSSProperties extends React.CSSProperties {
+  '--background-image-webp': string;
+  '--background-image-hidpi': string;
+}

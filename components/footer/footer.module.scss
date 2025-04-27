@@ -1,4 +1,4 @@
-@import "../../lib/assets/scss/bootstrap_vars_override";
+@import '../../lib/assets/scss/bootstrap_vars_override';
 
 .footerWrap {
   background-color: #3e6f22;
@@ -7,11 +7,13 @@
 }
 
 .footerBorder {
-  @include backgroundImgFallback('#{$assets-url}/ca68252a-2078-41ad-8801-0cef47444183/footer-tile');
   background-color: #000;
   background-repeat: repeat-x;
   background-position: top left;
   height: 232px;
+  @supports (background-image: url('someimage.webp')) {
+    background-image: var(--background-image-webp) !important;
+  }
 }
 
 .interior {
@@ -81,5 +83,3 @@
     }
   }
 }
-
-
