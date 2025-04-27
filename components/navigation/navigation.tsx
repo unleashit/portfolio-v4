@@ -1,9 +1,10 @@
 import Link from 'next/link';
 
 import { navWithCtx } from '@/components/navigation/navWithCtx';
-import { JG_LOGO } from '@/lib/constants';
+import { ASSETS_URL, JG_LOGO } from '@/lib/constants';
 import { getNavigation } from '../../app/data';
 import styles from './navigation.module.scss';
+import Img from '../common/Img';
 
 export interface NavigationProps {
   template?: 'home' | 'interior' | 'hamburger';
@@ -57,8 +58,8 @@ export function Logo({ isMobile }: { isMobile: boolean }) {
   return (
     <li>
       <Link href="/" className={styles.logo}>
-        <img
-          src={JG_LOGO}
+        <Img
+          src={`${ASSETS_URL}/${JG_LOGO}/logo.svg`}
           alt="jg logo"
           className={isMobile ? styles.jgLogoMobile : styles.jgLogo}
           width={size}

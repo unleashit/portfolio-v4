@@ -12,7 +12,7 @@ export type ProjectWithMeta = Omit<Project, 'image_logo'> & {
 
 export default function PortfolioItem({ item }: { item: ProjectWithMeta }) {
   const {
-    image_logo: { width, height },
+    image_logo: { width, type },
   } = item;
 
   return (
@@ -25,16 +25,13 @@ export default function PortfolioItem({ item }: { item: ProjectWithMeta }) {
           <Img
             src={`${ASSETS_URL}/${item.image_logo.id}/${sluggify(
               item.title,
-            )}.webp?format=webp${width && '&width=' + Math.ceil(+width * 0.8)}`}
+            )}.${type === 'image/svg+xml' ? 'svg' : 'webp'}?format=webp${width ? '&width=' + Math.ceil(+width * 0.8) : ''}`}
             hidpi={`${ASSETS_URL}/${item.image_logo.id}/${sluggify(
               item.title,
-            )}.webp?format=webp${width && '&width=' + width}`}
+            )}.webp?format=webp${width ? '&width=' + width : ''}`}
             alt={item.title}
-            {...(width && { width })}
-            {...(height && { height })}
             loading="lazy"
           />
-
           <div className={styles.portfolioCaption}>
             <p>{item.decription_short}</p>
           </div>

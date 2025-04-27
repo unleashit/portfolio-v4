@@ -7,14 +7,28 @@ import React from 'react';
 // import { animation } from '../../libs/utils';
 import styles from './footer.module.scss';
 import clsx from 'clsx';
+import { ASSETS_URL } from '@/lib/constants';
+import { getImages } from '@/lib/services/fetchImages';
+import { CustomCSSProperties } from '@/lib/types/global';
 
 export async function Footer({ isInterior }: { isInterior?: boolean }) {
   const blocks = await getHomeBlocks();
+  const [main, , fallback] = await getImages(
+    `${ASSETS_URL}/ca68252a-2078-41ad-8801-0cef47444183/footer-tile.webp`,
+  );
   const contact = findKeyWithValue(blocks, 'title', 'Contact');
   const aboutTheSite = findKeyWithValue(blocks, 'title', 'About the Site');
 
   return (
-    <footer className={clsx(styles.footer, isInterior && styles.interior)}>
+    <footer
+      className={clsx(styles.footer, isInterior && styles.interior)}
+      style={
+        {
+          backgroundImage: `url('/assets/${fallback}')`,
+          '--background-image-webp': `url('/assets/${main}')`,
+        } as CustomCSSProperties
+      }
+    >
       <div className={styles.footerBorder} />
       <div className={styles.footerWrap} id="contact-area">
         <div

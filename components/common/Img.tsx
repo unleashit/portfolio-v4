@@ -1,49 +1,45 @@
-'use client';
+import { getImages } from '@/lib/services/fetchImages';
+import { type ImgHTMLAttributes } from 'react';
 
-import { ImgHTMLAttributes, useState } from 'react';
-import { PLACEHOLDER_IMG } from '@/lib/constants';
+type ImgProps = {
+  src: string;
+  alt: string;
+  hidpi?: string;
+};
 
-function Img({
-  src = '',
-  width = '',
-  height = '',
-  alt = '',
-  hidpi,
+async function Img({
+  src,
+  alt,
+  hidpi = '',
   ...rest
-}: ImgHTMLAttributes<HTMLImageElement> & { hidpi?: string }) {
-  const [error, setError] = useState(false);
+}: ImgProps & ImgHTMLAttributes<HTMLImageElement>) {
+  const [mainImg, hidpiImg, fallbackImg] = await getImages(src, hidpi);
 
-  const legacySrc = new URL(src);
-  legacySrc.pathname = legacySrc.pathname.replace(/\.webp$/, '.jpg');
-  legacySrc.search = legacySrc.search.replace(/format=webp/, 'format=jpg');
-
-  // fallback image not working after server hydration (only when client mounts).
-  // https://github.com/facebook/react/issues/15446
-  return error ? (
+  return mainImg?.endsWith('.svg') ? (
     <img
+      src={'/assets/' + mainImg}
+      {...(rest.width && { width: rest.width })}
+      {...(rest.height && { width: rest.height })}
       alt={alt}
-      {...(width && { width })}
-      {...(height && { height })}
       {...rest}
-      src={PLACEHOLDER_IMG}
     />
   ) : (
     <picture>
-      {hidpi && (
+      {hidpiImg && (
         <source
-          srcSet={`${hidpi} 1.1x`}
+          srcSet={`/assets/${hidpiImg} 1.1x`}
           media="(min-width: 2000px)"
           type="image/webp"
         />
       )}
-      <source srcSet={src} type="image/webp" />
+      <source srcSet={'/assets/' + mainImg} type="image/webp" />
 
       <img
-        src={error ? PLACEHOLDER_IMG : legacySrc.href}
-        width={width}
-        height={height}
+        src={'/assets/' + fallbackImg}
+        {...(rest.width && { width: rest.width })}
+        {...(rest.height && { width: rest.height })}
         alt={alt}
-        onError={() => setError(true)}
+        // onError={() => setError(true)}
         {...rest}
       />
     </picture>

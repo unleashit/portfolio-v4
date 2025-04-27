@@ -31,7 +31,7 @@ export default async function Portfolio() {
             <PortfolioItem
               key={item.title + ' thumb'}
               // color={color}
-              item={item as any}
+              item={item}
             />
           );
         })}

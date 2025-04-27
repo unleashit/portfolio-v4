@@ -24,7 +24,7 @@ export async function getHomeBlocks() {
 
 export async function getProjects() {
   const fields =
-    'project_id,date_created,title,decription_short,image_logo,slug,sort,image_logo.id,image_logo.width,image_logo.height';
+    'project_id,date_created,title,decription_short,image_logo,slug,sort,image_logo.id,image_logo.width,image_logo.height,image_logo.type';
 
   return (
     await directus().get<Data<Project[]>>(`/items/project?fields=${fields}`)

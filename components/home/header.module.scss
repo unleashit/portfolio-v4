@@ -1,13 +1,15 @@
-@import "../../lib/assets/scss/bootstrap_vars_override";
+@import '../../lib/assets/scss/bootstrap_vars_override';
 
 .mainHeader {
   height: 825px;
-  @include backgroundImgFallback('#{$assets-url}/a9824768-3995-46a6-a3c8-5a5689778498/header-image', 'width=3000');
   background-color: #46823c;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: auto 825px;
   overflow: hidden;
+  @supports (background-image: url('someimage.webp')) {
+    background-image: var(--background-image-webp) !important;
+  }
 }
 
 .titleTaglineWrapper {
@@ -85,7 +87,9 @@
 
 @include hiDPI_MQ {
   .mainHeader {
-    @include backgroundImgFallback('#{$assets-url}/a9824768-3995-46a6-a3c8-5a5689778498/header-image');
+    @supports (background-image: url('someimage.webp')) {
+      background-image: var(--background-image-hidpi) !important;
+    }
     background-color: #3f7e37;
     background-repeat: no-repeat;
     background-position: center top;
@@ -102,4 +106,3 @@
     margin-top: 120px;
   }
 }
-

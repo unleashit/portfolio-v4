@@ -1,14 +1,15 @@
 @mixin hiDPI_MQ {
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
-  only screen and (-o-min-device-pixel-ratio: 13/10),
-  only screen and (min-resolution: 120dpi) {
-    @content
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.3) and (min-width: 2000px),
+    only screen and (-o-min-device-pixel-ratio: 13/10) and (min-width: 2000px),
+    only screen and (min-resolution: 120dpi) and (min-width: 2000px) {
+    @content;
   }
 }
 
+// not currently in use
 @mixin backgroundImgFallback($path, $querystring: '', $ext: 'jpg') {
   $amp: if($querystring == '', '', '&');
-  background-image: url("#{$path}.#{$ext}?format=#{$ext}#{$amp}#{$querystring}");
+  background-image: url('#{$path}.#{$ext}?format=#{$ext}#{$amp}#{$querystring}');
 
   @supports (background-image: url('#{$path}.webp')) {
     background-image: url('#{$path}.webp?format=webp#{$amp}#{$querystring}');
