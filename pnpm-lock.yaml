@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@fullhuman/postcss-purgecss':
+    hash: cb99bf912e3d5bad17f4f3791f0d10fb65b59c3633ed5452296cf6cdfb9134be
+    path: patches/@fullhuman__postcss-purgecss.patch
+
 importers:
 
   .:
@@ -50,7 +55,7 @@ importers:
     devDependencies:
       '@fullhuman/postcss-purgecss':
         specifier: ^7.0.2
-        version: 7.0.2(postcss@8.5.3)
+        version: 7.0.2(patch_hash=cb99bf912e3d5bad17f4f3791f0d10fb65b59c3633ed5452296cf6cdfb9134be)(postcss@8.5.3)
       '@next/bundle-analyzer':
         specifier: ^15.2.4
         version: 15.3.1
@@ -3742,7 +3747,7 @@ snapshots:
       prop-types: 15.8.1
       react: 19.1.0
 
-  '@fullhuman/postcss-purgecss@7.0.2(postcss@8.5.3)':
+  '@fullhuman/postcss-purgecss@7.0.2(patch_hash=cb99bf912e3d5bad17f4f3791f0d10fb65b59c3633ed5452296cf6cdfb9134be)(postcss@8.5.3)':
     dependencies:
       postcss: 8.5.3
       purgecss: 7.0.2
