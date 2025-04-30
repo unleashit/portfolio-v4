@@ -74,14 +74,6 @@ export default async function Home() {
 
   return (
     <div>
-      {/* HACK since NextJS metatdata api doesn't currently support <link /> */}
-      {/* <link
-        rel="preload"
-        fetchPriority="high"
-        as="image"
-        href={`${ASSETS_URL}/a9824768-3995-46a6-a3c8-5a5689778498/header-image.webp?format=webp`}
-        type="image/webp"
-      /> */}
       <PrimaryHeader
         isHome
         // remoteId={this.props.liveChat.remoteId}

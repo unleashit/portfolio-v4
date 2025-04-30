@@ -7,6 +7,7 @@
 }
 
 .footerBorder {
+  background-image: var(--background-image-fallback);
   background-color: #000;
   background-repeat: repeat-x;
   background-position: top left;

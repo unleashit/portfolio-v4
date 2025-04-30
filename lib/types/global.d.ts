@@ -7,6 +7,7 @@ declare module 'react' {
 }
 
 export interface CustomCSSProperties extends React.CSSProperties {
+  '--background-image-fallback': string;
   '--background-image-webp': string;
   '--background-image-hidpi': string;
 }

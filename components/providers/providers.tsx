@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import ReactDOM from 'react-dom';
 import { initialState, reducer } from '@/lib/clientState/reducer';
 import type { GlobalState } from '@/lib/clientState/reducer';
 import { GlobalContext } from '@/lib/clientState/context';
@@ -54,6 +55,25 @@ import {
 //   return appState ? appState : initialState;
 // }
 
+function AddMetaData({ children }: { children: React.ReactNode }) {
+  let backgroundImg;
+  if (typeof window !== 'undefined') {
+    backgroundImg =
+      window.innerWidth > 3000
+        ? '/assets/header-image-hidpi-a9824768-3995-46a6-a3c8-5a5689778498.webp'
+        : '/assets/header-image-main-a9824768-3995-46a6-a3c8-5a5689778498.webp';
+  }
+
+  backgroundImg &&
+    ReactDOM.preload(backgroundImg, {
+      as: 'image',
+      type: 'image/webp',
+      fetchPriority: 'high',
+    });
+
+  return children;
+}
+
 function FontAwesome({ children }: { children: React.ReactNode }) {
   React.useEffect(() => {
     dom.watch();
@@ -71,7 +91,7 @@ function FontAwesome({ children }: { children: React.ReactNode }) {
   //   handleLocalStorage(state, dispatch);
   // }, [state, dispatch]);
 
-  return <>{children}</>;
+  return children;
 }
 
 function GlobalState({ children }: { children: React.ReactNode }) {
@@ -89,7 +109,9 @@ function GlobalState({ children }: { children: React.ReactNode }) {
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <GlobalState>
-      <FontAwesome>{children}</FontAwesome>
+      <AddMetaData>
+        <FontAwesome>{children}</FontAwesome>
+      </AddMetaData>
     </GlobalState>
   );
 }

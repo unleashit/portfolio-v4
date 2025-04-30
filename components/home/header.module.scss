@@ -1,6 +1,7 @@
 @import '../../lib/assets/scss/bootstrap_vars_override';
 
 .mainHeader {
+  background-image: var(--background-image-fallback);
   height: 825px;
   background-color: #46823c;
   background-repeat: no-repeat;
@@ -86,15 +87,17 @@
 }
 
 @include hiDPI_MQ {
-  .mainHeader {
-    @supports (background-image: url('someimage.webp')) {
-      background-image: var(--background-image-hidpi) !important;
+  @media (min-width: 3000px) {
+    .mainHeader {
+      @supports (background-image: url('someimage.webp')) {
+        background-image: var(--background-image-hidpi) !important;
+      }
+      background-color: #3f7e37;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: auto 725px;
+      height: 725px;
     }
-    background-color: #3f7e37;
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: auto 725px;
-    height: 725px;
   }
   .titleTaglineWrapper {
     margin-top: 130px;
