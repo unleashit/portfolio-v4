@@ -1,0 +1,14 @@
+diff --git a/lib/postcss-purgecss.js b/lib/postcss-purgecss.js
+index c54db9f7c4abd4169ec713ef3274360bfce79754..86b24722210e773fc8a84092ac6e50a96e2e6769 100644
+--- a/lib/postcss-purgecss.js
++++ b/lib/postcss-purgecss.js
+@@ -109,5 +109,7 @@ const purgeCSSPlugin = function (opts) {
+ };
+ purgeCSSPlugin.postcss = true;
+ 
+-exports.default = purgeCSSPlugin;
+-exports.purgeCSSPlugin = purgeCSSPlugin;
++// exports.default = purgeCSSPlugin;
++// exports.purgeCSSPlugin = purgeCSSPlugin;
++
++module.exports = purgeCSSPlugin;

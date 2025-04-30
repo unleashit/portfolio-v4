@@ -1,0 +1,2 @@
+patchedDependencies:
+  '@fullhuman/postcss-purgecss': patches/@fullhuman__postcss-purgecss.patch
