@@ -24,7 +24,7 @@ export default async function Header() {
       className={styles.mainHeader}
       style={
         {
-          backgroundImage: `url('/assets/${fallback}')`,
+          '--background-image-fallback': `url('/assets/${fallback}')`,
           '--background-image-webp': `url('/assets/${main}')`,
           '--background-image-hidpi': `url('/assets/${hidpi}')`,
         } as CustomCSSProperties

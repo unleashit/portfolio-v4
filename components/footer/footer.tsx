@@ -24,7 +24,7 @@ export async function Footer({ isInterior }: { isInterior?: boolean }) {
       className={clsx(styles.footer, isInterior && styles.interior)}
       style={
         {
-          backgroundImage: `url('/assets/${fallback}')`,
+          '--background-image-fallback': `url('/assets/${fallback}')`,
           '--background-image-webp': `url('/assets/${main}')`,
         } as CustomCSSProperties
       }
