@@ -2,8 +2,16 @@
 # was needed for Next.js module compat is no longer required:
 # https://github.com/FullHuman/purgecss/issues/1295
 
-# pnpm >= 11 requires an explicit decision for dependencies with build scripts.
+# pnpm >= 11 requires an explicit decision for dependencies with build scripts,
+# and refuses to add a package whose scripts would have been ignored.
 # @parcel/watcher (pulled in by sass, vite and Next) only compiles from source
 # when npm_config_build_from_source is set, otherwise it uses its prebuilt binary.
+# esbuild and workerd come in with wrangler (CI deploys Pages with
+# wrangler-action, which reuses this installation instead of running its own
+# `pnpm add wrangler` mid-deploy). Both postinstalls only fetch a fallback
+# binary; the real one arrives through their @cloudflare/@esbuild platform
+# optionalDependencies, so the scripts are cheap but harmless to allow.
 allowBuilds:
   '@parcel/watcher': true
+  esbuild: true
+  workerd: true
