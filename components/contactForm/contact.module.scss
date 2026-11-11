@@ -1,4 +1,4 @@
-@import "../../lib/assets/scss/bootstrap_vars_override";
+@use "../../lib/assets/scss/bootstrap" as *;
 
 .contactForm {
   h4 {
@@ -11,20 +11,18 @@
     color: var(--jg-lime-green-light);
     padding-left: 13px;
     }
-  :global {
-    .button {
-      width: 140px;
-      @include media-breakpoint-down(sm)  {
-        display: block;
-        width: 100%;
-      }
+  :global(.button) {
+    width: 140px;
+    @include media-breakpoint-down(sm) {
+      display: block;
+      width: 100%;
     }
-    .form-control:focus {
-      color: #999;
-      background-color: #444;
-      border: 0;
-      outline: none;
-    }
+  }
+  :global(.form-control:focus) {
+    color: #999;
+    background-color: #444;
+    border: 0;
+    outline: none;
   }
 }
 

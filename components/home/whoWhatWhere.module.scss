@@ -1,4 +1,4 @@
-@import "../../lib/assets/scss/bootstrap_vars_override";
+@use "../../lib/assets/scss/bootstrap" as *;
 
 .whoWhatWhere {
   margin-top: var(--jg-section-padding);

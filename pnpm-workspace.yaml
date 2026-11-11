@@ -1,2 +1,9 @@
-patchedDependencies:
-  '@fullhuman/postcss-purgecss': patches/@fullhuman__postcss-purgecss.patch
+# purgecss >= 9 ships the PostCSS plugin as `module.exports`, so the patch that
+# was needed for Next.js module compat is no longer required:
+# https://github.com/FullHuman/purgecss/issues/1295
+
+# pnpm >= 11 requires an explicit decision for dependencies with build scripts.
+# @parcel/watcher (pulled in by sass, vite and Next) only compiles from source
+# when npm_config_build_from_source is set, otherwise it uses its prebuilt binary.
+allowBuilds:
+  '@parcel/watcher': true

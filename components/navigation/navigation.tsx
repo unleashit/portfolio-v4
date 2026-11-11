@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import ScrollToTopLink from '@/components/common/scrollToTopLink';
 
 import { navWithCtx } from '@/components/navigation/navWithCtx';
 import { ASSETS_URL, JG_LOGO } from '@/lib/constants';
@@ -49,7 +49,7 @@ const NavLink = ({
   isMobile: boolean;
 }) => (
   <li className={!isMobile ? 'd-none d-md-inline-block' : undefined}>
-    <Link href={href}>{title}</Link>
+    <ScrollToTopLink href={href}>{title}</ScrollToTopLink>
   </li>
 );
 
@@ -57,7 +57,7 @@ export function Logo({ isMobile }: { isMobile: boolean }) {
   const size = isMobile ? 100 : 42;
   return (
     <li>
-      <Link href="/" className={styles.logo}>
+      <ScrollToTopLink href="/" className={styles.logo}>
         <Img
           src={`${ASSETS_URL}/${JG_LOGO}/logo.svg`}
           alt="jg logo"
@@ -65,7 +65,7 @@ export function Logo({ isMobile }: { isMobile: boolean }) {
           width={size}
           height={size}
         />
-      </Link>
+      </ScrollToTopLink>
     </li>
   );
 }
