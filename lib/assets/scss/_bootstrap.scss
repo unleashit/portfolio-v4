@@ -1,0 +1,22 @@
+// Shared Sass entry point for component stylesheets: site values + the mixins
+// they use, exposed for `@use ... as *`.
+//
+// Bootstrap 5.3 still ships its Sass as a plain `@import` chain — its partials
+// reference variables and mixins that have to be in the same scope — so the
+// pieces cannot be loaded with `@use` individually (e.g. `mixins/_breakpoints`
+// has no `$grid-breakpoints` of its own). Everything bootstrap needs in scope
+// is therefore `@import`ed once, here, instead of in every component file; what
+// comes out of this module is re-exported for `@use` consumers.
+//
+// Nothing in this file emits CSS: it is values and mixins only. The CSS itself
+// comes from `global.scss`, which owns the theme order (it has to interleave
+// variable assignments between bootstrap partials).
+//
+// When Bootstrap 6 (module-native Sass) lands, this shim should collapse into
+// `@use 'bootstrap' with (...)` and the `@import` below can go away.
+// @forward has to come before the @import chain below
+@forward 'mixins';
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap_vars_override';
+@import 'bootstrap/scss/mixins';

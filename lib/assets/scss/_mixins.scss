@@ -8,7 +8,11 @@
 
 // not currently in use
 @mixin backgroundImgFallback($path, $querystring: '', $ext: 'jpg') {
-  $amp: if($querystring == '', '', '&');
+  // `if()` is deprecated in favor of CSS syntax, so branch explicitly
+  $amp: '';
+  @if $querystring != '' {
+    $amp: '&';
+  }
   background-image: url('#{$path}.#{$ext}?format=#{$ext}#{$amp}#{$querystring}');
 
   @supports (background-image: url('#{$path}.webp')) {

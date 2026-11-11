@@ -1,13 +1,19 @@
+@use 'sass:map';
+
 // Functions first
-@import "../../../node_modules/bootstrap/scss/functions";
+@import "bootstrap/scss/functions";
 
 // custom bootstrap var overrides (in between funcs and stock vars)
+// Kept as @import: these values have to be in the same scope as bootstrap's
+// `!default` declarations below, which only happens on the import chain.
 @import "bootstrap_vars_override";
 
 // Required Bootstrap imports
-@import "../../../node_modules/bootstrap/scss/variables";
+@import "bootstrap/scss/variables";
 
 // create and add custom css vars to :root
+// Kept as @import: _root.scss merges our colors into $theme-colors, and the
+// partials below (maps, utilities/api) have to see the merged map.
 @import "root";
 
 // remove css variable bloat
@@ -15,7 +21,7 @@ $colors: ();
 $theme-colors-rgb: ();
 
 // final required bootstrap
-@import "../../../node_modules/bootstrap/scss/maps";
+@import "bootstrap/scss/maps";
 
 // More css variable bloat: the text-emphasis / bg-subtle / border-subtle
 // palettes added in 5.3 are the light/dark counterparts used by
@@ -25,17 +31,17 @@ $theme-colors-text: ();
 $theme-colors-bg-subtle: ();
 $theme-colors-border-subtle: ();
 
-@import "../../../node_modules/bootstrap/scss/mixins";
+@import "bootstrap/scss/mixins";
 
 // Optional components
-@import "../../../node_modules/bootstrap/scss/root";
-@import "../../../node_modules/bootstrap/scss/reboot";
-@import "../../../node_modules/bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/utilities";
 
 // Drop the 5.3 utility groups that would reference the variables removed above:
 // focus-ring builds its values straight from $theme-colors-rgb, and
 // generate-utility() throws on an empty list.
-$utilities: map-remove(
+$utilities: map.remove(
   $utilities,
   'focus-ring',
   'text-color',
@@ -43,12 +49,12 @@ $utilities: map-remove(
   'subtle-border-color'
 );
 
-@import "../../../node_modules/bootstrap/scss/containers";
-@import "../../../node_modules/bootstrap/scss/grid";
-@import "../../../node_modules/bootstrap/scss/helpers";
-@import "../../../node_modules/bootstrap/scss/utilities/api";
-@import "../../../node_modules/bootstrap/scss/forms";
-@import "../../../node_modules/bootstrap/scss/type";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/type";
 //@import "../../node_modules/bootstrap/scss/buttons";
 //@import "../../node_modules/bootstrap/scss/button-group";
 //@import "../../node_modules/bootstrap/scss/images";
@@ -76,4 +82,6 @@ $utilities: map-remove(
 //@import "../../node_modules/bootstrap/scss/placeholders";
 
 // custom
+// Kept as @import on purpose: this CSS has to land after bootstrap's, and `@use`
+// rules are hoisted to the top of a module, which would flip the cascade.
 @import "_global";

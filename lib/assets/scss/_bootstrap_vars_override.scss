@@ -1,6 +1,8 @@
-@import "../../../node_modules/bootstrap/scss/mixins";
-@import 'mixins';
-
+// Values only: this file defines variables and emits no CSS. It is loaded by
+// `lib/assets/scss/_bootstrap.scss` (for components) and by `global.scss` (for
+// the theme), both of which need it in scope *before* Bootstrap's own
+// `variables` partial, whose declarations are all `!default`.
+//
 // Colors
 // Grayscale and brand colors for use across Bootstrap.
 
