@@ -18,6 +18,16 @@ a {
   }
 }
 
+// Font Awesome 7 sizes every icon as `width: var(--fa-width, 1.25em)`, while 6.x
+// left width to the SVG viewBox aspect ratio (fa-bars is 448x512, so 0.875em).
+// That widened the hamburger, the close labels and the resume/github buttons.
+// `--fa-width` is FA's own knob, so using it avoids a specificity fight with the
+// CSS FA injects at runtime, and fixed-width helpers (.fa-fw) keep working
+// because they set the variable themselves.
+:root {
+  --fa-width: auto;
+}
+
 html, body {
   min-height: 100%;
 }
