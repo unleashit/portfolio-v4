@@ -1,4 +1,4 @@
-@import '../../lib/assets/scss/bootstrap_vars_override';
+@use '../../lib/assets/scss/bootstrap' as *;
 
 .mainHeader {
   background-image: var(--background-image-fallback);

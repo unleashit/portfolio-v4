@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $custom-vars: (
   "jg-lime-green": $lime-green, // primary => green btns
   "jg-light-purple": $light-purple, // secondary => lighter purple from hone page graphics old: #afafc8
@@ -26,7 +28,7 @@ $cust-theme-colors: (
 );
 
 // Merge the maps
-$theme-colors: map-merge($theme-colors, $cust-theme-colors);
+$theme-colors: map.merge($theme-colors, $cust-theme-colors);
 
 :root {
   @each $color, $value in $custom-vars {

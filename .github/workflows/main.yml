@@ -1,42 +1,48 @@
-on: [push]
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    # master lands on Pages' production branch; any other listed branch lands
+    # on a preview branch (https://<branch>.<project>.pages.dev).
+    branches:
+      - master
+      - staging
+  # Allows a re-deploy from the Actions tab without a new commit.
+  workflow_dispatch:
+
+# Two deploys of the same ref at once would race on the same Pages branch.
+concurrency:
+  group: pages-deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  deployments: write # lets wrangler-action create the GitHub Deployment
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
     name: Deploy to Cloudflare Pages
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+
+      # Must come before setup-node so the pnpm store can be cached. The
+      # version comes from "packageManager" in package.json (pnpm@12.18.0).
+      - uses: pnpm/action-setup@v6
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 20.x
-
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 10.7.0
-          run_install: false
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v4
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          node-version-file: .nvmrc
+          cache: pnpm
 
       - name: Install
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint and test
+        run: |
+          pnpm lint
+          pnpm test
 
       - name: Build
         run: pnpm build
@@ -44,24 +50,41 @@ jobs:
           NEXT_PUBLIC_CONTENT_API: ${{ secrets.NEXT_PUBLIC_CONTENT_API }}
           NEXT_PUBLIC_ASSETS_URL: ${{ secrets.NEXT_PUBLIC_ASSETS_URL }}
           NEXT_TELEMETRY_DISABLED: ${{ secrets.NEXT_TELEMETRY_DISABLED }}
+          # Honored by lib/services/index.ts (also accepts the new
+          # NEXT_PUBLIC_API_DEBUG). Unused unless set to true|verbose.
           NEXT_PUBLIC_PROMISE_CACHE_DEBUG: ${{ secrets.NEXT_PUBLIC_PROMISE_CACHE_DEBUG }}
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
 
-      - name: Test
-        run: pnpm lint
-
+      # cloudflare/pages-action is retired (repo gone; the Marketplace entry
+      # points at wrangler-action). `pages deploy` uploads out/ to the same
+      # Pages project, so the dashboard settings, custom domain and branch
+      # aliases are unchanged. Wrangler picks up the branch and commit from
+      # the checkout, so pushes to master land on the production branch.
       - name: Deploy
-        uses: cloudflare/pages-action@1
+        id: deploy
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: 'portfolio'
-          directory: 'out'
-          gitHubToken: ${{ secrets.GH_TOKEN }}
+          # --branch keeps preview and production deploys apart: Pages routes a
+          # deploy whose branch matches the project's production branch
+          # (master) to the domain, everything else to <branch>.<project>.pages.dev.
+          command: pages deploy out --project-name=portfolio --branch=${{ github.ref_name }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
+      # public/_headers caches every path for a year, so the zone has to be
+      # purged for visitors to see updated HTML. Preview branches are served from
+      # their own hostname and are never part of this zone, so purging for them
+      # would only throw away the production cache.
+      # Pinned to a tag: @master is a moving ref.
       - name: Purge Cloudflare cache
-        uses: nathanvaughn/actions-cloudflare-purge@master
-        # preferred
+        if: github.ref_name == 'master'
+        uses: nathanvaughn/actions-cloudflare-purge@v4.0.0
         with:
           cf_zone: ${{ secrets.CLOUDFLARE_ZONE }}
           cf_auth: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
+
+      - name: Deployment URLs
+        run: |
+          echo "deployment: ${{ steps.deploy.outputs.deployment-url }}"
+          echo "branch alias: ${{ steps.deploy.outputs.pages-deployment-alias-url }}"

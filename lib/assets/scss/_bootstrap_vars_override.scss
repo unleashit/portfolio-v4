@@ -1,6 +1,8 @@
-@import "../../../node_modules/bootstrap/scss/mixins";
-@import 'mixins';
-
+// Values only: this file defines variables and emits no CSS. It is loaded by
+// `lib/assets/scss/_bootstrap.scss` (for components) and by `global.scss` (for
+// the theme), both of which need it in scope *before* Bootstrap's own
+// `variables` partial, whose declarations are all `!default`.
+//
 // Colors
 // Grayscale and brand colors for use across Bootstrap.
 
@@ -37,9 +39,11 @@ $brand-danger:              #d9534f !default;
 
 // Links
 
-$link-color:                 initial;
+// Only the decoration overrides are left here. Since Bootstrap 5.3 the variables
+// layer runs color math on $link-color / $link-hover-color (color-contrast(),
+// to-rgb()), which rejects the `initial` keyword, so those two keep their stock
+// values and _global.scss neutralises the emitted link styles instead.
 $link-decoration:            initial;
-$link-hover-color:           initial;
 $link-hover-decoration:      initial;
 
 // breakpoints
@@ -87,7 +91,9 @@ $headings-font-weight:       400;
 $input-bg:                       #292929;
 $input-color:                    #c7c7c7;
 $input-border-color:             #ccc !default;
-$input-btn-border-width:         0; // For form controls and buttons
+// needs the unit: Bootstrap 5.3 interpolates this into calc(), where a
+// unitless 0 would invalidate the whole declaration (e.g. textarea min-height)
+$input-btn-border-width:         0px; // For form controls and buttons
 $input-border-radius:            2px;
 $input-border-focus:             inherit;
 $input-box-shadow-focus:         inherit;

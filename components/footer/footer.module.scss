@@ -1,4 +1,5 @@
-@import '../../lib/assets/scss/bootstrap_vars_override';
+@use 'sass:color';
+@use '../../lib/assets/scss/bootstrap' as *;
 
 .footerWrap {
   background-color: #3e6f22;
@@ -35,7 +36,7 @@
     transition: color 300ms;
   }
   a:hover {
-    color: darken($lime-green-light, 15%);
+    color: color.adjust($lime-green-light, $lightness: -15%);
   }
 }
 
@@ -45,31 +46,29 @@
 */
 /* purgecss start ignore */
 .footer {
-  :global {
-    .contact-method {
-      margin-bottom: 3px;
-      svg {
-        margin-right: 11px;
-      }
-      &.chat svg {
-        margin-right: 5px;
-      }
+  :global(.contact-method) {
+    margin-bottom: 3px;
+    svg {
+      margin-right: 11px;
     }
+  }
+  :global(.contact-method.chat) svg {
+    margin-right: 5px;
+  }
 
-    .about-this-site {
-      margin-top: 30px;
-      @include media-breakpoint-down(lg) {
-        margin-top: 45px;
-      }
+  :global(.about-this-site) {
+    margin-top: 30px;
+    @include media-breakpoint-down(lg) {
+      margin-top: 45px;
     }
-    .about-this-site-text {
-      span {
-        color: var(--jg-lime-green-light);
-        white-space: nowrap;
-      }
-      @include media-breakpoint-down(lg) {
-        margin-bottom: 45px;
-      }
+  }
+  :global(.about-this-site-text) {
+    span {
+      color: var(--jg-lime-green-light);
+      white-space: nowrap;
+    }
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 45px;
     }
   }
 }
@@ -77,10 +76,8 @@
 
 @include media-breakpoint-down(lg) {
   .footer {
-    :global {
-      .contact-me {
-        margin-top: 45px;
-      }
+    :global(.contact-me) {
+      margin-top: 45px;
     }
   }
 }

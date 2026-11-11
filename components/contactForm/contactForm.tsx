@@ -6,7 +6,7 @@ import { Input, Textarea } from '@/components/common/formParts';
 import Loader from '@/components/common/loader';
 import { useState } from 'react';
 import { sendContact } from '../../app/data';
-import { NextPromiseCacheError } from 'next-promise-cache';
+import { ApiError } from '@/lib/services';
 import styles from './contact.module.scss';
 
 export interface FormValues {
@@ -50,8 +50,10 @@ function ContactForm() {
   const [fetchError, setFetchError] = useState<null | Error>(null);
 
   const onSubmit = handleSubmit(async (data) => {
-    await sendContact(data).catch(async (err: NextPromiseCacheError) => {
-      if (err.status === 400) {
+    try {
+      await sendContact(data);
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 400) {
         const resp = await err.response.json();
         const serverErrors = mapServerErrors(resp.errors);
 
@@ -62,10 +64,10 @@ function ContactForm() {
           });
         });
       } else {
-        console.error(err.status);
-        setFetchError(err);
+        console.error(err);
+        setFetchError(err instanceof Error ? err : new Error(String(err)));
       }
-    });
+    }
   });
 
   if (isSubmitSuccessful && !fetchError) {
