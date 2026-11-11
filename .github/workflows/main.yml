@@ -2,12 +2,15 @@ name: Deploy to Cloudflare Pages
 
 on:
   push:
+    # master lands on Pages' production branch; any other listed branch lands
+    # on a preview branch (https://<branch>.<project>.pages.dev).
     branches:
       - master
+      - staging
   # Allows a re-deploy from the Actions tab without a new commit.
   workflow_dispatch:
 
-# Two production deploys at once would race on the same Pages project.
+# Two deploys of the same ref at once would race on the same Pages branch.
 concurrency:
   group: pages-deploy-${{ github.ref }}
   cancel-in-progress: false
@@ -63,17 +66,25 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy out --project-name=portfolio
+          # --branch keeps preview and production deploys apart: Pages routes a
+          # deploy whose branch matches the project's production branch
+          # (master) to the domain, everything else to <branch>.<project>.pages.dev.
+          command: pages deploy out --project-name=portfolio --branch=${{ github.ref_name }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       # public/_headers caches every path for a year, so the zone has to be
-      # purged for visitors to see updated HTML.
+      # purged for visitors to see updated HTML. Preview branches are served from
+      # their own hostname and are never part of this zone, so purging for them
+      # would only throw away the production cache.
       # Pinned to a tag: @master is a moving ref.
       - name: Purge Cloudflare cache
+        if: github.ref_name == 'master'
         uses: nathanvaughn/actions-cloudflare-purge@v4.0.0
         with:
           cf_zone: ${{ secrets.CLOUDFLARE_ZONE }}
           cf_auth: ${{ secrets.CLOUDFLARE_PURGE_KEY }}
 
-      - name: Deployment URL
-        run: echo "Deployed ${{ steps.deploy.outputs.deployment-url }}"
+      - name: Deployment URLs
+        run: |
+          echo "deployment: ${{ steps.deploy.outputs.deployment-url }}"
+          echo "branch alias: ${{ steps.deploy.outputs.pages-deployment-alias-url }}"
