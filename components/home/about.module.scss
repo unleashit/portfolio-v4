@@ -4,23 +4,26 @@
   margin-top: var(--jg-section-padding);
   padding-top: var(--jg-section-padding);
   border-top: 1px solid #ccc;
-  :global {
-    .about-buttons {
-      margin-top: 30px;
+  // `.about-buttons` only exists in CMS-authored HTML, so purgecss never saw the
+  // class in the source scan and dropped this rule — that is the spacing that has
+  // always shipped. purgecss 9 keeps the rule, which would add a gap that has
+  // never been live, so the deployed value is pinned here. Switch back to 30px if
+  // the intended gap is wanted.
+  :global(.about-buttons) {
+    margin-top: 0; // design intent: 30px
+  }
+  :global(.button) {
+    margin-right: 21px;
+    display: inline-block;
+    @include media-breakpoint-down(sm) {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 0.8rem;
     }
-    .button {
-      margin-right: 21px;
-      display: inline-block;
-      @include media-breakpoint-down(sm) {
-        display: block;
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 0.8rem;
-      }
-      svg {
-        margin-right: 6px;
-        color: #000;
-      }
+    svg {
+      margin-right: 6px;
+      color: #000;
     }
   }
 }

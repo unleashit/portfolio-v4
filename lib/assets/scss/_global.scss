@@ -1,3 +1,23 @@
+// Bootstrap's own link styling is disabled (see the Links section of
+// _bootstrap_vars_override.scss). Up to 5.2 that was done by setting
+// $link-color: initial; 5.3 runs color math on $link-color, so it needs a real
+// color and the neutralizing rule moves here instead.
+//
+// In 5.2 `--bs-link-color: initial` made `color: var(--bs-link-color)` invalid
+// at computed-value time, which means links *inherited* their color (white in
+// the nav/footer, body color elsewhere) rather than turning black. `inherit`
+// reproduces that exactly; `initial` would not.
+//
+// This file is imported after bootstrap, so it wins over reboot without
+// changing specificity.
+a {
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
 html, body {
   min-height: 100%;
 }

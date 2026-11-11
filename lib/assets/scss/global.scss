@@ -16,12 +16,33 @@ $theme-colors-rgb: ();
 
 // final required bootstrap
 @import "../../../node_modules/bootstrap/scss/maps";
+
+// More css variable bloat: the text-emphasis / bg-subtle / border-subtle
+// palettes added in 5.3 are the light/dark counterparts used by
+// [data-bs-theme="dark"] and none of them are referenced here. _maps.scss
+// assigns them without !default, so they can only be dropped after it is read.
+$theme-colors-text: ();
+$theme-colors-bg-subtle: ();
+$theme-colors-border-subtle: ();
+
 @import "../../../node_modules/bootstrap/scss/mixins";
 
 // Optional components
 @import "../../../node_modules/bootstrap/scss/root";
 @import "../../../node_modules/bootstrap/scss/reboot";
 @import "../../../node_modules/bootstrap/scss/utilities";
+
+// Drop the 5.3 utility groups that would reference the variables removed above:
+// focus-ring builds its values straight from $theme-colors-rgb, and
+// generate-utility() throws on an empty list.
+$utilities: map-remove(
+  $utilities,
+  'focus-ring',
+  'text-color',
+  'subtle-background-color',
+  'subtle-border-color'
+);
+
 @import "../../../node_modules/bootstrap/scss/containers";
 @import "../../../node_modules/bootstrap/scss/grid";
 @import "../../../node_modules/bootstrap/scss/helpers";
